@@ -1,0 +1,101 @@
+name: CI/CD & Vercel Deployment
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: Code Quality & Asset Integrity
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate JavaScript Syntax
+        run: |
+          echo "Checking JavaScript syntax across all modules..."
+          node -c js/config.js
+          node -c js/navigation.js
+          node -c js/portfolio.js
+          node -c js/quote.js
+          node -c js/faq.js
+          node -c js/animations.js
+          node -c js/main.js
+          echo "All JavaScript modules passed syntax verification!"
+
+      - name: Verify Core Static Files & Assets
+        run: |
+          echo "Checking that all production HTML files exist..."
+          test -f index.html
+          test -f services.html
+          test -f work.html
+          test -f pricing.html
+          test -f about.html
+          test -f contact.html
+          test -f quote.html
+          test -f 404.html
+          test -f vercel.json
+          test -f robots.txt
+          test -f sitemap.xml
+          
+          echo "Checking assets and stylesheets..."
+          test -f css/style.css
+          test -f css/responsive.css
+          test -f css/animations.css
+          test -f assets/logo/cape-secure-logo.png
+          test -f assets/logo/favicon.png
+          test -f favicon.png
+          test -f assets/images/kanyakumari-heritage.jpg
+          
+          echo "Checking project demo assets..."
+          test -f assets/projects/sri-lakshmi-textiles.jpg
+          test -f assets/projects/careplus-clinic.jpg
+          test -f assets/projects/future-scholars.jpg
+          test -f assets/projects/spice-route.jpg
+          test -f assets/projects/businessflow-dashboard.jpg
+          
+          echo "All core assets verified successfully!"
+
+  deploy:
+    name: Vercel Production Deployment
+    needs: validate
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Vercel (CLI Action)
+        # Note: If your GitHub repository is connected directly via Vercel's dashboard,
+        # Vercel already deploys automatically on push.
+        # This step provides an optional fallback if VERCEL_TOKEN is configured in GitHub secrets.
+        if: env.VERCEL_TOKEN != ''
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: '--prod'
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deployment Success Notification
+        run: |
+          echo "========================================================"
+          echo " CapeSecure production deployment workflow completed!  "
+          echo " If using Vercel GitHub integration, Vercel deploys    "
+          echo " automatically on every commit pushed to main.         "
+          echo "========================================================"
