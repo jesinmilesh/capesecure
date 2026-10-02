@@ -45,6 +45,14 @@
     padding-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
+
+  .nav-links {
+    gap: 1.25rem;
+  }
+
+  .nav-link {
+    font-size: 0.88rem;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -102,7 +110,7 @@
   }
 
   .nav-mobile-cta {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     gap: 1rem;
     margin-top: 2rem;
@@ -270,20 +278,22 @@
     padding: 1.25rem;
   }
 
-  /* Floating badge repositioning for small screens */
+  /* Floating badges on smaller screens */
   .hero-badge-float {
-    position: static;
-    margin-top: 1rem;
-    width: 100%;
-    justify-content: center;
+    position: absolute;
+    font-size: 0.75rem;
+    padding: 0.45rem 0.8rem;
+    z-index: 4;
   }
 
-  .hero-badges-mobile {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    width: 100%;
-    margin-top: 1.5rem;
+  .hero-badge-top {
+    top: 2%;
+    right: -2%;
+  }
+
+  .hero-badge-bottom {
+    bottom: 2%;
+    left: -2%;
   }
 }
 
@@ -342,5 +352,20 @@
     right: 1rem;
     bottom: 1rem;
     max-width: none;
+  }
+
+  .hero-badge-float {
+    font-size: 0.68rem;
+    padding: 0.35rem 0.65rem;
+  }
+
+  .hero-badge-top {
+    top: -4px;
+    right: -4px;
+  }
+
+  .hero-badge-bottom {
+    bottom: -4px;
+    left: -4px;
   }
 }

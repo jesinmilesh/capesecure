@@ -92,6 +92,10 @@ body {
   min-height: 100vh;
 }
 
+body.menu-locked {
+  overflow: hidden;
+}
+
 /* --------------------------------------------------------------------------
    3. KANYAKUMARI MULTI-LAYERED BACKGROUND
    Layer 1: Deep Navy Gradient
@@ -344,6 +348,17 @@ img, svg {
   color: var(--text-muted);
   letter-spacing: 0.05em;
   text-transform: uppercase;
+}
+
+/* Navigation Menu Container */
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+/* Mobile CTA is strictly hidden on desktop */
+.nav-mobile-cta {
+  display: none !important;
 }
 
 /* Navigation Links */
