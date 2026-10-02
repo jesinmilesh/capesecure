@@ -1,0 +1,204 @@
+/* ==========================================================================
+   CapeSecure - Subtle Micro-Animations & Motion Design
+   Respects: prefers-reduced-motion
+   Ocean Waves • Shield Glow • Slow Compass • Light Sweep
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. KEYFRAME DEFINITIONS
+   -------------------------------------------------------------------------- */
+@keyframes pulseAura {
+  0% {
+    transform: scale(0.96);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(0.96);
+    opacity: 0.7;
+  }
+}
+
+@keyframes floatSubtle {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slowCompass {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes oceanWaveGentle {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(1.05);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+
+@keyframes lightSweep {
+  0% {
+    left: -120%;
+  }
+  30% {
+    left: 120%;
+  }
+  100% {
+    left: 120%;
+  }
+}
+
+@keyframes shieldGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.2), inset 0 0 15px rgba(0, 217, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(0, 217, 255, 0.45), inset 0 0 25px rgba(0, 217, 255, 0.25);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. SCROLL REVEAL UTILITIES (Triggered via IntersectionObserver)
+   -------------------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.reveal-left {
+  transform: translateX(-35px);
+}
+
+.reveal.reveal-right {
+  transform: translateX(35px);
+}
+
+.reveal.reveal-scale {
+  transform: scale(0.92);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+/* Stagger Delays */
+.delay-1 { transition-delay: 100ms; }
+.delay-2 { transition-delay: 200ms; }
+.delay-3 { transition-delay: 300ms; }
+.delay-4 { transition-delay: 400ms; }
+.delay-5 { transition-delay: 500ms; }
+
+/* --------------------------------------------------------------------------
+   3. DECORATIVE WAVE SVG DIVIDERS
+   -------------------------------------------------------------------------- */
+.wave-divider {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: translateZ(0);
+}
+
+.wave-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 48px;
+}
+
+.wave-divider.inverted svg {
+  transform: rotate(180deg);
+}
+
+.wave-divider .wave-deep {
+  fill: #06111c;
+}
+
+.wave-divider .wave-cyan {
+  fill: rgba(0, 217, 255, 0.08);
+}
+
+.wave-divider .wave-violet {
+  fill: rgba(118, 93, 255, 0.06);
+}
+
+/* --------------------------------------------------------------------------
+   4. INTERACTIVE HOVER SHINE
+   -------------------------------------------------------------------------- */
+.sweep-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.sweep-hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.12) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  transition: none;
+  pointer-events: none;
+}
+
+.sweep-hover:hover::after {
+  animation: lightSweep 1.2s ease;
+}
+
+/* --------------------------------------------------------------------------
+   5. ACCESSIBILITY: REDUCED MOTION PREFERENCES
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .hero-glow-disc,
+  .hero-badge-float,
+  .security-icon-center {
+    animation: none !important;
+  }
+
+  .sweep-hover::after {
+    display: none !important;
+  }
+}

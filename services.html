@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | CapeSecure - Websites • Security • Digital Solutions</title>
+  <meta name="description" content="Explore our specialized web development services: business websites, healthcare clinics, education portals, restaurant systems, professional portfolios, and custom web apps.">
+  <meta name="author" content="CapeSecure">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Web Development Services | CapeSecure">
+  <meta property="og:description" content="Modern, mobile-first websites and security-conscious digital solutions designed for real business growth.">
+  <meta property="og:image" content="assets/logo/cape-secure-logo.png">
+
+  <link rel="icon" type="image/png" href="assets/logo/favicon.png">
+  <link rel="apple-touch-icon" href="assets/logo/cape-secure-logo.png">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar" id="siteHeader">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand" aria-label="CapeSecure Homepage">
+        <img src="assets/logo/cape-secure-logo.png" alt="CapeSecure Brand Logo" class="brand-logo-img" width="44" height="44">
+        <div class="brand-text">
+          <span class="brand-name">
+            <span class="cape">CAPE</span><span class="secure">SECURE</span>
+          </span>
+          <span class="brand-tagline">Websites • Security • Solutions</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="primaryNav" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="services.html" class="nav-link active">Services</a></li>
+          <li><a href="work.html" class="nav-link">Our Work</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-mobile-cta">
+          <button type="button" class="btn btn-primary btn-block" data-open-quote>Get a Free Quote</button>
+          <a href="#" class="btn btn-secondary btn-block" data-whatsapp-btn>WhatsApp Us</a>
+        </div>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="btn btn-primary btn-sm btn-desktop" data-open-quote>Get a Free Quote</button>
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primaryNav">
+          <div class="menu-icon-bars">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+  <main id="mainContent">
+    
+    <!-- Hero / Intro -->
+    <section class="section hero-section" style="padding-bottom: 3rem;">
+      <div class="container text-center">
+        <div class="reveal">
+          <span class="section-tag">Engineered For Growth</span>
+          <h1>WHAT WE BUILD</h1>
+          <p class="section-subtitle" style="max-width: 680px; margin: 1rem auto 2rem auto;">
+            From responsive business websites for local shops to custom web applications with database workflows, we construct high-speed, security-conscious digital solutions.
+          </p>
+          <button type="button" class="btn btn-primary btn-lg sweep-hover" data-open-quote>
+            Get a Free Quote For Your Project
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Detailed Breakdown -->
+    <section class="section" style="padding-top: 1rem;">
+      <div class="container">
+        
+        <div class="services-grid" style="grid-template-columns: 1fr; gap: 3rem;">
+          
+          <!-- 1. Business Websites -->
+          <article class="service-card" id="business" style="padding: 3rem 2.5rem;">
+            <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+              <div class="service-icon-box" style="margin-bottom: 0;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              </div>
+              <div>
+                <h2>1. Business Websites</h2>
+                <span class="text-cyan" style="font-weight: 600; font-size: 0.95rem;">Professional websites for shops and local businesses</span>
+              </div>
+            </div>
+            <p>
+              Ideal for retail stores, boutique showrooms, hardware distributors, and local commerce companies. We design clean, branded websites that put your inventory, catalog, and contact options directly into customer hands.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+              <div>
+                <h4 style="font-size: 0.95rem; color: var(--white); margin-bottom: 0.5rem;">Included Features:</h4>
+                <ul class="service-features-list">
+                  <li><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Mobile-first responsive catalog</li>
+                  <li><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Direct WhatsApp order inquiry button</li>
+                  <li><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Google Maps location & directions</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size: 0.95rem; color: var(--white); margin-bottom: 0.5rem;">Security & Technical:</h4>
+                <ul class="service-features-list">
+                  <li><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> HTTPS SSL deployment included</li>
+                  <li><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Fast lightweight semantic code</li>
+                  <li><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Open Graph social sharing tags</li>
+                </ul>
+              </div>
+            </div>
+            <div style="display: flex; gap: 1rem; align-items: center; margin-top: 1rem;">
+              <button type="button" class="btn btn-primary btn-sm" data-open-quote data-quote-category="shop">
+                Get a Quote for Business Website
+              </button>
+              <a href="work.html" class="btn btn-secondary btn-sm">See Demo Projects</a>
+            </div>
+          </article>
+
+          <!-- 2. Healthcare Websites -->
+          <article class="service-card" id="healthcare" style="padding: 3rem 2.5rem;">
+            <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+              <div class="service-icon-box" style="margin-bottom: 0;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+              </div>
+              <div>
+                <h2>2. Healthcare Websites</h2>
+                <span class="text-cyan" style="font-weight: 600; font-size: 0.95rem;">Modern websites for clinics, doctors and healthcare centres</span>
+              </div>
+            </div>
+            <p>
+              Instill trust and simplify patient care. We construct respectful, clear portals for polyclinics, specialized practitioners, diagnostic labs, and physiotherapists.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+              <div>
+                <h4 style="font-size: 0.95rem; color: var(--white); margin-bottom: 0.5rem;">Clinical Workflows:</h4>
+                <ul class="service-features-list">
+                  <li><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Appointment request & slot picker</li>
+                  <li><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Doctor credentials and qualifications</li>
+                  <li><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Emergency tap-to-call hotlines</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size: 0.95rem; color: var(--white); margin-bottom: 0.5rem;">Security & Compliance:</h4>
+                <ul class="service-features-list">
+                  <li><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Strict patient enquiry privacy handling</li>
+                  <li><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Sanitized inputs on consultation forms</li>
+                  <li><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Schema.org medical business metadata</li>
+                </ul>
+              </div>
+            </div>
+            <div style="display: flex; gap: 1rem; align-items: center; margin-top: 1rem;">
+              <button type="button" class="btn btn-primary btn-sm" data-open-quote data-quote-category="clinic">
+                Get a Quote for Clinic Website
+              </button>
+            </div>
+          </article>
+
+          <!-- 3. Education Websites -->
+          <article class="service-card" id="education" style="padding: 3rem 2.5rem;">
+            <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+              <div class="service-icon-box" style="margin-bottom: 0;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              </div>
+              <div>
+                <h2>3. Education Websites</h2>
+                <span class="text-cyan" style="font-weight: 600; font-size: 0.95rem;">Websites for schools, colleges and coaching centres</span>
+              </div>
+            </div>
+            <p>
+              Present an authoritative, inspiring digital gateway for parents and aspiring students. We organize complex course curricula, admission deadlines, and academic announcements into an intuitive structure.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+              <div>
+                <h4 style="font-size: 0.95rem; color: var(--white); margin-bottom: 0.5rem;">Key Capabilities:</h4>
+                <ul class="service-features-list">
+                  <li><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Admissions lead capture workflows</li>
+                  <li><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Downloadable prospectus & schedules</li>
+                  <li><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Campus galleries and achievements</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size: 0.95rem; color: var(--white); margin-bottom: 0.5rem;">Compliance:</h4>
+                <ul class="service-features-list">
+                  <li><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> WCAG AA accessible typography</li>
+                  <li><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Fast mobile viewing for low-bandwidth users</li>
+                  <li><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Security hardened contact endpoints</li>
+                </ul>
+              </div>
+            </div>
+            <div style="display: flex; gap: 1rem; align-items: center; margin-top: 1rem;">
+              <button type="button" class="btn btn-primary btn-sm" data-open-quote data-quote-category="school">
+                Get a Quote for School Website
+              </button>
+            </div>
+          </article>
+
+          <!-- 4. Restaurant Websites -->
+          <article class="service-card" id="restaurant" style="padding: 3rem 2.5rem;">
+            <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+              <div class="service-icon-box" style="margin-bottom: 0;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+              </div>
+              <div>
+                <h2>4. Restaurant Websites</h2>
+                <span class="text-cyan" style="font-weight: 600; font-size: 0.95rem;">Digital menus, locations, galleries and enquiry systems</span>
+              </div>
+            </div>
+            <p>
+              Transform hungry online browsers into dining patrons. We build mouth-watering digital menus with interactive categories, table reservation requests, and direct WhatsApp booking.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+              <div>
+                <h4 style="font-size: 0.95rem; color: var(--white); margin-bottom: 0.5rem;">Dining Modules:</h4>
+                <ul class="service-features-list">
+                  <li><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Mobile QR contactless menu viewer</li>
+                  <li><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Table reservation with guest count</li>
+                  <li><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Dietary filters (Veg, Non-Veg, Seafood)</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size: 0.95rem; color: var(--white); margin-bottom: 0.5rem;">Local Discoverability:</h4>
+                <ul class="service-features-list">
+                  <li><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Restaurant schema for Google Maps</li>
+                  <li><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Optimized food asset loading</li>
+                  <li><svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Social link integration for Instagram</li>
+                </ul>
+              </div>
+            </div>
+            <div style="display: flex; gap: 1rem; align-items: center; margin-top: 1rem;">
+              <button type="button" class="btn btn-primary btn-sm" data-open-quote data-quote-category="restaurant">
+                Get a Quote for Restaurant
+              </button>
+            </div>
+          </article>
+
+          <!-- 5. Portfolio Websites -->
+          <article class="service-card" id="portfolio" style="padding: 3rem 2.5rem;">
+            <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+              <div class="service-icon-box" style="margin-bottom: 0;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-7L10 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path></svg>
+              </div>
+              <div>
+                <h2>5. Portfolio Websites</h2>
+                <span class="text-cyan" style="font-weight: 600; font-size: 0.95rem;">Professional websites for individuals, creators and professionals</span>
+              </div>
+            </div>
+            <p>
+              Your professional brand matters. We craft personal portfolios that establish credibility, demonstrate your past accomplishments, and make it effortless for high-value clients to book consultations.
+            </p>
+            <div style="display: flex; gap: 1rem; align-items: center; margin-top: 1rem;">
+              <button type="button" class="btn btn-primary btn-sm" data-open-quote data-quote-category="professional">
+                Get a Quote for Portfolio
+              </button>
+            </div>
+          </article>
+
+          <!-- 6. Custom Web Apps -->
+          <article class="service-card" id="custom" style="padding: 3rem 2.5rem;">
+            <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+              <div class="service-icon-box" style="margin-bottom: 0;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              </div>
+              <div>
+                <h2>6. Custom Web Apps</h2>
+                <span class="text-cyan" style="font-weight: 600; font-size: 0.95rem;">Dashboards, booking systems, portals and database-powered applications</span>
+              </div>
+            </div>
+            <p>
+              When a basic brochure site is not enough. We build tailored operational tools: admin control panels, customer booking engines, member directories, and database management systems that save your team hours every week.
+            </p>
+            <div style="display: flex; gap: 1rem; align-items: center; margin-top: 1rem;">
+              <button type="button" class="btn btn-primary btn-sm" data-open-quote data-quote-category="other">
+                Request Custom Web App Quote
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box text-center">
+          <h2 class="cta-title">READY TO DISCUSS YOUR PROJECT?</h2>
+          <p class="cta-subtitle">Let's build a fast, secure website tailored to your business goals.</p>
+          <button type="button" class="btn btn-primary btn-lg sweep-hover" data-open-quote>Get a Free Quote</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="nav-brand">
+            <img src="assets/logo/cape-secure-logo.png" alt="CapeSecure Logo" class="brand-logo-img" width="40" height="40">
+            <div class="brand-text">
+              <span class="brand-name"><span class="cape">CAPE</span><span class="secure">SECURE</span></span>
+              <span class="brand-tagline">Websites • Security • Solutions</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            Two-person freelance web development & digital solutions agency based out of Kanyakumari.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="footer-title">Navigation</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Our Work</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About Team</a></li>
+            <li><a href="quote.html">Get a Quote</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-title">Services</h3>
+          <ul class="footer-links">
+            <li><a href="services.html#business">Business Websites</a></li>
+            <li><a href="services.html#healthcare">Healthcare Clinics</a></li>
+            <li><a href="services.html#education">Schools & Colleges</a></li>
+            <li><a href="services.html#restaurant">Restaurant Portals</a></li>
+            <li><a href="services.html#portfolio">Portfolios</a></li>
+            <li><a href="services.html#custom">Custom Apps</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact-col">
+          <h3 class="footer-title">Contact</h3>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path></svg>
+            <a href="mailto:hello@capesecure.in" data-config="email">hello@capesecure.in</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path></svg>
+            <span data-config="location">Kanyakumari, Tamil Nadu, India</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; <span data-config="year">2026</span> CapeSecure. All rights reserved.</span>
+        <span>Built with care by CapeSecure</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/quote.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

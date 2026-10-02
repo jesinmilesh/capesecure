@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | CapeSecure - Two Developers. One Goal.</title>
+  <meta name="description" content="Meet the two-person technology team behind CapeSecure. Combining Kanyakumari coastal identity with security-conscious web engineering.">
+  <meta name="author" content="CapeSecure">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About CapeSecure | Modern Web Engineering">
+  <meta property="og:description" content="Two developers focused on helping local businesses build resilient, fast and security-conscious digital solutions.">
+  <meta property="og:image" content="assets/logo/cape-secure-logo.png">
+
+  <link rel="icon" type="image/png" href="assets/logo/favicon.png">
+  <link rel="apple-touch-icon" href="assets/logo/cape-secure-logo.png">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar" id="siteHeader">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand" aria-label="CapeSecure Homepage">
+        <img src="assets/logo/cape-secure-logo.png" alt="CapeSecure Brand Logo" class="brand-logo-img" width="44" height="44">
+        <div class="brand-text">
+          <span class="brand-name">
+            <span class="cape">CAPE</span><span class="secure">SECURE</span>
+          </span>
+          <span class="brand-tagline">Websites • Security • Solutions</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="primaryNav" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="work.html" class="nav-link">Our Work</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="about.html" class="nav-link active">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-mobile-cta">
+          <button type="button" class="btn btn-primary btn-block" data-open-quote>Get a Free Quote</button>
+          <a href="#" class="btn btn-secondary btn-block" data-whatsapp-btn>WhatsApp Us</a>
+        </div>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="btn btn-primary btn-sm btn-desktop" data-open-quote>Get a Free Quote</button>
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primaryNav">
+          <div class="menu-icon-bars">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+  <main id="mainContent">
+
+    <!-- Header Section -->
+    <section class="section hero-section" style="padding-bottom: 2rem;">
+      <div class="container text-center">
+        <div class="reveal">
+          <span class="section-tag gold">Our Story & Ethos</span>
+          <h1>TWO DEVELOPERS.<br><span class="text-cyan">ONE GOAL.</span></h1>
+          <p class="section-subtitle" style="max-width: 720px; margin: 1.25rem auto 2rem auto;">
+            CapeSecure is a two-person technology team focused on helping local businesses establish a professional online presence through modern websites and digital solutions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Profiles (Config Driven) -->
+    <section class="section" style="padding-top: 1rem; padding-bottom: 3.5rem;">
+      <div class="container">
+        
+        <div class="about-grid">
+          
+          <!-- Developer 01 -->
+          <article class="developer-card reveal reveal-left">
+            <div class="developer-header">
+              <div class="developer-avatar" aria-hidden="true">01</div>
+              <div>
+                <h3 class="developer-name" data-config="dev1-name">[PLACEHOLDER NAME]</h3>
+                <span class="developer-role" data-config="dev1-role">Founder & Developer</span>
+              </div>
+            </div>
+            <p class="developer-bio" data-config="dev1-bio">
+              Specializes in building high-performance, mobile-first websites and secure web architectures that help local businesses establish a commanding online presence.
+            </p>
+            <div class="developer-skills">
+              <span class="skills-title">Core Disciplines</span>
+              <div class="skills-pills">
+                <span class="skill-pill">Frontend Architecture</span>
+                <span class="skill-pill">Backend Logic</span>
+                <span class="skill-pill">Deployment & SSL</span>
+                <span class="skill-pill">Security Hardening</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Developer 02 -->
+          <article class="developer-card reveal reveal-right">
+            <div class="developer-header">
+              <div class="developer-avatar" aria-hidden="true" style="border-color: var(--border-gold); color: var(--gold);">02</div>
+              <div>
+                <h3 class="developer-name" data-config="dev2-name">[PLACEHOLDER NAME]</h3>
+                <span class="developer-role" data-config="dev2-role">Co-Founder / Business & Development</span>
+              </div>
+            </div>
+            <p class="developer-bio" data-config="dev2-bio">
+              Focuses on translating business needs into intuitive customer journeys, seamless booking workflows, and conversion-focused digital experiences for clients.
+            </p>
+            <div class="developer-skills">
+              <span class="skills-title">Core Disciplines</span>
+              <div class="skills-pills">
+                <span class="skill-pill">Client Relations</span>
+                <span class="skill-pill">UI/UX Design</span>
+                <span class="skill-pill">Web Development</span>
+                <span class="skill-pill">Business Solutions</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- The Kanyakumari Inspiration Story -->
+    <section class="section brand-story-section" style="border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="container">
+        <div class="story-grid">
+          
+          <div class="story-visual-card reveal reveal-left">
+            <img src="assets/images/kanyakumari-heritage.jpg" alt="Kanyakumari Coast with Thiruvalluvar Silhouette and digital wave grid" width="600" height="420">
+            <div class="story-badge-overlay" aria-hidden="true">
+              <span class="story-coordinates">8.078° N, 77.555° E</span>
+              <div class="story-tri-ocean">
+                <span class="ocean-pill indian">Indian Ocean</span>
+                <span class="ocean-pill arabian">Arabian Sea</span>
+                <span class="ocean-pill bengal">Bay of Bengal</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="story-content reveal reveal-right">
+            <span class="section-tag gold">Brand Identity</span>
+            <h2>Kanyakumari Coastal Heritage Meets Modern Cybersecurity</h2>
+            <p class="mt-2">
+              Our name, visual identity, and values are rooted in Kanyakumari. The meeting point of the Indian Ocean, Arabian Sea, and Bay of Bengal is celebrated for its clarity of horizon, unshakeable stone landmarks, and maritime lighthouses that offer constant guidance.
+            </p>
+            <p class="mt-2">
+              We bring that exact steadfast dependability to software. When you hire CapeSecure, you never get passed between account managers, third-party contractors, or automated support tickets. You communicate directly with the two developers who write your code, audit your security, and launch your website.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-tag">Principles</span>
+          <h2>HOW WE OPERATE</h2>
+          <p class="section-subtitle">Our commitments to every local business we partner with.</p>
+        </div>
+
+        <div class="services-grid">
+          
+          <div class="service-card reveal delay-1">
+            <div class="service-icon-box" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3>Security First Mindset</h3>
+            <p>We do not treat security as an afterthought. From input sanitization to HTTPS encryption, we engineer protection directly into the core.</p>
+          </div>
+
+          <div class="service-card reveal delay-2">
+            <div class="service-icon-box" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            </div>
+            <h3>No Bloat, Pure Speed</h3>
+            <p>We avoid heavy frameworks when lightweight, semantic HTML, CSS, and Vanilla JS provide faster page loads and better Core Web Vitals.</p>
+          </div>
+
+          <div class="service-card reveal delay-3">
+            <div class="service-icon-box" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+            </div>
+            <h3>Direct Developer Access</h3>
+            <p>You speak directly with the two engineers who actually build your project. Revisions are fast, accurate, and completely transparent.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box text-center">
+          <h2 class="cta-title">LET'S BUILD SOMETHING GREAT TOGETHER.</h2>
+          <p class="cta-subtitle">Talk with us about your business goals and get an honest, actionable estimate.</p>
+          <button type="button" class="btn btn-primary btn-lg sweep-hover" data-open-quote>Get a Free Quote</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="nav-brand">
+            <img src="assets/logo/cape-secure-logo.png" alt="CapeSecure Logo" class="brand-logo-img" width="40" height="40">
+            <div class="brand-text">
+              <span class="brand-name"><span class="cape">CAPE</span><span class="secure">SECURE</span></span>
+              <span class="brand-tagline">Websites • Security • Solutions</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            Two-person freelance web development & digital solutions agency based out of Kanyakumari.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="footer-title">Navigation</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Our Work</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About Team</a></li>
+            <li><a href="quote.html">Get a Quote</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-title">Services</h3>
+          <ul class="footer-links">
+            <li><a href="services.html#business">Business Websites</a></li>
+            <li><a href="services.html#healthcare">Healthcare Clinics</a></li>
+            <li><a href="services.html#education">Schools & Colleges</a></li>
+            <li><a href="services.html#restaurant">Restaurant Portals</a></li>
+            <li><a href="services.html#portfolio">Portfolios</a></li>
+            <li><a href="services.html#custom">Custom Apps</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact-col">
+          <h3 class="footer-title">Contact</h3>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path></svg>
+            <a href="mailto:hello@capesecure.in" data-config="email">hello@capesecure.in</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path></svg>
+            <span data-config="location">Kanyakumari, Tamil Nadu, India</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; <span data-config="year">2026</span> CapeSecure. All rights reserved.</span>
+        <span>Built with care by CapeSecure</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/quote.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

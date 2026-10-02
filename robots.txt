@@ -1,0 +1,6 @@
+# CapeSecure - Robots.txt
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://capesecure.in/sitemap.xml

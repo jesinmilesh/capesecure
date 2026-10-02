@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d9ff" />
+      <stop offset="60%" stop-color="#0787ff" />
+      <stop offset="100%" stop-color="#061b33" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd978" />
+      <stop offset="100%" stop-color="#f6b73c" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="#06111c" stroke="url(#goldGrad)" stroke-width="2" />
+  <polygon points="32,2 34,7 32,5 30,7" fill="#f6b73c" />
+  <polygon points="32,62 34,57 32,59 30,57" fill="#f6b73c" />
+  <polygon points="2,32 7,30 5,32 7,34" fill="#f6b73c" />
+  <polygon points="62,32 57,30 59,32 57,34" fill="#f6b73c" />
+  <path d="M32 12 C42 12 48 16 48 24 C48 37 39 46 32 50 C25 46 16 37 16 24 C16 16 22 12 32 12 Z" 
+        fill="url(#shieldGrad)" stroke="#00d9ff" stroke-width="1.5" filter="url(#glow)" />
+  <path d="M19 32 Q 25 28, 32 32 T 45 32 C 43 40, 36 45, 32 47 C 28 45, 21 40, 19 32 Z" 
+        fill="#00d9ff" opacity="0.4" />
+  <rect x="26" y="27" width="12" height="10" rx="2" fill="#ffffff" />
+  <path d="M28 27 V23 C28 20.8 29.8 19 32 19 C34.2 19 36 20.8 36 23 V27" 
+        fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+  <circle cx="32" cy="31" r="1.5" fill="#0787ff" />
+  <path d="M32 32.5 V35" stroke="#0787ff" stroke-width="1.2" stroke-linecap="round" />
+</svg>
