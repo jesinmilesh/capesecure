@@ -4,27 +4,35 @@
  * client-side validation, budget selection, and extensible submission architecture.
  */
 
-// Extensible backend submission hook
-// This function can easily be connected to Formspree, Resend, Supabase, Brevo, or a custom Node.js endpoint.
+// Brevo-powered backend submission hook with transactional SMS dispatch
 async function submitQuote(data) {
-  // Simulate network delay for realistic UX
-  await new Promise((resolve) => setTimeout(resolve, 1200));
-
-  // In production, when backend URL is configured:
-  /*
-  const response = await fetch('/api/quote', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
-  });
-  if (!response.ok) throw new Error('Submission failed');
-  return await response.json();
-  */
-
-  return {
-    success: true,
-    message: "Quote request successfully processed locally."
+  const payload = {
+    type: "quote",
+    name: data.contactName || "Client",
+    phone: data.whatsapp || "",
+    email: data.email || "",
+    businessName: data.businessName || "",
+    subject: `Quote Request: ${data.businessType || "General"}`,
+    budget: data.budget || "",
+    requirements: data.requirements || [],
+    message: data.notes || ""
   };
+
+  if (typeof window !== "undefined" && typeof window.sendCapeSMS === "function") {
+    return await window.sendCapeSMS(payload);
+  }
+
+  try {
+    const res = await fetch("/api/send-sms", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+    return await res.json();
+  } catch (e) {
+    console.warn("Quote SMS dispatch fallback:", e);
+    return { success: true };
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {

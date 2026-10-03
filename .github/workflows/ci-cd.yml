@@ -33,6 +33,7 @@ jobs:
           node -c js/faq.js
           node -c js/animations.js
           node -c js/main.js
+          node -c api/send-sms.js
           echo "All JavaScript modules passed syntax verification!"
 
       - name: Verify Core Static Files & Assets

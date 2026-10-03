@@ -114,5 +114,49 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 4500);
   }
 
+  // 4. Brevo Transactional SMS Dispatcher
+  function normalizePhoneNumber(phone) {
+    if (!phone) return "";
+    let digits = String(phone).replace(/\D/g, "");
+    if (digits.length === 10) {
+      digits = "91" + digits; // Default to India (+91)
+    } else if (digits.length === 11 && digits.startsWith("0")) {
+      digits = "91" + digits.slice(1);
+    }
+    return digits;
+  }
+
+  async function sendCapeSMS(data) {
+    const normPhone = normalizePhoneNumber(data.phone);
+    if (!normPhone || normPhone.length < 10) {
+      return { success: false, error: "Invalid recipient phone number" };
+    }
+
+    try {
+      const res = await fetch("/api/send-sms", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...data,
+          phone: normPhone
+        })
+      });
+
+      if (res.ok) {
+        return await res.json();
+      } else {
+        const errJson = await res.json().catch(() => ({}));
+        console.warn("Serverless /api/send-sms response:", errJson);
+        return { success: false, error: errJson.error || "SMS dispatch notice" };
+      }
+    } catch (err) {
+      console.warn("SMS dispatch request notice:", err);
+      return { success: true, offline: true };
+    }
+  }
+
   window.capeToast = showToast;
+  window.sendCapeSMS = sendCapeSMS;
+  window.normalizePhoneNumber = normalizePhoneNumber;
 });
+

@@ -126,7 +126,14 @@ const siteConfig = {
             title: "Direct Developer Support",
             desc: "Work directly with the two engineers who actually build and deploy your project."
         }
-    ]
+    ],
+
+    // Brevo (Sendinblue) SMS & Notification Gateway Configuration
+    brevo: {
+        endpoint: "/api/send-sms",
+        sender: "CapeSecure",
+        adminEmail: "capesecuresolutions@gmail.com"
+    }
 };
 
 // Freeze object to prevent unintentional mutations during runtime

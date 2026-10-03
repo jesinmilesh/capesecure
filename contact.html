@@ -339,11 +339,26 @@
         const loadingBox = document.getElementById("contactLoading");
         const successBox = document.getElementById("contactSuccess");
 
+        const subjectSelect = document.getElementById("contactSubject");
+        const subjectVal = subjectSelect ? subjectSelect.options[subjectSelect.selectedIndex].text : "General Inquiry";
+
         submitBtn.disabled = true;
         loadingBox.style.display = "flex";
 
-        // Simulated submission
-        await new Promise(r => setTimeout(r, 1000));
+        try {
+          if (typeof window.sendCapeSMS === "function") {
+            await window.sendCapeSMS({
+              type: "contact",
+              name: nameInput.value.trim(),
+              phone: phoneInput.value.trim(),
+              email: emailInput ? emailInput.value.trim() : "",
+              subject: subjectVal,
+              message: messageInput.value.trim()
+            });
+          }
+        } catch (err) {
+          console.warn("Contact form Brevo SMS dispatch notice:", err);
+        }
 
         loadingBox.style.display = "none";
         successBox.style.display = "block";
