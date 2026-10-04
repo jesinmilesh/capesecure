@@ -16,17 +16,41 @@ document.addEventListener("DOMContentLoaded", () => {
     const dev1Name = document.querySelectorAll("[data-config='dev1-name']");
     const dev1Role = document.querySelectorAll("[data-config='dev1-role']");
     const dev1Bio = document.querySelectorAll("[data-config='dev1-bio']");
+    const dev1Linkedin = document.querySelectorAll("[data-config='dev1-linkedin']");
+    const dev1Portfolio = document.querySelectorAll("[data-config='dev1-portfolio']");
     dev1Name.forEach((el) => (el.textContent = siteConfig.developers.developerOne.name));
     dev1Role.forEach((el) => (el.textContent = siteConfig.developers.developerOne.role));
     dev1Bio.forEach((el) => (el.textContent = siteConfig.developers.developerOne.bio));
+    dev1Linkedin.forEach((el) => {
+      if (el.tagName === "A" && siteConfig.developers.developerOne.linkedin) {
+        el.href = siteConfig.developers.developerOne.linkedin;
+      }
+    });
+    dev1Portfolio.forEach((el) => {
+      if (el.tagName === "A" && siteConfig.developers.developerOne.portfolio) {
+        el.href = siteConfig.developers.developerOne.portfolio;
+      }
+    });
 
     // Developer 2
     const dev2Name = document.querySelectorAll("[data-config='dev2-name']");
     const dev2Role = document.querySelectorAll("[data-config='dev2-role']");
     const dev2Bio = document.querySelectorAll("[data-config='dev2-bio']");
+    const dev2Linkedin = document.querySelectorAll("[data-config='dev2-linkedin']");
+    const dev2Portfolio = document.querySelectorAll("[data-config='dev2-portfolio']");
     dev2Name.forEach((el) => (el.textContent = siteConfig.developers.developerTwo.name));
     dev2Role.forEach((el) => (el.textContent = siteConfig.developers.developerTwo.role));
     dev2Bio.forEach((el) => (el.textContent = siteConfig.developers.developerTwo.bio));
+    dev2Linkedin.forEach((el) => {
+      if (el.tagName === "A" && siteConfig.developers.developerTwo.linkedin) {
+        el.href = siteConfig.developers.developerTwo.linkedin;
+      }
+    });
+    dev2Portfolio.forEach((el) => {
+      if (el.tagName === "A" && siteConfig.developers.developerTwo.portfolio) {
+        el.href = siteConfig.developers.developerTwo.portfolio;
+      }
+    });
 
     // Contact Elements
     const emailEls = document.querySelectorAll("[data-config='email']");
