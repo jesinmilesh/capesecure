@@ -368,4 +368,15 @@
     bottom: -4px;
     left: -4px;
   }
+
+  .developer-actions {
+    gap: 0.5rem;
+  }
 }
+
+@media screen and (max-width: 380px) {
+  .developer-actions {
+    grid-template-columns: 1fr;
+  }
+}
+

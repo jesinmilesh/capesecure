@@ -18,18 +18,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const dev1Bio = document.querySelectorAll("[data-config='dev1-bio']");
     const dev1Linkedin = document.querySelectorAll("[data-config='dev1-linkedin']");
     const dev1Portfolio = document.querySelectorAll("[data-config='dev1-portfolio']");
-    dev1Name.forEach((el) => (el.textContent = siteConfig.developers.developerOne.name));
-    dev1Role.forEach((el) => (el.textContent = siteConfig.developers.developerOne.role));
-    dev1Bio.forEach((el) => (el.textContent = siteConfig.developers.developerOne.bio));
+    const dev1NameVal = (siteConfig.developers?.developerOne?.name || "").trim();
+    if (dev1NameVal && !dev1NameVal.startsWith("[")) {
+      dev1Name.forEach((el) => (el.textContent = dev1NameVal));
+    } else {
+      dev1Name.forEach((el) => (el.textContent = "Jesin Milesh M"));
+    }
+    const dev1RoleVal = (siteConfig.developers?.developerOne?.role || "").trim();
+    if (dev1RoleVal) dev1Role.forEach((el) => (el.textContent = dev1RoleVal));
+    const dev1BioVal = (siteConfig.developers?.developerOne?.bio || "").trim();
+    if (dev1BioVal) dev1Bio.forEach((el) => (el.textContent = dev1BioVal));
     dev1Linkedin.forEach((el) => {
-      if (el.tagName === "A" && siteConfig.developers.developerOne.linkedin) {
-        el.href = siteConfig.developers.developerOne.linkedin;
-      }
+      const url = siteConfig.developers?.developerOne?.linkedin || "https://www.linkedin.com/in/jesin-milesh-m-7981bb347/";
+      if (el.tagName === "A") el.href = url;
     });
     dev1Portfolio.forEach((el) => {
-      if (el.tagName === "A" && siteConfig.developers.developerOne.portfolio) {
-        el.href = siteConfig.developers.developerOne.portfolio;
-      }
+      const url = siteConfig.developers?.developerOne?.portfolio || "work.html";
+      if (el.tagName === "A") el.href = url;
     });
 
     // Developer 2
@@ -38,18 +43,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const dev2Bio = document.querySelectorAll("[data-config='dev2-bio']");
     const dev2Linkedin = document.querySelectorAll("[data-config='dev2-linkedin']");
     const dev2Portfolio = document.querySelectorAll("[data-config='dev2-portfolio']");
-    dev2Name.forEach((el) => (el.textContent = siteConfig.developers.developerTwo.name));
-    dev2Role.forEach((el) => (el.textContent = siteConfig.developers.developerTwo.role));
-    dev2Bio.forEach((el) => (el.textContent = siteConfig.developers.developerTwo.bio));
+    const dev2NameVal = (siteConfig.developers?.developerTwo?.name || "").trim();
+    if (dev2NameVal && !dev2NameVal.startsWith("[")) {
+      dev2Name.forEach((el) => (el.textContent = dev2NameVal));
+    } else {
+      dev2Name.forEach((el) => (el.textContent = "Libinesh R U"));
+    }
+    const dev2RoleVal = (siteConfig.developers?.developerTwo?.role || "").trim();
+    if (dev2RoleVal) dev2Role.forEach((el) => (el.textContent = dev2RoleVal));
+    const dev2BioVal = (siteConfig.developers?.developerTwo?.bio || "").trim();
+    if (dev2BioVal) dev2Bio.forEach((el) => (el.textContent = dev2BioVal));
     dev2Linkedin.forEach((el) => {
-      if (el.tagName === "A" && siteConfig.developers.developerTwo.linkedin) {
-        el.href = siteConfig.developers.developerTwo.linkedin;
-      }
+      const url = siteConfig.developers?.developerTwo?.linkedin || "https://www.linkedin.com/in/libinesh-r-u-59496a370";
+      if (el.tagName === "A") el.href = url;
     });
     dev2Portfolio.forEach((el) => {
-      if (el.tagName === "A" && siteConfig.developers.developerTwo.portfolio) {
-        el.href = siteConfig.developers.developerTwo.portfolio;
-      }
+      const url = siteConfig.developers?.developerTwo?.portfolio || "work.html";
+      if (el.tagName === "A") el.href = url;
     });
 
     // Contact Elements
