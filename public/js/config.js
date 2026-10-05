@@ -7,7 +7,8 @@
 const siteConfig = {
     companyName: "Cape Secure Solutions",
     brandName: "Cape Secure Solutions",
-    tagline: "Cybersecurity & Secure Software Solutions",
+    tagline: "Where three seas meet, security begins.",
+    motto: "Born at the edge of three seas. Built to protect your digital horizon.",
     establishedYear: "2026",
 
     // Contact Information (Configurable Placeholders)
@@ -15,7 +16,7 @@ const siteConfig = {
     // If empty, buttons degrade gracefully with helpful prompts.
     whatsapp: "", // e.g. "+919876543210" or "919876543210"
     whatsappDisplay: "+91 (Available on Request)",
-    email: "contact@capesecure.in", // e.g. "contact@capesecure.in"
+    email: "capesecuresolutions@gmail.com", // e.g. "contact@capesecure.in"
     phone: "", // e.g. "+91 98765 43210"
     phoneDisplay: "+91 (Direct Developer Line)",
     location: "Kanyakumari, Tamil Nadu, India",

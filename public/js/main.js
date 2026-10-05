@@ -65,8 +65,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Contact Elements
     const emailEls = document.querySelectorAll("[data-config='email']");
     emailEls.forEach((el) => {
-      el.textContent = siteConfig.email || "hello@capesecure.in";
-      if (el.tagName === "A") el.href = `mailto:${siteConfig.email || "hello@capesecure.in"}`;
+      el.textContent = siteConfig.email || "capesecuresolutions@gmail.com";
+      if (el.tagName === "A") el.href = `mailto:${siteConfig.email || "capesecuresolutions@gmail.com"}`;
     });
 
     const locationEls = document.querySelectorAll("[data-config='location']");
