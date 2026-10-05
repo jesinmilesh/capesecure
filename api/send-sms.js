@@ -5,7 +5,20 @@
  * Configured securely via Vercel Environment Variables: BREVO_API_KEY
  */
 
-const BREVO_API_KEY = process.env.BREVO_API_KEY || "";
+import fs from 'fs';
+import path from 'path';
+
+let BREVO_API_KEY = process.env.BREVO_API_KEY || "";
+if (!BREVO_API_KEY) {
+  try {
+    const envPath = path.join(process.cwd(), 'backend', '.env');
+    if (fs.existsSync(envPath)) {
+      const match = fs.readFileSync(envPath, 'utf8').match(/BREVO_API_KEY=([^\r\n]+)/);
+      if (match) BREVO_API_KEY = match[1].trim();
+    }
+  } catch (e) {}
+}
+
 const BREVO_SENDER = process.env.BREVO_SENDER || "CapeSecure";
 const ADMIN_EMAIL = process.env.BREVO_ADMIN_EMAIL || "capesecuresolutions@gmail.com";
 const ADMIN_PHONE = process.env.BREVO_ADMIN_PHONE || "";

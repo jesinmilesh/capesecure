@@ -80,27 +80,23 @@
    2. SCROLL REVEAL UTILITIES (Triggered via IntersectionObserver)
    -------------------------------------------------------------------------- */
 .reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
-.reveal.reveal-left {
-  transform: translateX(-35px);
-}
-
-.reveal.reveal-right {
-  transform: translateX(35px);
-}
-
+.reveal.reveal-left,
+.reveal.reveal-right,
 .reveal.reveal-scale {
-  transform: scale(0.92);
+  opacity: 1;
+  transform: none;
 }
 
-.reveal.revealed {
-  opacity: 1;
-  transform: translateY(0) translateX(0) scale(1);
+.reveal.revealed,
+.reveal.reveal-visible {
+  opacity: 1 !important;
+  transform: translateY(0) translateX(0) scale(1) !important;
 }
 
 /* Stagger Delays */
@@ -202,3 +198,5 @@
     display: none !important;
   }
 }
+
+

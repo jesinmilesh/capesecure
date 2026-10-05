@@ -8,3 +8,5 @@ node_modules/
 capesecure/
 .env
 .env*.local
+**/.env
+backend/.env

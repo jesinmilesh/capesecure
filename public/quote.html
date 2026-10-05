@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get a Project Quote | Cape Secure Solutions — Cybersecurity &amp; Secure Software</title>
+  <meta name="description" content="Request a confidential cybersecurity or web software quote from Cape Secure Solutions. Clear estimates for businesses, organizations, and startups.">
+  <meta name="author" content="Cape Secure Solutions">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Get a Quote | Cape Secure Solutions">
+  <meta property="og:description" content="Direct scoping from our cybersecurity and software engineering team.">
+  <meta property="og:image" content="assets/logo/cape-secure-logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <link rel="stylesheet" href="css/style.css?v=1.2">
+  <link rel="stylesheet" href="css/responsive.css?v=1.2">
+  <link rel="stylesheet" href="css/animations.css?v=1.2">
+  <link rel="stylesheet" href="css/water.css?v=1.2">
+</head>
+<body>
+
+  <!-- Minimal Smooth Page Loader -->
+  <div class="cape-loader" id="capeLoader" aria-hidden="true">
+    <div class="cape-loader-brand">
+      <div class="cape-loader-compass">
+        <svg viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="18" stroke="#00E5FF" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <path d="M20 6 L23 18 L34 20 L23 22 L20 34 L17 22 L6 20 L17 18 Z" fill="#F59E32"/>
+        </svg>
+      </div>
+      <div class="cape-loader-title">CAPE SECURE SOLUTIONS</div>
+      <div class="cape-loader-ocean-line"></div>
+    </div>
+  </div>
+
+  <!-- Ambient Particle Canvas System -->
+  <canvas id="waterCanvas" aria-hidden="true"></canvas>
+
+  <!-- Navigation -->
+  <header class="navbar" id="siteHeader">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand" aria-label="Cape Secure Solutions Home">
+        <img src="assets/logo/cape-secure-logo.png" alt="Cape Secure Solutions Brand Logo" class="brand-logo-img" width="44" height="44">
+        <div class="brand-text">
+          <span class="brand-name">
+            <span class="cape">CAPE</span> <span class="secure">SECURE</span>
+          </span>
+          <span class="brand-tagline">Cybersecurity &bull; Solutions</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="primaryNav" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="work.html" class="nav-link">Our Work</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-mobile-cta">
+          <a href="#" class="btn btn-secondary btn-block" data-whatsapp-btn>WhatsApp Us</a>
+        </div>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="btn btn-secondary btn-sm" data-whatsapp-btn>WhatsApp Us</button>
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primaryNav">
+          <div class="menu-icon-bars">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+  <main id="mainContent">
+
+    <section class="section hero-section" style="padding-bottom: 2rem;">
+      <!-- Kanyakumari Photographic Background -->
+      <div class="hero-backdrop" aria-hidden="true">
+        <img src="assets/images/kanyakumari-hero.jpg" alt="Kanyakumari Coastline" class="hero-scene-image">
+        <div class="hero-vignette"></div>
+      </div>
+
+      <div class="container text-center">
+        <div class="reveal">
+          <span class="section-tag gold">Fast & Transparent</span>
+          <h1>REQUEST YOUR FREE QUOTE</h1>
+          <p class="section-subtitle" style="max-width: 680px; margin: 1rem auto 2rem auto;">
+            Tell us about your business and website needs. We'll review your scope and provide an actionable, transparent estimate.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Quote Form Section -->
+    <section class="section" style="padding-top: 0; padding-bottom: 5rem;">
+      <div class="container" style="max-width: 860px;">
+        
+        <div class="service-card reveal" style="padding: clamp(2rem, 5vw, 3.5rem); border-color: var(--border-cyan);">
+          
+          <form id="quotePageForm" novalidate>
+            <!-- Multi-Step Progress Indicator (01 — 02 — 03 — 04 — 05) -->
+            <div class="quote-progress-bar">
+              <div class="quote-progress-step active" data-step="1">
+                <span class="quote-step-num">01</span>
+                <span>Business</span>
+              </div>
+              <div class="quote-step-divider"></div>
+              <div class="quote-progress-step" data-step="2">
+                <span class="quote-step-num">02</span>
+                <span>Requirements</span>
+              </div>
+              <div class="quote-step-divider"></div>
+              <div class="quote-progress-step" data-step="3">
+                <span class="quote-step-num">03</span>
+                <span>Budget</span>
+              </div>
+              <div class="quote-step-divider"></div>
+              <div class="quote-progress-step" data-step="4">
+                <span class="quote-step-num">04</span>
+                <span>Contact</span>
+              </div>
+              <div class="quote-step-divider"></div>
+              <div class="quote-progress-step" data-step="5">
+                <span class="quote-step-num">05</span>
+                <span>Review</span>
+              </div>
+            </div>
+
+            <div class="quote-steps-container">
+              <!-- STEP 1: BUSINESS -->
+              <div class="quote-step-pane active" data-step="1">
+                <span class="form-section-title">Step 01: Tell Us About Your Business</span>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Help us understand what kind of presence you need.</p>
+                
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label" for="pageQuoteBusinessName">Business or Organization Name <span class="required">*</span></label>
+                    <input type="text" id="pageQuoteBusinessName" name="businessName" class="form-control" placeholder="e.g. Sri Balaji Sweets & Bakery" required>
+                    <span class="field-error-msg">Business name is required.</span>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="pageQuoteBusinessType">Business Type <span class="required">*</span></label>
+                    <select id="pageQuoteBusinessType" name="businessType" class="form-control" required>
+                      <option value="">Select business type...</option>
+                      <option value="business">Local Business / Company</option>
+                      <option value="healthcare">Clinic / Healthcare / Doctor</option>
+                      <option value="education">School / College / Academy</option>
+                      <option value="restaurant">Restaurant / Cafe / Food</option>
+                      <option value="portfolio">Professional / Creator / Consultant</option>
+                      <option value="custom">Custom Web Application</option>
+                      <option value="other">Other Business</option>
+                    </select>
+                    <span class="field-error-msg">Please select your business type.</span>
+                  </div>
+                </div>
+
+                <div class="quote-nav-buttons">
+                  <div></div>
+                  <button type="button" class="btn btn-primary sweep-hover" data-step-next="2">
+                    Continue to Requirements &rarr;
+                  </button>
+                </div>
+              </div>
+
+              <!-- STEP 2: REQUIREMENTS -->
+              <div class="quote-step-pane" data-step="2">
+                <span class="form-section-title">Step 02: What Are Your Requirements?</span>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.25rem;">Select everything that applies to your desired website:</p>
+
+                <div class="form-group">
+                  <div class="checkbox-grid">
+                    <label class="custom-checkbox-card">
+                      <input type="checkbox" name="req_website" value="Business website">
+                      <span>Business website</span>
+                    </label>
+                    <label class="custom-checkbox-card">
+                      <input type="checkbox" name="req_catalogue" value="Online catalogue">
+                      <span>Online catalogue</span>
+                    </label>
+                    <label class="custom-checkbox-card">
+                      <input type="checkbox" name="req_booking" value="Booking system">
+                      <span>Booking system</span>
+                    </label>
+                    <label class="custom-checkbox-card">
+                      <input type="checkbox" name="req_enquiry" value="Contact/enquiry system">
+                      <span>Contact/enquiry system</span>
+                    </label>
+                    <label class="custom-checkbox-card">
+                      <input type="checkbox" name="req_portfolio" value="Portfolio">
+                      <span>Portfolio</span>
+                    </label>
+                    <label class="custom-checkbox-card">
+                      <input type="checkbox" name="req_custom" value="Custom web application">
+                      <span>Custom web application</span>
+                    </label>
+                  </div>
+                  <span class="field-error-msg">Please select at least one requirement.</span>
+                </div>
+
+                <div class="quote-nav-buttons">
+                  <button type="button" class="btn btn-ghost" data-step-prev="1">
+                    &larr; Back
+                  </button>
+                  <button type="button" class="btn btn-primary sweep-hover" data-step-next="3">
+                    Continue to Budget &rarr;
+                  </button>
+                </div>
+              </div>
+
+              <!-- STEP 3: BUDGET -->
+              <div class="quote-step-pane" data-step="3">
+                <span class="form-section-title">Step 03: Estimated Budget Tier</span>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.25rem;">Choose the investment tier you are comfortable with:</p>
+
+                <div class="form-group">
+                  <div class="budget-grid">
+                    <label class="custom-checkbox-card">
+                      <input type="radio" name="budget" value="3000-5000">
+                      <span>₹2,999 – ₹5,000 (Starter)</span>
+                    </label>
+                    <label class="custom-checkbox-card">
+                      <input type="radio" name="budget" value="5000-10000">
+                      <span>₹5,999 – ₹10,000 (Business)</span>
+                    </label>
+                    <label class="custom-checkbox-card">
+                      <input type="radio" name="budget" value="10000-25000">
+                      <span>₹9,999 – ₹25,000 (Custom)</span>
+                    </label>
+                    <label class="custom-checkbox-card">
+                      <input type="radio" name="budget" value="25000+">
+                      <span>₹25,000+ (Full Web App)</span>
+                    </label>
+                  </div>
+                  <span class="field-error-msg">Please choose an estimated budget.</span>
+                </div>
+
+                <div class="quote-nav-buttons">
+                  <button type="button" class="btn btn-ghost" data-step-prev="2">
+                    &larr; Back
+                  </button>
+                  <button type="button" class="btn btn-primary sweep-hover" data-step-next="4">
+                    Continue to Contact &rarr;
+                  </button>
+                </div>
+              </div>
+
+              <!-- STEP 4: CONTACT -->
+              <div class="quote-step-pane" data-step="4">
+                <span class="form-section-title">Step 04: Your Contact Details</span>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.25rem;">Where should we send your project roadmap and tailored estimate?</p>
+
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label" for="pageQuoteContactName">Your Name <span class="required">*</span></label>
+                    <input type="text" id="pageQuoteContactName" name="contactName" class="form-control" placeholder="Full name" required>
+                    <span class="field-error-msg">Your name is required.</span>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="pageQuoteWhatsappNumber">WhatsApp Number <span class="required">*</span></label>
+                    <input type="tel" id="pageQuoteWhatsappNumber" name="whatsappNumber" class="form-control" placeholder="10-digit mobile number" required>
+                    <span class="field-error-msg">Valid phone/WhatsApp number is required.</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="pageQuoteEmailAddress">Email Address (Optional)</label>
+                  <input type="email" id="pageQuoteEmailAddress" name="emailAddress" class="form-control" placeholder="you@domain.com">
+                  <span class="field-error-msg">Please enter a valid email address.</span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="pageQuoteNotes">Additional Requirements / Notes (Optional)</label>
+                  <textarea id="pageQuoteNotes" name="notes" rows="3" class="form-control" placeholder="Tell us any specific features, deadlines, design preferences, or existing website links..."></textarea>
+                </div>
+
+                <div class="quote-nav-buttons">
+                  <button type="button" class="btn btn-ghost" data-step-prev="3">
+                    &larr; Back
+                  </button>
+                  <button type="button" class="btn btn-primary sweep-hover" data-step-next="5">
+                    Review Project &rarr;
+                  </button>
+                </div>
+              </div>
+
+              <!-- STEP 5: REVIEW & READY -->
+              <div class="quote-step-pane" data-step="5">
+                <span class="form-section-title">Step 05: Review Project Specification</span>
+                
+                <!-- Populated dynamically by populateReviewSummary() in quote.js -->
+                <div class="quote-review-summary"></div>
+
+                <div style="display: flex; gap: 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                  <button type="button" class="btn btn-secondary btn-sm" data-review-whatsapp-btn>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right: 0.35rem;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    Chat Directly on WhatsApp
+                  </button>
+                  <span style="font-size: 0.8rem; color: var(--text-muted);">Direct developer review within 24 hours</span>
+                </div>
+
+                <div class="quote-nav-buttons">
+                  <button type="button" class="btn btn-ghost" data-step-prev="4">
+                    &larr; Edit Details
+                  </button>
+                  <button type="submit" class="btn btn-primary btn-lg sweep-hover">
+                    Request My Free Quote
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Loading State -->
+            <div class="form-status-msg loading" aria-live="polite">
+              <div class="spinner"></div>
+              <span>Processing requirements and preparing your proposal...</span>
+            </div>
+
+            <!-- Success State -->
+            <div class="form-status-msg success" aria-live="polite">
+              <div class="review-status-badge" style="margin-bottom: 0.75rem;">
+                <span class="badge-dot pulse"></span>
+                <span>PROJECT REQUEST RECEIVED</span>
+              </div>
+              <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--gold-light);">THANKS! YOUR REQUEST HAS BEEN RECEIVED.</h3>
+              <p style="font-size: 1.05rem; margin-bottom: 1.5rem; color: var(--text-secondary);">We'll review your requirements and contact you shortly with a personalized proposal and timeline.</p>
+              <a href="index.html" class="btn btn-secondary btn-sm">Return to Homepage</a>
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="nav-brand">
+            <img src="assets/logo/cape-secure-logo.png" alt="Cape Secure Solutions Logo" class="brand-logo-img" width="40" height="40">
+            <div class="brand-text">
+              <span class="brand-name"><span class="cape">CAPE</span> <span class="secure">SECURE</span></span>
+              <span class="brand-tagline">Cybersecurity &bull; Solutions</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            Cybersecurity &amp; secure software engineering consultancy headquartered in Kanyakumari.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="footer-title">Navigation</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="security.html">Security Philosophy</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-title">Services</h3>
+          <ul class="footer-links">
+            <li><a href="services.html#cybersecurity">Cybersecurity</a></li>
+            <li><a href="services.html#software">Secure Software</a></li>
+            <li><a href="services.html#engineering">Security Engineering</a></li>
+            <li><a href="services.html#automation">Security Automation</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact-col">
+          <h3 class="footer-title">Contact</h3>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path></svg>
+            <a href="mailto:capesecuresolutions@gmail.com" data-config="email">capesecuresolutions@gmail.com</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path></svg>
+            <span data-config="location">Kanyakumari, Tamil Nadu, India</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; <span data-config="year">2026</span> Cape Secure Solutions. All rights reserved.</span>
+        <span>Built with care by Cape Secure Solutions</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/config.js?v=1.2"></script>
+  <script src="js/navigation.js?v=1.2"></script>
+  <script src="js/quote.js?v=1.2"></script>
+  <script src="js/animations.js?v=1.2"></script>
+  <script src="js/ambient.js"></script>
+  <script src="js/main.js?v=1.2"></script>
+  <script src="js/water.js?v=1.2"></script>
+  <script src="js/ripple.js?v=1.2"></script>
+</body>
+</html>

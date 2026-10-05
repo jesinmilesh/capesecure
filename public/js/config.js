@@ -5,9 +5,9 @@
  */
 
 const siteConfig = {
-    companyName: "CapeSecure",
-    brandName: "Cape Secure",
-    tagline: "Websites • Security • Digital Solutions",
+    companyName: "Cape Secure Solutions",
+    brandName: "Cape Secure Solutions",
+    tagline: "Cybersecurity & Secure Software Solutions",
     establishedYear: "2026",
 
     // Contact Information (Configurable Placeholders)

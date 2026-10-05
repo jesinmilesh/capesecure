@@ -1,125 +1,87 @@
-# CapeSecure — Official Business Website
+# CAPE SECURE &mdash; Cybersecurity Solutions
 
-> **Websites • Security • Digital Solutions**  
-> Two-person freelance web-development & digital-solutions agency based out of Kanyakumari.
+> **Securing the Digital Horizon &bull; From Kanyakumari, Tamil Nadu, India**
 
----
-
-## 🌊 Visual & Brand Identity
-
-CapeSecure merges **Kanyakumari coastal heritage** with **modern cyber-security web engineering**:
-- **Palette**: Deep navy foundations (`#06111c`), vivid cyan ocean accents (`#00d9ff`, `#0787ff`), and warm Kanyakumari sunset gold (`#f6b73c`).
-- **Brand Imagery**: Inspired by the Kanyakumari horizon where the Indian Ocean, Arabian Sea, and Bay of Bengal converge, with the Thiruvalluvar monument and maritime lighthouse motifs.
-- **Tech Philosophy**: Zero unnecessary framework dependencies. Pure, blazing-fast HTML5, CSS3, and Vanilla JavaScript with sub-second page loads and security-conscious standards.
+Cape Secure is an independent, premium cybersecurity and secure technology service inspired by the meeting of three oceans at Kanyakumari (Indian Ocean, Arabian Sea, and Bay of Bengal).
 
 ---
 
-## 📁 Project Architecture
+## Brand Architecture & Visual Identity
+
+1. **Kanyakumari Heritage**: Rooted in the steadfast endurance of the Thiruvalluvar Statue, Vivekananda Rock Memorial, and coastal maritime lighthouses.
+2. **Three Seas Convergence**: The Arabian Sea (Edge Defense), Indian Ocean (Core Granite Resilience), and Bay of Bengal (Continuous Monitoring) converge into a single unbreakable cybersecurity shield.
+3. **Palette Tokens**:
+   - **Deep Navy (`#03111F`)**: Depth, security, and enterprise stability.
+   - **Ocean Blue (`#0066FF`)**: Maritime power and dynamic current.
+   - **Electric Cyan (`#00D9FF`)**: Technological precision, active defense, and telemetry.
+   - **Kanyakumari Gold (`#FFB52E`)**: Sunrise/sunset horizon, heritage, and integrity.
+   - **Sunset Orange (`#FF7A18`)**: Golden hour atmospheric aura.
+
+---
+
+## Technology Stack
+
+- **Structure**: Semantic HTML5 with complete ARIA landmarks and Open Graph / SEO metadata.
+- **Styling**: Modern vanilla CSS3 with CSS custom properties, glassmorphism (`backdrop-filter`), and GPU-accelerated micro-interactions.
+- **Dynamic Ocean Engine**: Canvas API rendering multi-frequency sine wave strata, sunset specular reflections, foam crests, and floating cyber telemetry particles (`js/ocean.js`).
+- **Water Interaction Cursor**: Optimized fluid droplet cursor with spring physics, disturbance trailing, and circular shockwaves upon click (`js/cursor.js`).
+- **Offensive Threat Defense Simulation**: Real-time vector interception arena and telemetry dashboard (`js/animations.js`).
+- **Transactional Communication**: Brevo SMS & webhook lead pipeline (`api/send-sms.js` & `js/contact.js`).
+
+---
+
+## File Structure
 
 ```
 /
-├── index.html              # High-converting homepage with all 11 core sections
-├── services.html           # In-depth breakdown for all 6 specialized business services
-├── work.html               # Demo portfolio with category filters & interactive preview modal
-├── pricing.html            # Transparent starting pricing, comparison matrix & add-ons
-├── about.html              # Two-developer team story, Kanyakumari coastal identity & ethos
-├── contact.html            # Direct developer contact channels, location & direct message form
-├── quote.html              # Dedicated full-page interactive quote builder
-├── 404.html                # Branded custom 404 error page
-├── vercel.json             # Vercel configuration (clean URLs, caching, security headers)
-│
-├── .github/
-│   └── workflows/
-│       └── ci-cd.yml       # GitHub Actions CI/CD pipeline (syntax validation & deploy)
-│
+├── index.html              # Main Experience: Hero, Three Seas, 10 Services, Threat Arena, Demo Monitor
+├── about.html              # Security From the Southern Edge, Heritage & Specialist Profiles
+├── services.html           # Full breakdown of all 10 specialized cybersecurity disciplines
+├── projects.html           # Selected Work & Case Studies (clearly labeled Case Studies / Demos)
+├── contact.html            # Confidential inquiry portal & engineer contact details
+├── 404.html                # Custom 404 error page with ocean theme
+├── favicon.png             # Official Cape Secure circular brand favicon
 ├── css/
-│   ├── style.css           # Design tokens, CSS variables, glass cards, buttons & layout
-│   ├── responsive.css      # Mobile-first breakpoints (320px, 375px, 480px, 768px, 1024px, 1440px+)
-│   └── animations.css      # Wave motion, shield glow, slow compass & prefers-reduced-motion
-│
+│   ├── style.css           # Core design system, typography, cards, and layouts
+│   ├── animations.css      # Keyframe animations, pulse effects, and reduced-motion rules
+│   └── responsive.css      # Dedicated mobile & tablet breakpoints (320px to 1440px+)
 ├── js/
-│   ├── config.js           # Central configuration for developer names, WhatsApp, email, pricing
-│   ├── main.js             # Global orchestrator, toast notices & dynamic DOM config binding
-│   ├── navigation.js       # Sticky navbar, mobile drawer menu & keyboard accessibility
-│   ├── portfolio.js        # Demo projects filter engine & interactive preview modal
-│   ├── quote.js            # Client-side quote calculator, validation & backend integration hook
-│   ├── faq.js              # Accessible accordion with keyboard navigation (Enter/Space/Arrows)
-│   └── animations.js       # Performant IntersectionObserver scroll reveals
-│
-├── assets/
-│   ├── logo/
-│   │   ├── cape-secure-logo.png  # Primary brand logo
-│   │   ├── favicon.png           # Brand favicon asset
-│   │   └── favicon.svg           # High-resolution vector favicon
-│   ├── images/
-│   │   └── kanyakumari-heritage.jpg # Cape sunset horizon visual
-│   └── projects/
-│       ├── sri-lakshmi-textiles.jpg # Demo: Retail Boutique Website
-│       ├── careplus-clinic.jpg      # Demo: Healthcare Clinic Portal
-│       ├── future-scholars.jpg      # Demo: Educational Academy Website
-│       ├── spice-route.jpg          # Demo: Coastal Restaurant Portal
-│       └── businessflow-dashboard.jpg # Demo: Custom SaaS Dashboard
-│
-├── robots.txt              # Search engine crawler instructions
-├── sitemap.xml             # XML sitemap for SEO discovery
-└── README.md               # Maintenance, configuration & deployment guide
+│   ├── main.js             # Loading screen, glass navbar, and drawer navigation
+│   ├── ocean.js            # Canvas layered wave physics and sunset particle atmosphere
+│   ├── cursor.js           # Custom water droplet cursor and ocean wave trail
+│   ├── animations.js       # Threat defense simulation, counters, and scroll reveals
+│   └── contact.js          # Client-side validation and secure dispatch handler
+├── api/
+│   └── send-sms.js         # Vercel serverless function for Brevo transactional notifications
+└── assets/
+    ├── images/             # Realistic Kanyakumari coastal photography and heritage
+    ├── logo/               # Official Cape Secure emblem, shields, and assets
+    └── projects/           # High-resolution case study interface screenshots
 ```
 
 ---
 
-## ⚡ Continuous Deployment with Vercel & CI/CD
+## Deployment Instructions
 
-This repository is configured for **Continuous Deployment (CI/CD)**:
+### 1. Vercel (Recommended)
+1. Push this repository to GitHub.
+2. Import the repository into your Vercel Dashboard.
+3. (Optional) Set environment variables for transactional SMS:
+   - `BREVO_API_KEY`: Your Brevo REST API v3 Key.
+   - `BREVO_ADMIN_PHONE`: Admin phone number in international format (e.g., `919876543210`).
+   - `BREVO_ADMIN_EMAIL`: Admin alert notification email.
+4. Click **Deploy**. Vercel will automatically serve the static website and the `/api/send-sms` serverless function.
 
-1. **Automatic Deployments on Git Push**:
-   - Any commit pushed to the `main` branch automatically triggers an instant production build and deployment on Vercel.
-   - Any pull request generates a preview deployment with an isolated staging URL.
-
-2. **`vercel.json` Optimizations**:
-   - `cleanUrls: true`: Routes `/services` cleanly to `services.html`, `/pricing` to `pricing.html`, etc.
-   - **Enterprise Security Headers**: Automatic `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `X-XSS-Protection`, `Referrer-Policy: strict-origin-when-cross-origin`, and `Permissions-Policy`.
-   - **Immutable Asset Caching**: 1-year caching for images and assets (`Cache-Control: public, max-age=31536000, immutable`), and stale-while-revalidate caching for scripts and stylesheets.
-
-3. **GitHub Actions Workflow (`.github/workflows/ci-cd.yml`)**:
-   - Runs on every push to `main`.
-   - Validates syntax across all JavaScript modules via `node -c`.
-   - Verifies the integrity of all HTML documents and static assets before deployment.
+### 2. GitHub Pages / Netlify / Cloudflare Pages
+- This project consists of pure standards-based HTML5, CSS3, and modern ES6 JavaScript. Simply set the publish directory to `/` (root) on any static web host.
 
 ---
 
-## ⚙️ Configuration & Customization (`js/config.js`)
+## Founders & Engineering Team
 
-All business details, developer names, and contact channels can be edited directly inside `js/config.js` without touching HTML:
+- **Jesin Milesh M** &mdash; Founder &bull; Lead Cybersecurity & Systems Engineer ([LinkedIn](https://www.linkedin.com/in/jesin-milesh-m-7981bb347/))
+- **Libinesh R U** &mdash; Co-Founder &bull; Strategy &amp; Application Development ([LinkedIn](https://www.linkedin.com/in/libinesh-r-u-59496a370))
+- **Location**: Kanyakumari, Tamil Nadu, India (8.078&deg; N, 77.555&deg; E)
+- **Email**: [capesecuresolutions@gmail.com](mailto:capesecuresolutions@gmail.com)
 
-```javascript
-const siteConfig = {
-  companyName: "CapeSecure",
-  whatsapp: "+91XXXXXXXXXX",  // Fill with verified business WhatsApp
-  email: "hello@capesecure.in",
-  phone: "+91 XXXXX XXXXX",
-  location: "Kanyakumari, Tamil Nadu, India",
-  
-  developers: {
-    developerOne: {
-      name: "Your Name",
-      role: "Founder & Developer"
-    },
-    developerTwo: {
-      name: "Partner Name",
-      role: "Co-Founder / Business & Development"
-    }
-  }
-};
-```
-
----
-
-## 🚀 Connecting Your Vercel Project
-
-If you haven't linked your repository to Vercel yet:
-1. Log in to [vercel.com](https://vercel.com) and click **"Add New Project"**.
-2. Select your repository: **`jesinmilesh/capesecure`**.
-3. Framework Preset: **Other** (Root directory: `./`).
-4. Click **Deploy**.
-
-From then on, whenever you push any change to GitHub, Vercel will automatically redeploy the site in seconds!
+&copy; 2026 Cape Secure. All rights reserved.

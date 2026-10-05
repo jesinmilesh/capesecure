@@ -18,8 +18,13 @@
   <link rel="stylesheet" href="css/style.css?v=1.2">
   <link rel="stylesheet" href="css/responsive.css?v=1.2">
   <link rel="stylesheet" href="css/animations.css?v=1.2">
+  <link rel="stylesheet" href="css/water.css?v=1.2">
 </head>
 <body>
+
+  <!-- Living Ocean Simulation Canvas -->
+  <canvas id="waterCanvas" aria-hidden="true"></canvas>
+
 
   <!-- Navigation -->
   <header class="navbar" id="siteHeader">
@@ -28,7 +33,7 @@
         <img src="assets/logo/cape-secure-logo.png" alt="CapeSecure Brand Logo" class="brand-logo-img" width="44" height="44">
         <div class="brand-text">
           <span class="brand-name">
-            <span class="cape">CAPE</span><span class="secure">SECURE</span>
+            <span class="cape">CAPE</span><span class="secure">SECURE</span> <span class="solutions">SOLUTIONS</span>
           </span>
           <span class="brand-tagline">Websites • Security • Solutions</span>
         </div>
@@ -69,6 +74,12 @@
     
     <!-- Hero / Intro -->
     <section class="section hero-section" style="padding-bottom: 3rem;">
+      <!-- Kanyakumari Photographic Background -->
+      <div class="hero-backdrop" aria-hidden="true">
+        <img src="assets/images/kanyakumari-hero.jpg" alt="Kanyakumari Ocean Coastline" class="hero-scene-image">
+        <div class="hero-vignette"></div>
+      </div>
+
       <div class="container text-center">
         <div class="reveal">
           <span class="section-tag">Engineered For Growth</span>
@@ -314,7 +325,9 @@
           <a href="index.html" class="nav-brand">
             <img src="assets/logo/cape-secure-logo.png" alt="CapeSecure Logo" class="brand-logo-img" width="40" height="40">
             <div class="brand-text">
-              <span class="brand-name"><span class="cape">CAPE</span><span class="secure">SECURE</span></span>
+              <span class="brand-name">
+            <span class="cape">CAPE</span><span class="secure">SECURE</span> <span class="solutions">SOLUTIONS</span>
+          </span>
               <span class="brand-tagline">Websites • Security • Solutions</span>
             </div>
           </a>
@@ -361,8 +374,8 @@
       </div>
 
       <div class="footer-bottom">
-        <span>&copy; <span data-config="year">2026</span> CapeSecure. All rights reserved.</span>
-        <span>Built with care by CapeSecure</span>
+        <span>&copy; <span data-config="year">2026</span> Cape Secure Solutions. All rights reserved.</span>
+        <span>Built with care by Cape Secure Solutions</span>
       </div>
     </div>
   </footer>
@@ -372,6 +385,10 @@
   <script src="js/navigation.js?v=1.2"></script>
   <script src="js/quote.js?v=1.2"></script>
   <script src="js/animations.js?v=1.2"></script>
+    <script src="js/water.js?v=1.2"></script>
+  <script src="js/ripple.js?v=1.2"></script>
   <script src="js/main.js?v=1.2"></script>
 </body>
 </html>
+
+

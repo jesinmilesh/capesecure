@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 &bull; Page Not Found | Cape Secure Solutions</title>
+  <meta name="description" content="The requested page could not be located in our digital waters. Return to Cape Secure Solutions home.">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/water.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between;">
+
+  <canvas id="waterCanvas" aria-hidden="true"></canvas>
+  <div class="water-caustic-atmosphere" aria-hidden="true"></div>
+
+  <header class="navbar" id="siteHeader">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand" aria-label="Cape Secure Solutions Home">
+        <div class="brand-emblem-wrap">
+          <img src="assets/logo/cape-secure-logo.png" alt="Cape Secure Solutions Emblem" width="44" height="44">
+        </div>
+        <div class="nav-brand-text">
+          <span class="nav-brand-title">CAPE SECURE</span>
+          <span class="nav-brand-sub">SOLUTIONS</span>
+        </div>
+      </a>
+      <a href="index.html" class="btn btn-secondary btn-sm">Return Home</a>
+    </div>
+  </header>
+
+  <main class="container text-center" style="padding: calc(var(--nav-height) + 5rem) 1.5rem 5rem; position: relative; z-index: 2;">
+    <span class="section-tag gold">Lost In Open Waters</span>
+    <h1 style="font-size: clamp(4rem, 10vw, 7rem); line-height: 1; margin: 1rem 0; color: var(--electric-cyan);">404</h1>
+    <h2>Uncharted Coordinates</h2>
+    <p class="lead" style="margin: 1rem auto 2.5rem;">
+      The URL you navigated to does not exist in our digital perimeter or has moved beyond the horizon.
+    </p>
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <a href="index.html" class="btn btn-primary btn-lg">Return to Safe Harbor</a>
+      <a href="services.html" class="btn btn-secondary btn-lg">Explore Services</a>
+    </div>
+  </main>
+
+  <footer class="footer" style="padding-top: 2rem; padding-bottom: 2rem;">
+    <div class="container text-center">
+      <p style="font-size: 0.85rem; color: var(--text-dim); margin: 0;">
+        &copy; <span data-year>2026</span> Cape Secure Solutions. All rights reserved.
+      </p>
+    </div>
+    <div class="footer-ocean-line" aria-hidden="true"></div>
+  </footer>
+
+  <script src="js/water.js"></script>
+  <script src="js/ripple.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
