@@ -1,5 +1,86 @@
 [
   {
+    "quotationId": "CSS-QTN-2026-000014",
+    "orderId": "CSS-ORD-2026-000035",
+    "enquiryId": "CSS-ENQ-2026-000019",
+    "accessToken": "7cb12167e30d5063643d4903eefa9132f44c",
+    "status": "sent",
+    "issueDate": "2026-10-21",
+    "validUntil": "2026-11-05",
+    "createdAt": "2026-10-21T09:54:37.062Z",
+    "updatedAt": "2026-10-21T09:54:37.062Z",
+    "customer": {
+      "name": "Karthik Subramanian",
+      "businessName": "Subramanian Maritime Logistics",
+      "email": "karthik.subramanian@gmail.com",
+      "phone": "9840123456",
+      "whatsapp": "9840123456",
+      "businessType": "Export & Shipping",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [
+        "Custom Cargo Tracking Portal",
+        "WhatsApp Delivery Alerts",
+        "SSL Security Hardening"
+      ],
+      "notes": "Need high security infrastructure with Indian data residency.",
+      "businessType": "Export & Shipping"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Export & Shipping Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (Required)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        }
+      ],
+      "subtotal": 11496,
+      "discount": 0,
+      "taxableAmount": 11496,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 11496,
+      "amountPaid": 0,
+      "balance": 11496,
+      "paymentStatus": "PENDING"
+    },
+    "notes": "Custom solution pricing as per initial consultation",
+    "terms": [
+      "This quotation is valid for 15 days from the date of issue.",
+      "A 50% advance deposit is required to commence development work.",
+      "Balance payment is due upon successful staging and prior to production domain cutover.",
+      "Scope additions beyond this quotation will be billed at standard component rates."
+    ],
+    "approvedAt": null
+  },
+  {
     "quotationId": "CSS-QTN-2026-000013",
     "orderId": "CSS-ORD-2026-000033",
     "enquiryId": "CSS-ENQ-2026-000017",

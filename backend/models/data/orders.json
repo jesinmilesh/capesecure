@@ -1,5 +1,153 @@
 [
   {
+    "orderId": "CSS-ORD-2026-000035",
+    "accessToken": "4bb6d625e48c1bc7eb0df831eb1af48ce2fd",
+    "enquiryId": "CSS-ENQ-2026-000019",
+    "status": "invoiceGenerated",
+    "createdAt": "2026-10-21T09:54:37.025Z",
+    "updatedAt": "2026-10-21T09:54:37.126Z",
+    "customer": {
+      "name": "Karthik Subramanian",
+      "businessName": "Subramanian Maritime Logistics",
+      "email": "karthik.subramanian@gmail.com",
+      "phone": "9840123456",
+      "whatsapp": "9840123456",
+      "businessType": "Export & Shipping",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [
+        "Custom Cargo Tracking Portal",
+        "WhatsApp Delivery Alerts",
+        "SSL Security Hardening"
+      ],
+      "notes": "Need high security infrastructure with Indian data residency.",
+      "businessType": "Export & Shipping"
+    },
+    "infrastructure": {
+      "domain": "Required",
+      "hosting": "Standard Cloud",
+      "maintenance": "Active Care Plan"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Export & Shipping Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (Required)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        }
+      ],
+      "subtotal": 11496,
+      "discount": 0,
+      "taxableAmount": 11496,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 11496,
+      "amountPaid": 0,
+      "balance": 11496,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": "CSS-QTN-2026-000014",
+    "invoiceId": "CSS-INV-2026-000011",
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000034",
+    "accessToken": "69a87f95d8b485844aee8efb8c98e74af3be",
+    "enquiryId": "CSS-ENQ-2026-000018",
+    "status": "enquiry",
+    "createdAt": "2026-10-21T09:54:36.828Z",
+    "updatedAt": "2026-10-21T09:54:36.828Z",
+    "customer": {
+      "name": "Verification Client",
+      "businessName": "",
+      "email": "verify@capesecure.test",
+      "phone": "+91 94444 00000",
+      "whatsapp": "+91 94444 00000",
+      "businessType": "Standard",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [],
+      "notes": "",
+      "businessType": "Standard"
+    },
+    "infrastructure": {
+      "domain": "Required",
+      "hosting": "Standard Cloud",
+      "maintenance": "Standard Delivery Warranty"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Standard Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (Required)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        }
+      ],
+      "subtotal": 8997,
+      "discount": 0,
+      "taxableAmount": 8997,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 8997,
+      "amountPaid": 0,
+      "balance": 8997,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": null,
+    "invoiceId": null,
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
     "orderId": "CSS-ORD-2026-000033",
     "accessToken": "d937e2b3175bea0313318117feaea5f86e57",
     "enquiryId": "CSS-ENQ-2026-000017",

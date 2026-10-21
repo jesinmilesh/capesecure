@@ -52,20 +52,33 @@ htmlFiles.forEach(file => {
   }
 });
 
-// Also validate syntax of all js files
-const jsDir = path.join(publicDir, 'js');
-const jsFiles = fs.existsSync(jsDir) ? fs.readdirSync(jsDir).filter(f => f.endsWith('.js')) : [];
-console.log('\nValidating JS file syntax:');
-jsFiles.forEach(f => {
-  try {
-    const code = fs.readFileSync(path.join(jsDir, f), 'utf8');
-    new Function(code);
-    console.log(`  [OK] syntax: js/${f}`);
-  } catch (e) {
-    console.error(`  [ERROR] syntax error in js/${f}:`, e.message);
-    allValid = false;
+// Validate syntax of all js files across public, admin-app, api, and backend
+function validateJsInDir(dir, prefix) {
+  if (!fs.existsSync(dir)) return;
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    const rel = path.join(prefix, entry.name);
+    if (entry.isDirectory()) {
+      validateJsInDir(fullPath, rel);
+    } else if (entry.name.endsWith('.js')) {
+      try {
+        const code = fs.readFileSync(fullPath, 'utf8');
+        new Function(code);
+        console.log(`  [OK] syntax: ${rel}`);
+      } catch (e) {
+        console.error(`  [ERROR] syntax error in ${rel}:`, e.message);
+        allValid = false;
+      }
+    }
   }
-});
+}
+
+console.log('\nValidating JS file syntax:');
+validateJsInDir(path.join(publicDir, 'js'), 'public/js');
+validateJsInDir('./admin-app', 'admin-app');
+validateJsInDir('./api', 'api');
+validateJsInDir('./backend', 'backend');
 
 if (allValid) {
   console.log('\n>>> All HTML asset references and JS files are 100% valid!');

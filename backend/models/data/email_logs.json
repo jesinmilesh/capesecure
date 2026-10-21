@@ -1,5 +1,71 @@
 [
   {
+    "id": "EML-1792576480651-lv4o",
+    "timestamp": "2026-10-21T09:54:40.651Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "karthik.subramanian@gmail.com",
+    "subject": "Quotation #CSS-QTN-2026-000014 from Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210954.67466283205@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792576479783-42ub",
+    "timestamp": "2026-10-21T09:54:39.783Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "karthik.subramanian@gmail.com",
+    "subject": "Invoice #CSS-INV-2026-000011 from Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210954.66924307414@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792576478250-pt1w",
+    "timestamp": "2026-10-21T09:54:38.250Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000035 - Karthik Subramanian (Subramanian Maritime Logistics)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210954.21009491691@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792576478090-tw0y",
+    "timestamp": "2026-10-21T09:54:38.090Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000034 - Verification Client (business)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210954.36653582987@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792576478083-vd9l",
+    "timestamp": "2026-10-21T09:54:38.083Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "karthik.subramanian@gmail.com",
+    "subject": "Order Confirmation: CSS-ORD-2026-000035 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210954.84310864800@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792576477922-vdgn",
+    "timestamp": "2026-10-21T09:54:37.922Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "verify@capesecure.test",
+    "subject": "Order Confirmation: CSS-ORD-2026-000034 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210954.46452710516@smtp-relay.mailin.fr>"
+    }
+  },
+  {
     "id": "EML-1792575396644-kp91",
     "timestamp": "2026-10-21T09:36:36.644Z",
     "template": "BREVO_TRANSACTIONAL",

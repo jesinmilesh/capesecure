@@ -1,5 +1,88 @@
 [
   {
+    "invoiceId": "CSS-INV-2026-000011",
+    "invoiceNumber": "CSS-INV-2026-000011",
+    "orderId": "CSS-ORD-2026-000035",
+    "quotationId": "CSS-QTN-2026-000014",
+    "enquiryId": "CSS-ENQ-2026-000019",
+    "accessToken": "b2b51eea987f3c2dd5104db788b63f7c3df8",
+    "status": "unpaid",
+    "invoiceDate": "2026-10-21",
+    "dueDate": "2026-10-28",
+    "createdAt": "2026-10-21T09:54:37.125Z",
+    "updatedAt": "2026-10-21T09:54:37.125Z",
+    "customer": {
+      "name": "Karthik Subramanian",
+      "businessName": "Subramanian Maritime Logistics",
+      "email": "karthik.subramanian@gmail.com",
+      "phone": "9840123456",
+      "whatsapp": "9840123456",
+      "businessType": "Export & Shipping",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [
+        "Custom Cargo Tracking Portal",
+        "WhatsApp Delivery Alerts",
+        "SSL Security Hardening"
+      ],
+      "notes": "Need high security infrastructure with Indian data residency.",
+      "businessType": "Export & Shipping"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Export & Shipping Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (Required)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        }
+      ],
+      "subtotal": 11496,
+      "discount": 0,
+      "taxableAmount": 11496,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 11496,
+      "amountPaid": 0,
+      "balance": 11496,
+      "paymentStatus": "PENDING"
+    },
+    "payments": [],
+    "notes": "Advance 50% invoice",
+    "terms": [
+      "Payment is due within 7 days of the invoice date unless otherwise agreed in writing.",
+      "Hosting, domain registration, and SSL certificates are provisioned upon receipt of advance.",
+      "Annual maintenance and renewal fees will be invoiced 30 days prior to cycle expiration.",
+      "All intellectual property rights transfer to the client upon full payment settlement."
+    ]
+  },
+  {
     "invoiceId": "CSS-INV-2026-000010",
     "invoiceNumber": "CSS-INV-2026-000010",
     "orderId": "CSS-ORD-2026-000033",

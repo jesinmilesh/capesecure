@@ -3,7 +3,7 @@
  * Vercel Serverless Function: /api/public/projects
  */
 
-export default function handler(req, res) {
+module.exports = function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
   res.setHeader('Cache-Control', 'public, max-age=3600, s-maxage=3600');

@@ -3,6 +3,6 @@
  * Vercel Serverless Function: /api/public/contact
  */
 
-import handler from '../send-sms.js';
+const handler = require('../send-sms.js');
 
-export default handler;
+module.exports = handler;

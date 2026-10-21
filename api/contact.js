@@ -4,6 +4,6 @@
  * Mirrors /api/send-sms handler for standardized REST intake.
  */
 
-import handler from './send-sms.js';
+const handler = require('./send-sms.js');
 
-export default handler;
+module.exports = handler;

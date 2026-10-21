@@ -8,7 +8,7 @@ const { getAuthUser } = require('../../backend/routes/authRoutes');
 const { setCorsHeaders } = require('../../backend/middleware/security');
 const auth = require('../../backend/middleware/auth');
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   setCorsHeaders(req, res, false);
   if (req.method === 'OPTIONS') return res.status(200).end();
 

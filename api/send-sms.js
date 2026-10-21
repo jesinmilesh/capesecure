@@ -5,8 +5,8 @@
  * Configured securely via Vercel Environment Variables: BREVO_API_KEY
  */
 
-import fs from 'fs';
-import path from 'path';
+const fs = require('fs');
+const path = require('path');
 
 let BREVO_API_KEY = process.env.BREVO_API_KEY || "";
 if (!BREVO_API_KEY) {
@@ -47,7 +47,7 @@ function normalizePhone(phone) {
   return digits;
 }
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   // Set CORS headers
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");

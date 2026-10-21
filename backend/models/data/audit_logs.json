@@ -1,5 +1,242 @@
 [
   {
+    "id": "AUD-1792576477128-421v",
+    "timestamp": "2026-10-21T09:54:37.128Z",
+    "action": "INVOICE_GENERATED",
+    "entityId": "CSS-INV-2026-000011",
+    "actor": "admin@capesecure.com",
+    "details": {
+      "orderId": "CSS-ORD-2026-000035",
+      "total": 11496
+    }
+  },
+  {
+    "id": "AUD-1792576477127-2wu0",
+    "timestamp": "2026-10-21T09:54:37.127Z",
+    "action": "ORDER_STATUS_CHANGED",
+    "entityId": "CSS-ORD-2026-000035",
+    "actor": "admin@capesecure.com",
+    "details": {
+      "newStatus": "invoiceGenerated",
+      "invoiceId": "CSS-INV-2026-000011"
+    }
+  },
+  {
+    "id": "AUD-1792576477065-91yp",
+    "timestamp": "2026-10-21T09:54:37.065Z",
+    "action": "QUOTATION_CREATED",
+    "entityId": "CSS-QTN-2026-000014",
+    "actor": "admin@capesecure.com",
+    "details": {
+      "orderId": "CSS-ORD-2026-000035",
+      "total": 11496
+    }
+  },
+  {
+    "id": "AUD-1792576477064-fdkt",
+    "timestamp": "2026-10-21T09:54:37.064Z",
+    "action": "ORDER_STATUS_CHANGED",
+    "entityId": "CSS-ORD-2026-000035",
+    "actor": "admin@capesecure.com",
+    "details": {
+      "newStatus": "quotation",
+      "quotationId": "CSS-QTN-2026-000014"
+    }
+  },
+  {
+    "id": "AUD-1792576477059-7oms",
+    "timestamp": "2026-10-21T09:54:37.059Z",
+    "action": "ENQUIRY_NOTE_ADDED",
+    "entityId": "CSS-ENQ-2026-000019",
+    "actor": "admin@capesecure.com",
+    "details": {
+      "author": "admin@capesecure.com"
+    }
+  },
+  {
+    "id": "AUD-1792576477055-lin9",
+    "timestamp": "2026-10-21T09:54:37.055Z",
+    "action": "ENQUIRY_ASSIGNED",
+    "entityId": "CSS-ENQ-2026-000019",
+    "actor": "admin@capesecure.com",
+    "details": {
+      "assignedTo": "techlead@capesecure.com"
+    }
+  },
+  {
+    "id": "AUD-1792576477051-thto",
+    "timestamp": "2026-10-21T09:54:37.051Z",
+    "action": "ENQUIRY_STATUS_CHANGED",
+    "entityId": "CSS-ENQ-2026-000019",
+    "actor": "admin@capesecure.com",
+    "details": {
+      "from": "CONTACTED",
+      "to": "QUOTATION_PREPARED"
+    }
+  },
+  {
+    "id": "AUD-1792576477046-ghxj",
+    "timestamp": "2026-10-21T09:54:37.046Z",
+    "action": "ENQUIRY_STATUS_CHANGED",
+    "entityId": "CSS-ENQ-2026-000019",
+    "actor": "admin@capesecure.com",
+    "details": {
+      "from": "REVIEWING",
+      "to": "CONTACTED"
+    }
+  },
+  {
+    "id": "AUD-1792576477042-fsyk",
+    "timestamp": "2026-10-21T09:54:37.042Z",
+    "action": "ENQUIRY_STATUS_CHANGED",
+    "entityId": "CSS-ENQ-2026-000019",
+    "actor": "admin@capesecure.com",
+    "details": {
+      "from": "NEW",
+      "to": "REVIEWING"
+    }
+  },
+  {
+    "id": "AUD-1792576477031-di7b",
+    "timestamp": "2026-10-21T09:54:37.031Z",
+    "action": "ENQUIRY_CREATED",
+    "entityId": "CSS-ENQ-2026-000019",
+    "actor": "public_user",
+    "details": {
+      "customerName": "Karthik Subramanian",
+      "businessName": "Subramanian Maritime Logistics",
+      "selectedPackage": "business",
+      "orderId": "CSS-ORD-2026-000035"
+    }
+  },
+  {
+    "id": "AUD-1792576477026-9jrj",
+    "timestamp": "2026-10-21T09:54:37.026Z",
+    "action": "ORDER_CREATED",
+    "entityId": "CSS-ORD-2026-000035",
+    "actor": "system",
+    "details": {
+      "customer": "Karthik Subramanian",
+      "total": 11496
+    }
+  },
+  {
+    "id": "AUD-1792576477023-qspv",
+    "timestamp": "2026-10-21T09:54:37.023Z",
+    "action": "ADMIN_LOGIN_SUCCESS",
+    "entityId": "AUTH",
+    "actor": "admin@capesecure.com",
+    "details": {
+      "email": "admin@capesecure.com",
+      "ip": "::ffff:127.0.0.1"
+    }
+  },
+  {
+    "id": "AUD-1792576476987-1stq",
+    "timestamp": "2026-10-21T09:54:36.987Z",
+    "action": "ADMIN_LOGIN_FAILED",
+    "entityId": "AUTH",
+    "actor": "system",
+    "details": {
+      "email": "lockout_target_1792576476974@capesecure.com",
+      "ip": "::ffff:127.0.0.1",
+      "reason": "Too many failed login attempts. Account temporarily locked for 15 minutes. Please try again in 900 seconds."
+    }
+  },
+  {
+    "id": "AUD-1792576476985-lvp6",
+    "timestamp": "2026-10-21T09:54:36.985Z",
+    "action": "ADMIN_LOGIN_FAILED",
+    "entityId": "AUTH",
+    "actor": "system",
+    "details": {
+      "email": "lockout_target_1792576476974@capesecure.com",
+      "ip": "::ffff:127.0.0.1",
+      "reason": "Invalid credentials."
+    }
+  },
+  {
+    "id": "AUD-1792576476983-a7k8",
+    "timestamp": "2026-10-21T09:54:36.983Z",
+    "action": "ADMIN_LOGIN_FAILED",
+    "entityId": "AUTH",
+    "actor": "system",
+    "details": {
+      "email": "lockout_target_1792576476974@capesecure.com",
+      "ip": "::ffff:127.0.0.1",
+      "reason": "Invalid credentials."
+    }
+  },
+  {
+    "id": "AUD-1792576476978-bu4z",
+    "timestamp": "2026-10-21T09:54:36.978Z",
+    "action": "ADMIN_LOGIN_FAILED",
+    "entityId": "AUTH",
+    "actor": "system",
+    "details": {
+      "email": "lockout_target_1792576476974@capesecure.com",
+      "ip": "::ffff:127.0.0.1",
+      "reason": "Invalid credentials."
+    }
+  },
+  {
+    "id": "AUD-1792576476927-8qe3",
+    "timestamp": "2026-10-21T09:54:36.927Z",
+    "action": "ADMIN_LOGOUT",
+    "entityId": "AUTH",
+    "actor": "admin",
+    "details": {
+      "ip": "::ffff:127.0.0.1"
+    }
+  },
+  {
+    "id": "AUD-1792576476917-0fk8",
+    "timestamp": "2026-10-21T09:54:36.917Z",
+    "action": "ADMIN_LOGIN_SUCCESS",
+    "entityId": "AUTH",
+    "actor": "admin@capesecure.com",
+    "details": {
+      "email": "admin@capesecure.com",
+      "ip": "::ffff:127.0.0.1"
+    }
+  },
+  {
+    "id": "AUD-1792576476882-y7fc",
+    "timestamp": "2026-10-21T09:54:36.882Z",
+    "action": "ADMIN_LOGIN_FAILED",
+    "entityId": "AUTH",
+    "actor": "system",
+    "details": {
+      "email": "admin@capesecure.com",
+      "ip": "::ffff:127.0.0.1",
+      "reason": "Invalid credentials."
+    }
+  },
+  {
+    "id": "AUD-1792576476831-j65v",
+    "timestamp": "2026-10-21T09:54:36.831Z",
+    "action": "ENQUIRY_CREATED",
+    "entityId": "CSS-ENQ-2026-000018",
+    "actor": "public_user",
+    "details": {
+      "customerName": "Verification Client",
+      "businessName": "",
+      "selectedPackage": "business",
+      "orderId": "CSS-ORD-2026-000034"
+    }
+  },
+  {
+    "id": "AUD-1792576476830-f9t9",
+    "timestamp": "2026-10-21T09:54:36.830Z",
+    "action": "ORDER_CREATED",
+    "entityId": "CSS-ORD-2026-000034",
+    "actor": "system",
+    "details": {
+      "customer": "Verification Client",
+      "total": 8997
+    }
+  },
+  {
     "id": "AUD-1792575390926-sxu0",
     "timestamp": "2026-10-21T09:36:30.926Z",
     "action": "PAYMENT_RECORDED",
