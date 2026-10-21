@@ -20,6 +20,8 @@ const siteConfig = {
     phone: "", // e.g. "+91 98765 43210"
     phoneDisplay: "+91 (Direct Developer Line)",
     location: "Kanyakumari, Tamil Nadu, India",
+    coordinates: "8.078° N, 77.555° E",
+    mapsUrl: "https://maps.google.com/?q=Kanyakumari,+Tamil+Nadu,+India",
     workingHours: "Monday – Saturday: 9:00 AM – 7:00 PM IST",
     responseTime: "Typically within 2 to 4 business hours",
 

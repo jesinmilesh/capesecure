@@ -256,7 +256,172 @@
       </div>
     </section>
 
-  </main>
+  <!-- ======================================================================
+       INTERACTIVE QUOTE MODAL (EMBEDDED)
+       ====================================================================== -->
+  <div class="modal-backdrop" id="quoteModal" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modalTitle">Get a Free Website Quote</h3>
+        <button type="button" class="modal-close-btn" aria-label="Close quote modal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <form id="quoteForm" novalidate>
+          <div class="form-fields-wrapper">
+
+            <!-- SECTION 1: BUSINESS INFORMATION -->
+            <span class="form-section-title">1. Business Information</span>
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="quoteBusinessName">Business Name <span class="required">*</span></label>
+                <input type="text" id="quoteBusinessName" name="businessName" class="form-control"
+                  placeholder="e.g. Apex Health Clinic" required>
+                <span class="field-error-msg">Business name is required.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="quoteBusinessType">Business Type <span class="required">*</span></label>
+                <select id="quoteBusinessType" name="businessType" class="form-control" required>
+                  <option value="">Select your business type...</option>
+                  <option value="shop">Local Shop / Boutique</option>
+                  <option value="clinic">Clinic / Healthcare</option>
+                  <option value="school">School / College</option>
+                  <option value="restaurant">Restaurant / Cafe</option>
+                  <option value="professional">Professional / Consultant</option>
+                  <option value="custom">Custom Web Application</option>
+                  <option value="other">Other Business</option>
+                </select>
+                <span class="field-error-msg">Please select a business type.</span>
+              </div>
+            </div>
+            <!-- Anti-Spam Honeypot -->
+            <input type="text" name="website_trap" style="display:none!important;" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <!-- SECTION 2: REQUIREMENTS -->
+            <span class="form-section-title">2. Requirements (What do you need?) <span class="required">*</span></span>
+            <div class="form-group">
+              <div class="checkbox-grid">
+                <label class="custom-checkbox-card">
+                  <input type="checkbox" name="req_website" value="Business website">
+                  <span>Business website</span>
+                </label>
+                <label class="custom-checkbox-card">
+                  <input type="checkbox" name="req_catalogue" value="Online catalogue">
+                  <span>Online catalogue</span>
+                </label>
+                <label class="custom-checkbox-card">
+                  <input type="checkbox" name="req_booking" value="Booking system">
+                  <span>Booking system</span>
+                </label>
+                <label class="custom-checkbox-card">
+                  <input type="checkbox" name="req_enquiry" value="Contact/enquiry system">
+                  <span>Contact/enquiry system</span>
+                </label>
+                <label class="custom-checkbox-card">
+                  <input type="checkbox" name="req_portfolio" value="Portfolio">
+                  <span>Portfolio</span>
+                </label>
+                <label class="custom-checkbox-card">
+                  <input type="checkbox" name="req_custom" value="Custom web application">
+                  <span>Custom web application</span>
+                </label>
+              </div>
+              <span class="field-error-msg">Please select at least one requirement.</span>
+            </div>
+
+            <!-- SECTION 3: ESTIMATED BUDGET -->
+            <span class="form-section-title">3. Estimated Budget <span class="required">*</span></span>
+            <div class="form-group">
+              <div class="budget-grid">
+                <label class="custom-checkbox-card">
+                  <input type="radio" name="budget" value="3000-5000">
+                  <span>₹3,000–₹5,000</span>
+                </label>
+                <label class="custom-checkbox-card">
+                  <input type="radio" name="budget" value="5000-10000">
+                  <span>₹5,000–₹10,000</span>
+                </label>
+                <label class="custom-checkbox-card">
+                  <input type="radio" name="budget" value="10000-25000">
+                  <span>₹10,000–₹25,000</span>
+                </label>
+                <label class="custom-checkbox-card">
+                  <input type="radio" name="budget" value="25000+">
+                  <span>₹25,000+</span>
+                </label>
+              </div>
+              <span class="field-error-msg">Please select an estimated budget.</span>
+            </div>
+
+            <!-- SECTION 4: CONTACT INFORMATION -->
+            <span class="form-section-title">4. Contact Information</span>
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="quoteContactName">Your Name <span class="required">*</span></label>
+                <input type="text" id="quoteContactName" name="contactName" class="form-control"
+                  placeholder="Your full name" required>
+                <span class="field-error-msg">Your name is required.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="quoteWhatsappNumber">WhatsApp Number <span
+                    class="required">*</span></label>
+                <input type="tel" id="quoteWhatsappNumber" name="whatsappNumber" class="form-control"
+                  placeholder="10-digit mobile number" required>
+                <span class="field-error-msg">Valid WhatsApp number is required.</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="quoteEmailAddress">Email Address (Optional)</label>
+              <input type="email" id="quoteEmailAddress" name="emailAddress" class="form-control"
+                placeholder="you@example.com">
+              <span class="field-error-msg">Please enter a valid email address.</span>
+            </div>
+
+            <!-- SECTION 5: ADDITIONAL REQUIREMENTS -->
+            <span class="form-section-title">5. Additional Requirements</span>
+            <div class="form-group">
+              <label class="form-label" for="quoteNotes">Special features, timelines, or questions</label>
+              <textarea id="quoteNotes" name="additionalNotes" class="form-control" rows="3"
+                placeholder="Tell us any specific features or existing websites you like..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg" id="submitQuoteBtn">
+              Submit Quote Request
+            </button>
+            <div id="quoteFormError" class="form-inline-error" style="display:none;" role="alert"></div>
+          </div>
+
+          <!-- SUCCESS STATE (REPLACES FIELDS UPON VERIFIED SUBMISSION) -->
+          <div id="quoteSuccessState" class="form-success-state" style="display:none;" role="status">
+            <div class="success-icon-wrap" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <h4>Quote Request Received</h4>
+            <p>
+              Thank you for reaching out! We will review your project requirements and message you directly on WhatsApp within 24 hours with an actionable roadmap and transparent quote.
+            </p>
+            <button type="button" class="btn btn-secondary btn-sm" id="quoteResetBtn">
+              Submit Another Request
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">

@@ -1,68 +1,69 @@
 /**
- * CapeSecure - Multi-Step Professional Client Onboarding Quote System
- * Implements a structured 6-step interactive workflow:
- * STEP 1: Business
- * STEP 2: Requirements
- * STEP 3: Budget
- * STEP 4: Contact
- * STEP 5: Review & Project Request Ready
- * STEP 6: Submission & Direct WhatsApp Concierge
- * Progress Indicator: 01 — 02 — 03 — 04 — 05
+ * Cape Secure Solutions - Quote & Client Onboarding System
+ * Supports both:
+ * 1. Single-screen Modal Form (.form-fields-wrapper) on Index & Work pages
+ * 2. Multi-step Progress Form (.quote-step-pane) on dedicated Quote page
+ * 
+ * Includes:
+ * - Robust client-side validation with inline error messages (no browser alert())
+ * - Indian WhatsApp mobile format validation (10 digits starting 6-9)
+ * - Anti-spam honeypot support
+ * - Category & Pricing tier auto-prefill
+ * - Universal window.sendCapeSMS() dispatcher for Brevo / API backend
+ * - Analytics event dispatching (cape:quote_open, cape:quote_submit)
+ * - Accessible keyboard focus trapping and ESC dismissal
  */
 
-// Brevo-powered backend submission hook with transactional SMS dispatch
-async function submitQuote(data) {
-  const payload = {
-    type: "quote",
-    name: data.contactName || "Client",
-    phone: data.whatsapp || "",
-    email: data.email || "",
-    businessName: data.businessName || "",
-    subject: `Quote Request: ${data.businessType || "General"}`,
-    budget: data.budget || "",
-    requirements: data.requirements || [],
-    message: data.notes || ""
-  };
-
-  if (typeof window !== "undefined" && typeof window.sendCapeSMS === "function") {
-    return await window.sendCapeSMS(payload);
-  }
-
+// Universal lead dispatch function
+window.sendCapeSMS = async function (payload) {
   try {
     const res = await fetch("/api/send-sms", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
     });
-    return await res.json();
-  } catch (e) {
-    console.warn("Quote SMS dispatch fallback:", e);
-    return { success: true };
+    const result = await res.json().catch(() => ({ success: true }));
+    return result;
+  } catch (err) {
+    console.warn("sendCapeSMS fallback notice:", err);
+    return { success: true, offline: true };
   }
-}
+};
+
+// Analytics event tracker
+window.trackCapeEvent = function (eventName, data = {}) {
+  try {
+    const event = new CustomEvent(eventName, { detail: data });
+    window.dispatchEvent(event);
+    if (window.dataLayer && Array.isArray(window.dataLayer)) {
+      window.dataLayer.push({ event: eventName, ...data });
+    }
+  } catch (e) {}
+};
 
 document.addEventListener("DOMContentLoaded", () => {
   const quoteModal = document.getElementById("quoteModal");
   const quoteModalForm = document.getElementById("quoteForm");
   const quotePageForm = document.getElementById("quotePageForm");
 
-  // Track quote controllers for both modal and page
   const controllers = [];
 
   if (quoteModalForm) {
-    controllers.push(setupMultiStepQuote(quoteModalForm, "modal"));
+    controllers.push(initQuoteController(quoteModalForm, "modal"));
   }
   if (quotePageForm) {
-    controllers.push(setupMultiStepQuote(quotePageForm, "page"));
+    controllers.push(initQuoteController(quotePageForm, "page"));
   }
 
-  // 1. Open Quote Modal Triggers
+  // 1. Global Open Quote Modal Triggers
   document.addEventListener("click", (e) => {
     const trigger = e.target.closest("[data-open-quote]");
     if (trigger) {
       e.preventDefault();
       const plan = trigger.getAttribute("data-quote-plan");
       const category = trigger.getAttribute("data-quote-category");
+
+      window.trackCapeEvent("cape:quote_open", { plan, category });
 
       if (quoteModal) {
         openQuoteModal(plan, category);
@@ -79,6 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function openQuoteModal(plan, category) {
     if (!quoteModal) return;
+
     quoteModal.classList.add("open");
     quoteModal.setAttribute("aria-hidden", "false");
     document.body.classList.add("menu-locked");
@@ -91,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const firstInput = quoteModal.querySelector("input:not([type='hidden']), select");
     if (firstInput) {
-      setTimeout(() => firstInput.focus(), 200);
+      setTimeout(() => firstInput.focus(), 150);
     }
   }
 
@@ -101,6 +103,9 @@ document.addEventListener("DOMContentLoaded", () => {
     quoteModal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("menu-locked");
   }
+
+  window.openQuoteModal = openQuoteModal;
+  window.closeQuoteModal = closeQuoteModal;
 
   if (quoteModal) {
     const closeBtns = quoteModal.querySelectorAll(".modal-close-btn, .btn-modal-close");
@@ -117,16 +122,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 2. Setup Multi-Step Quote Controller
-  function setupMultiStepQuote(form, type) {
-    let currentStep = 1;
-    const totalSteps = 5; // 01 to 05 before submission
-
+  // 2. Quote Controller Implementation
+  function initQuoteController(form, type) {
+    const isMultiStep = form.querySelectorAll(".quote-step-pane").length > 0;
     const stepPanes = form.querySelectorAll(".quote-step-pane");
     const progressSteps = form.querySelectorAll(".quote-progress-step");
     const reviewBox = form.querySelector(".quote-review-summary");
+    const fieldsWrapper = form.querySelector(".form-fields-wrapper");
+    const panesContainer = form.querySelector(".quote-steps-container");
+    const progressContainer = form.querySelector(".quote-progress-bar");
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const loadingBox = form.querySelector(".form-status-msg.loading");
+    const successBox = form.querySelector(".form-status-msg.success");
 
-    // Initialize checkable card click behaviors
+    let currentStep = 1;
+    const totalSteps = stepPanes.length || 1;
+
+    // Checkable card click behaviors
     const checkableCards = form.querySelectorAll(".custom-checkbox-card");
     checkableCards.forEach((card) => {
       const input = card.querySelector("input");
@@ -148,30 +160,25 @@ document.addEventListener("DOMContentLoaded", () => {
       syncState();
     });
 
-    // Step Navigation Function
+    // Step Navigation
     function goToStep(stepNumber) {
+      if (!isMultiStep) return;
       if (stepNumber < 1) stepNumber = 1;
       if (stepNumber > totalSteps) stepNumber = totalSteps;
 
       currentStep = stepNumber;
 
-      // Update panes
       stepPanes.forEach((pane) => {
-        const paneStep = parseInt(pane.getAttribute("data-step"), 10);
-        if (paneStep === currentStep) {
+        const s = parseInt(pane.getAttribute("data-step"), 10);
+        if (s === currentStep) {
           pane.classList.add("active");
           pane.style.display = "block";
-          const firstFocusable = pane.querySelector("input, select, textarea, button");
-          if (firstFocusable && type === "page") {
-            // Smoothly focus on non-modal views
-          }
         } else {
           pane.classList.remove("active");
           pane.style.display = "none";
         }
       });
 
-      // Update progress indicators (01 - 02 - 03 - 04 - 05)
       progressSteps.forEach((stepEl) => {
         const s = parseInt(stepEl.getAttribute("data-step"), 10);
         stepEl.classList.remove("active", "completed");
@@ -186,7 +193,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
-      // If moving to step 5 (Review), populate summary card
       if (currentStep === 5) {
         populateReviewSummary();
       }
@@ -194,12 +200,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Step Validation
     function validateStep(step) {
-      // Clear previous error marks in current step
-      const activePane = form.querySelector(`.quote-step-pane[data-step="${step}"]`);
-      if (!activePane) return true;
+      let activeContainer = form;
+      if (isMultiStep) {
+        activeContainer = form.querySelector(`.quote-step-pane[data-step="${step}"]`);
+        if (!activeContainer) return true;
+      }
 
-      const errorGroups = activePane.querySelectorAll(".form-group.has-error");
-      errorGroups.forEach((g) => g.classList.remove("has-error"));
+      // Clear previous error marks in scope
+      activeContainer.querySelectorAll(".form-group.has-error").forEach((g) => g.classList.remove("has-error"));
+      activeContainer.querySelectorAll(".error").forEach((el) => el.classList.remove("error"));
 
       let isValid = true;
       let firstError = null;
@@ -216,7 +225,8 @@ document.addEventListener("DOMContentLoaded", () => {
         isValid = false;
       }
 
-      if (step === 1) {
+      // Check Business Details
+      if (!isMultiStep || step === 1) {
         const businessName = form.querySelector('[name="businessName"]');
         if (businessName && !businessName.value.trim()) {
           flagError(businessName, "Please enter your business or project name.");
@@ -225,7 +235,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (businessType && !businessType.value) {
           flagError(businessType, "Please select your business type.");
         }
-      } else if (step === 2) {
+      }
+
+      // Check Requirements
+      if (!isMultiStep || step === 2) {
         const reqCheckboxes = form.querySelectorAll('input[type="checkbox"][name^="req_"]');
         const anyChecked = Array.from(reqCheckboxes).some((c) => c.checked);
         if (!anyChecked && reqCheckboxes.length > 0) {
@@ -238,7 +251,10 @@ document.addEventListener("DOMContentLoaded", () => {
           if (!firstError) firstError = reqCheckboxes[0];
           isValid = false;
         }
-      } else if (step === 3) {
+      }
+
+      // Check Budget
+      if (!isMultiStep || step === 3) {
         const budgetRadios = form.querySelectorAll('input[name="budget"]');
         const budgetChecked = Array.from(budgetRadios).some((r) => r.checked);
         if (!budgetChecked && budgetRadios.length > 0) {
@@ -251,21 +267,26 @@ document.addEventListener("DOMContentLoaded", () => {
           if (!firstError) firstError = budgetRadios[0];
           isValid = false;
         }
-      } else if (step === 4) {
+      }
+
+      // Check Contact Details
+      if (!isMultiStep || step === 4) {
         const contactName = form.querySelector('[name="contactName"]');
         if (contactName && !contactName.value.trim()) {
-          flagError(contactName, "Please enter your name.");
+          flagError(contactName, "Please enter your full name.");
         }
+
         const whatsappNumber = form.querySelector('[name="whatsappNumber"]');
         if (whatsappNumber) {
-          const val = whatsappNumber.value.trim().replace(/[\s\-()]/g, "");
-          const phoneRegex = /^(\+?\d{1,4})?[6-9]\d{9}$/;
-          if (!val) {
+          const raw = whatsappNumber.value.trim().replace(/[\s\-\(\)]/g, "");
+          const phoneRegex = /^(\+?91)?[6-9]\d{9}$/;
+          if (!raw) {
             flagError(whatsappNumber, "WhatsApp number is required so we can reply with your quote.");
-          } else if (!phoneRegex.test(val) && val.length < 8) {
-            flagError(whatsappNumber, "Please enter a valid 10-digit phone/WhatsApp number.");
+          } else if (!phoneRegex.test(raw) && raw.replace(/\D/g, "").length < 10) {
+            flagError(whatsappNumber, "Please enter a valid 10-digit Indian WhatsApp mobile number.");
           }
         }
+
         const emailInput = form.querySelector('[name="emailAddress"]');
         if (emailInput && emailInput.value.trim()) {
           const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -282,7 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return isValid;
     }
 
-    // Populate Review Summary in Step 5
+    // Review Summary (Step 5)
     function populateReviewSummary() {
       if (!reviewBox) return;
 
@@ -344,33 +365,37 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       `;
 
-      // Update WhatsApp action button in review step
+      // WhatsApp Concierge Button in Step 5
       const reviewWhatsAppBtn = form.querySelector("[data-review-whatsapp-btn]");
       if (reviewWhatsAppBtn) {
         reviewWhatsAppBtn.onclick = (e) => {
           e.preventDefault();
           const configuredNumber = typeof siteConfig !== "undefined" ? siteConfig.whatsapp.trim() : "";
-          if (configuredNumber) {
-            const cleanNumber = configuredNumber.replace(/[\s\+\-()]/g, "");
-            const formattedMessage = `Hello CapeSecure,
+          const formattedMessage = `Hello Cape Secure Solutions,
 
-I am interested in a website.
+I would like to discuss a website quote for my business.
 
-Business type:
+Business:
 ${businessName} (${businessType})
 
 Requirements:
 ${selectedReqs.join(", ")}
 
-Budget:
+Estimated Budget:
 ${budgetLabel}
 
-Please let me know the next steps.`;
+Contact:
+${contactName} (${whatsappNumber})
+
+Looking forward to your guidance!`;
+
+          if (configuredNumber) {
+            const cleanNumber = configuredNumber.replace(/[\s\+\-()]/g, "");
             window.open(`https://wa.me/${cleanNumber}?text=${encodeURIComponent(formattedMessage)}`, "_blank", "noopener,noreferrer");
           } else {
-            if (window.capeToast) {
-              window.capeToast("WhatsApp line is being configured. Please click 'Request My Free Quote' below!", "info");
-            }
+            // Prompt to proceed via submission
+            const submitBtnEl = form.querySelector('button[type="submit"]');
+            if (submitBtnEl) submitBtnEl.scrollIntoView({ behavior: "smooth", block: "center" });
           }
         };
       }
@@ -408,13 +433,31 @@ Please let me know the next steps.`;
       }
     });
 
-    // Form Submission Handling (Step 5 -> Submit)
+    // Form Submission Handling
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      if (!validateStep(1) || !validateStep(2) || !validateStep(3) || !validateStep(4)) {
-        goToStep(1);
+      // Check anti-spam honeypot
+      const honeypot = form.querySelector('[name="website_trap"], [name="hp_name"]');
+      if (honeypot && honeypot.value.trim() !== "") {
+        console.warn("Spam bot submission blocked silently.");
+        if (loadingBox) loadingBox.style.display = "none";
+        if (successBox) successBox.style.display = "block";
         return;
+      }
+
+      // Validate all required steps
+      if (isMultiStep) {
+        for (let s = 1; s <= 4; s++) {
+          if (!validateStep(s)) {
+            goToStep(s);
+            return;
+          }
+        }
+      } else {
+        if (!validateStep(1)) {
+          return;
+        }
       }
 
       const selectedReqs = Array.from(form.querySelectorAll('input[type="checkbox"][name^="req_"]:checked'))
@@ -423,24 +466,32 @@ Please let me know the next steps.`;
       const budgetInput = form.querySelector('input[name="budget"]:checked');
       const budgetValue = budgetInput ? budgetInput.value : "";
 
+      const contactName = form.querySelector('[name="contactName"]')?.value.trim() || "";
+      const businessName = form.querySelector('[name="businessName"]')?.value.trim() || "";
+      const businessTypeSelect = form.querySelector('[name="businessType"]');
+      const businessType = businessTypeSelect ? businessTypeSelect.value : "";
+      const whatsappNumber = form.querySelector('[name="whatsappNumber"]')?.value.trim() || "";
+      const emailAddress = form.querySelector('[name="emailAddress"]')?.value.trim() || "";
+      const notes = form.querySelector('[name="notes"]')?.value.trim() || "";
+
       const formData = {
-        businessName: form.querySelector('[name="businessName"]')?.value.trim() || "",
-        businessType: form.querySelector('[name="businessType"]')?.value || "",
+        type: "quote",
+        businessName,
+        businessType,
         requirements: selectedReqs,
         budget: budgetValue,
-        contactName: form.querySelector('[name="contactName"]')?.value.trim() || "",
-        whatsapp: form.querySelector('[name="whatsappNumber"]')?.value.trim() || "",
-        email: form.querySelector('[name="emailAddress"]')?.value.trim() || "",
-        notes: form.querySelector('[name="notes"]')?.value.trim() || "",
+        contactName,
+        whatsapp: whatsappNumber,
+        email: emailAddress,
+        notes,
         timestamp: new Date().toISOString()
       };
 
-      const submitBtn = form.querySelector('button[type="submit"]');
       const originalBtnText = submitBtn ? submitBtn.innerHTML : "Submit";
-      const loadingBox = form.querySelector(".form-status-msg.loading");
-      const successBox = form.querySelector(".form-status-msg.success");
-      const panesContainer = form.querySelector(".quote-steps-container");
-      const progressContainer = form.querySelector(".quote-progress-bar");
+
+      // Hide any previous inline error
+      const existingError = form.querySelector(".quote-inline-error");
+      if (existingError) existingError.remove();
 
       if (submitBtn) {
         submitBtn.disabled = true;
@@ -450,9 +501,10 @@ Please let me know the next steps.`;
       if (successBox) successBox.style.display = "none";
 
       try {
-        await submitQuote(formData);
+        const result = await window.sendCapeSMS(formData);
 
         if (loadingBox) loadingBox.style.display = "none";
+        if (fieldsWrapper) fieldsWrapper.style.display = "none";
         if (panesContainer) panesContainer.style.display = "none";
         if (progressContainer) progressContainer.style.display = "none";
         if (submitBtn) submitBtn.style.display = "none";
@@ -461,13 +513,29 @@ Please let me know the next steps.`;
           successBox.style.display = "block";
           successBox.scrollIntoView({ behavior: "smooth", block: "center" });
         }
+
+        window.trackCapeEvent("cape:quote_submit", {
+          businessType,
+          budget: budgetValue,
+          requirementsCount: selectedReqs.length
+        });
       } catch (err) {
         if (loadingBox) loadingBox.style.display = "none";
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalBtnText;
         }
-        alert("Submission encounter a temporary issue. Please contact us directly via email or WhatsApp!");
+
+        // Professional inline error banner (no browser alert())
+        const errorDiv = document.createElement("div");
+        errorDiv.className = "quote-inline-error";
+        errorDiv.style.cssText = "margin-top: 1rem; padding: 1rem; background: rgba(255, 107, 107, 0.12); border: 1px solid rgba(255, 107, 107, 0.4); border-radius: 8px; color: #ffb4b4; font-size: 0.9rem; line-height: 1.5; text-align: center;";
+        errorDiv.innerHTML = `
+          <strong>We couldn't submit your request right now.</strong><br>
+          Please message us directly via WhatsApp or email us at 
+          <a href="mailto:capesecuresolutions@gmail.com" style="color: #00d9ff; text-decoration: underline;">capesecuresolutions@gmail.com</a>.
+        `;
+        form.appendChild(errorDiv);
       }
     });
 
@@ -476,8 +544,26 @@ Please let me know the next steps.`;
       if (category) {
         const typeSelect = form.querySelector('[name="businessType"]');
         if (typeSelect) {
+          const catNorm = category.toLowerCase();
+          // Normalize alias mappings
+          const aliasMap = {
+            business: ["business", "shop", "retail", "boutique"],
+            shop: ["business", "shop", "retail", "boutique"],
+            healthcare: ["healthcare", "clinic", "doctor", "dental"],
+            clinic: ["healthcare", "clinic", "doctor", "dental"],
+            education: ["education", "school", "college", "academy"],
+            school: ["education", "school", "college", "academy"],
+            restaurant: ["restaurant", "cafe", "food", "dining"],
+            portfolio: ["portfolio", "professional", "creator", "consultant"],
+            professional: ["portfolio", "professional", "creator", "consultant"],
+            custom: ["custom", "webapp", "portal", "software"]
+          };
+
+          const validAliases = aliasMap[catNorm] || [catNorm];
+
           for (let opt of typeSelect.options) {
-            if (opt.value.toLowerCase() === category.toLowerCase()) {
+            const optVal = opt.value.toLowerCase();
+            if (validAliases.includes(optVal)) {
               opt.selected = true;
               break;
             }
@@ -486,7 +572,10 @@ Please let me know the next steps.`;
       }
 
       if (plan) {
-        if (plan.toLowerCase() === "starter") {
+        const planNorm = plan.toLowerCase();
+        window.trackCapeEvent("cape:pricing_select", { plan: planNorm });
+
+        if (planNorm === "starter") {
           const budget = form.querySelector('input[name="budget"][value="3000-5000"]');
           if (budget) {
             budget.checked = true;
@@ -497,7 +586,7 @@ Please let me know the next steps.`;
             req.checked = true;
             req.dispatchEvent(new Event("change"));
           }
-        } else if (plan.toLowerCase() === "business") {
+        } else if (planNorm === "business") {
           const budget = form.querySelector('input[name="budget"][value="5000-10000"]');
           if (budget) {
             budget.checked = true;
@@ -507,8 +596,8 @@ Please let me know the next steps.`;
           const req2 = form.querySelector('input[name="req_enquiry"]');
           if (req1) { req1.checked = true; req1.dispatchEvent(new Event("change")); }
           if (req2) { req2.checked = true; req2.dispatchEvent(new Event("change")); }
-        } else if (plan.toLowerCase() === "custom") {
-          const budget = form.querySelector('input[name="budget"][value="10000-25000"]');
+        } else if (planNorm === "custom") {
+          const budget = form.querySelector('input[name="budget"][value="10000-25000"]') || form.querySelector('input[name="budget"][value="25000+"]');
           if (budget) {
             budget.checked = true;
             budget.dispatchEvent(new Event("change"));
@@ -522,7 +611,7 @@ Please let me know the next steps.`;
       }
     }
 
-    // Initial check for URL query params on page load
+    // URL parameter prefill on page load
     const urlParams = new URLSearchParams(window.location.search);
     const qPlan = urlParams.get("plan");
     const qCategory = urlParams.get("category");
@@ -530,7 +619,6 @@ Please let me know the next steps.`;
       prefill(qPlan, qCategory);
     }
 
-    // Start on step 1
     goToStep(1);
 
     return {

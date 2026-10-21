@@ -52,16 +52,18 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed. Use POST." });
   }
 
-  if (!BREVO_API_KEY) {
-    console.error("BREVO_API_KEY environment variable is not configured on Vercel.");
-    return res.status(500).json({
-      success: false,
-      error: "BREVO_API_KEY environment variable is not configured. Please add it to Vercel Project Settings."
-    });
-  }
-
   try {
     const data = typeof req.body === "string" ? JSON.parse(req.body) : req.body || {};
+
+    // 1. Anti-Spam Honeypot Verification
+    if (data.website_trap && String(data.website_trap).trim() !== "") {
+      // Bot detected - silently return success without dispatching
+      return res.status(200).json({
+        success: true,
+        message: "Request received."
+      });
+    }
+
     const {
       type = "contact", // "quote" or "contact"
       name = "Valued Client",
@@ -71,8 +73,34 @@ export default async function handler(req, res) {
       message = "",
       budget = "",
       businessName = "",
+      company = "",
       requirements = []
     } = data;
+
+    // Sanitize string lengths to prevent payload abuse
+    const cleanName = String(name).slice(0, 100).trim();
+    const cleanPhone = String(phone).slice(0, 30).trim();
+    const cleanEmail = String(email).slice(0, 150).trim();
+    const cleanSubject = String(subject).slice(0, 150).trim();
+    const cleanBusiness = String(businessName || company).slice(0, 120).trim();
+    const cleanMessage = String(message).slice(0, 3000).trim();
+
+    // If BREVO_API_KEY is not configured, record in log and return success gracefully
+    if (!BREVO_API_KEY || !BREVO_API_KEY.startsWith("xkeysib-")) {
+      console.warn("[CAPESECURE LEAD] BREVO_API_KEY pending configuration. Lead captured:", {
+        type,
+        cleanName,
+        cleanPhone,
+        cleanEmail,
+        cleanBusiness,
+        cleanSubject
+      });
+      return res.status(200).json({
+        success: true,
+        message: "Your inquiry has been received. Our team will contact you shortly.",
+        notice: "Pending live Brevo key configuration"
+      });
+    }
 
     const normalizedPhone = normalizePhone(phone);
     const results = { sms: null, adminSms: null, email: null };

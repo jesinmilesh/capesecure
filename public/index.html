@@ -4,31 +4,125 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cape Secure Solutions | Professional Websites & Digital Solutions</title>
+  <title>Cape Secure Solutions | Kanyakumari Web Development & Digital Solutions</title>
   <meta name="description"
-    content="CapeSecure builds affordable, modern and security-conscious websites and digital solutions for local businesses, clinics, schools, restaurants and professionals.">
+    content="Cape Secure Solutions builds high-speed, security-conscious websites and custom digital solutions in Kanyakumari, Tamil Nadu — Where Three Seas Meet, Security Begins.">
   <meta name="keywords"
-    content="web development Kanyakumari, business websites, clinic websites, school websites, digital solutions, secure web design, CapeSecure">
-  <meta name="author" content="CapeSecure">
+    content="Cape Secure Solutions, Kanyakumari web development, website development Kanyakumari, freelance web developer Kanyakumari, business website development, custom web applications, secure web development, Tamil Nadu web development">
+  <meta name="author" content="Cape Secure Solutions">
+  <link rel="canonical" href="https://capesecure.vercel.app/">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://capesecure.in/">
-  <meta property="og:title" content="CapeSecure | Professional Websites & Digital Solutions">
+  <meta property="og:url" content="https://capesecure.vercel.app/">
+  <meta property="og:title" content="Cape Secure Solutions | Where Three Seas Meet, Security Begins">
   <meta property="og:description"
-    content="Modern, mobile-first websites and security-conscious digital solutions for local businesses, clinics, schools, and professionals.">
+    content="Professional freelance web development and digital solutions based in Kanyakumari, Tamil Nadu. Fast, secure, and mobile-first.">
   <meta property="og:image" content="assets/logo/cape-secure-logo.png">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CapeSecure | Websites • Security • Digital Solutions">
+  <meta name="twitter:title" content="Cape Secure Solutions | Kanyakumari Web Development">
   <meta name="twitter:description"
-    content="Affordable, modern and security-conscious websites built by a dedicated two-person development team.">
+    content="High-speed, security-conscious websites built by a dedicated freelance development team in Kanyakumari.">
   <meta name="twitter:image" content="assets/logo/cape-secure-logo.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/logo/favicon.png">
   <link rel="apple-touch-icon" href="assets/logo/cape-secure-logo.png">
+
+  <!-- Structured Data: LocalBusiness & ProfessionalService -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Cape Secure Solutions",
+    "alternateName": "CapeSecure",
+    "image": "https://capesecure.vercel.app/assets/logo/cape-secure-logo.png",
+    "url": "https://capesecure.vercel.app/",
+    "email": "capesecuresolutions@gmail.com",
+    "priceRange": "₹2,999 - ₹25,000+",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kanyakumari",
+      "addressRegion": "Tamil Nadu",
+      "postalCode": "629702",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 8.078,
+      "longitude": 77.555
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "09:00",
+      "closes": "19:00"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Web Development & Digital Solutions",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Business Websites",
+            "description": "Professional websites for retail shops and local businesses."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Healthcare & Clinic Websites",
+            "description": "Appointment-ready web portals for clinics and doctors."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Education Websites",
+            "description": "Admissions and curriculum portals for schools and colleges."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Restaurant Web Portals",
+            "description": "Digital menus, contactless QR, and table booking systems."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Portfolio Websites",
+            "description": "Personal branding and case-study showcases for professionals."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom Web Applications",
+            "description": "Secure dashboards, booking engines, and database systems."
+          }
+        }
+      ]
+    }
+  }
+  </script>
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css?v=1.2">
@@ -314,7 +408,7 @@
                   </path>
                 </svg> Google Maps Location Pin</li>
             </ul>
-            <a href="services.html#business" class="service-link">
+            <a href="services.html#business" class="service-link" data-service-detail="business">
               <span>Learn More</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -351,7 +445,7 @@
                   </path>
                 </svg> Emergency One-Tap Call Action</li>
             </ul>
-            <a href="services.html#healthcare" class="service-link">
+            <a href="services.html#healthcare" class="service-link" data-service-detail="healthcare">
               <span>Learn More</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -389,7 +483,7 @@
                   </path>
                 </svg> Events, Notices & Announcements</li>
             </ul>
-            <a href="services.html#education" class="service-link">
+            <a href="services.html#education" class="service-link" data-service-detail="education">
               <span>Learn More</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -430,7 +524,7 @@
                   </path>
                 </svg> High-Resolution Food Galleries</li>
             </ul>
-            <a href="services.html#restaurant" class="service-link">
+            <a href="services.html#restaurant" class="service-link" data-service-detail="restaurant">
               <span>Learn More</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -467,7 +561,7 @@
                   </path>
                 </svg> Social & Professional Links</li>
             </ul>
-            <a href="services.html#portfolio" class="service-link">
+            <a href="services.html#portfolio" class="service-link" data-service-detail="portfolio">
               <span>Learn More</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -506,7 +600,7 @@
                   </path>
                 </svg> Custom Business Logic & Reports</li>
             </ul>
-            <a href="services.html#custom" class="service-link">
+            <a href="services.html#custom" class="service-link" data-service-detail="custom">
               <span>Learn More</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -1485,11 +1579,14 @@
                   <option value="school">School / College</option>
                   <option value="restaurant">Restaurant / Cafe</option>
                   <option value="professional">Professional / Consultant</option>
+                  <option value="custom">Custom Web Application</option>
                   <option value="other">Other Business</option>
                 </select>
                 <span class="field-error-msg">Please select a business type.</span>
               </div>
             </div>
+            <!-- Anti-Spam Honeypot -->
+            <input type="text" name="website_trap" style="display:none!important;" tabindex="-1" autocomplete="off" aria-hidden="true">
 
             <!-- SECTION 2: REQUIREMENTS -->
             <span class="form-section-title">2. Requirements (What do you need?) <span class="required">*</span></span>
@@ -1636,8 +1733,32 @@
         <p class="preview-modal-desc" style="font-size: 0.95rem; margin-bottom: 1.5rem; color: var(--text-secondary);">
         </p>
 
+        <!-- Business Challenge & Digital Solution (Phase 11) -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; background: rgba(3, 17, 31, 0.5); padding: 1rem; border-radius: 8px; border: 1px solid var(--border);">
+          <div>
+            <h4 style="font-size: 0.82rem; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">Business Challenge</h4>
+            <p class="preview-modal-problem" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin: 0;"></p>
+          </div>
+          <div>
+            <h4 style="font-size: 0.82rem; color: var(--cyan); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">Digital Solution</h4>
+            <p class="preview-modal-solution" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin: 0;"></p>
+          </div>
+        </div>
+
         <h4 style="font-size: 0.95rem; color: var(--white); margin-bottom: 0.75rem;">Key Features Implemented:</h4>
         <ul class="preview-modal-features service-features-list" style="margin-bottom: 1.5rem;"></ul>
+
+        <!-- Responsive Architecture & Security Considerations (Phase 11) -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+          <div style="background: rgba(6, 26, 46, 0.6); padding: 0.85rem 1rem; border-radius: 8px; border-left: 3px solid var(--blue);">
+            <h4 style="font-size: 0.82rem; color: var(--white); margin-bottom: 0.25rem;">Responsive Architecture</h4>
+            <p class="preview-modal-responsive" style="font-size: 0.84rem; color: var(--text-secondary); margin: 0; line-height: 1.45;"></p>
+          </div>
+          <div style="background: rgba(6, 26, 46, 0.6); padding: 0.85rem 1rem; border-radius: 8px; border-left: 3px solid var(--teal);">
+            <h4 style="font-size: 0.82rem; color: var(--white); margin-bottom: 0.25rem;">Security Hardening</h4>
+            <p class="preview-modal-security" style="font-size: 0.84rem; color: var(--text-secondary); margin: 0; line-height: 1.45;"></p>
+          </div>
+        </div>
 
         <h4
           style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.5rem;">
@@ -1647,6 +1768,63 @@
         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
           <button type="button" class="btn btn-primary btn-block preview-quote-cta sweep-hover" data-open-quote>
             Request a Similar Website For My Business
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       INTERACTIVE SERVICE DETAIL MODAL (PHASE 9)
+       ====================================================================== -->
+  <div class="modal-backdrop" id="serviceDetailModal" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-labelledby="serviceModalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <span class="demo-badge service-modal-badge" style="position: static;">SERVICE DETAIL</span>
+          <h3 id="serviceModalTitle" class="service-modal-title">Service Name</h3>
+        </div>
+        <button type="button" class="modal-close-btn" aria-label="Close service details">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+          <span class="category-tag service-modal-category" style="position: static;">Cape Secure Solutions</span>
+          <span style="font-size: 0.8rem; color: var(--gold-light);">Production Architecture</span>
+        </div>
+
+        <p class="service-modal-desc" style="font-size: 0.95rem; margin-bottom: 1.5rem; color: var(--text-secondary);"></p>
+
+        <!-- Who It Is For & Benefits Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; background: rgba(3, 17, 31, 0.5); padding: 1rem; border-radius: 8px; border: 1px solid var(--border);">
+          <div>
+            <h4 style="font-size: 0.82rem; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">Who It Is For</h4>
+            <p class="service-modal-audience" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin: 0;"></p>
+          </div>
+          <div>
+            <h4 style="font-size: 0.82rem; color: var(--cyan); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">Key Business Benefits</h4>
+            <p class="service-modal-benefits" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin: 0;"></p>
+          </div>
+        </div>
+
+        <h4 style="font-size: 0.95rem; color: var(--white); margin-bottom: 0.75rem;">Key Capabilities & Features:</h4>
+        <ul class="service-modal-features service-features-list" style="margin-bottom: 1.5rem;"></ul>
+
+        <div style="background: rgba(6, 26, 46, 0.6); padding: 0.85rem 1rem; border-radius: 8px; border-left: 3px solid var(--teal); margin-bottom: 1.5rem;">
+          <h4 style="font-size: 0.82rem; color: var(--white); margin-bottom: 0.25rem;">Typical Deliverables</h4>
+          <p class="service-modal-deliverables" style="font-size: 0.85rem; color: var(--text-secondary); margin: 0; line-height: 1.5;"></p>
+        </div>
+
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <button type="button" class="btn btn-primary btn-block service-quote-cta sweep-hover" data-open-quote>
+            Request This Service For My Business
           </button>
         </div>
       </div>

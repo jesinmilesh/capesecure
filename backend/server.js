@@ -71,13 +71,48 @@ const server = http.createServer(async (req, res) => {
     req.on('end', async () => {
       try {
         const data = JSON.parse(body || '{}');
-        const { name = 'Client', email = '', phone = '', company = '', subject = 'Inquiry', message = '' } = data;
 
-        console.log(`[INQUIRY RECEIVED] From: ${name} (${email || phone}) - Subject: ${subject}`);
+        // Anti-Spam Honeypot Verification
+        if (data.website_trap && String(data.website_trap).trim() !== '') {
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          return res.end(JSON.stringify({ success: true, message: 'Consultation request recorded.' }));
+        }
+
+        const {
+          type = 'contact',
+          name = 'Client',
+          email = '',
+          phone = '',
+          company = '',
+          businessName = '',
+          subject = 'Inquiry',
+          budget = '',
+          requirements = [],
+          message = ''
+        } = data;
+
+        const clientBusiness = businessName || company;
+        console.log(`[INQUIRY RECEIVED - ${type.toUpperCase()}] From: ${name} (${email || phone}) - Business: ${clientBusiness || 'N/A'}`);
 
         // If Brevo key is configured, dispatch email/notification
         if (BREVO_API_KEY && BREVO_API_KEY.startsWith('xkeysib-')) {
           try {
+            const emailHtml = `
+              <div style="font-family: Arial, sans-serif; background: #03111f; color: #f0f6fc; padding: 24px; border-radius: 8px;">
+                <h2 style="color: #00d9ff; margin-top: 0;">New ${type === 'quote' ? 'Quote Request' : 'Client Consultation'}</h2>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email || 'Not provided'}</p>
+                <p><strong>Phone / WhatsApp:</strong> ${phone || 'Not provided'}</p>
+                ${clientBusiness ? `<p><strong>Business Name:</strong> ${clientBusiness}</p>` : ''}
+                ${budget ? `<p><strong>Selected Budget:</strong> ${budget}</p>` : ''}
+                ${requirements && requirements.length ? `<p><strong>Requirements:</strong> ${requirements.join(', ')}</p>` : ''}
+                <p><strong>Service / Subject:</strong> ${subject}</p>
+                <p><strong>Message / Brief:</strong></p>
+                <blockquote style="background: rgba(255,255,255,0.05); padding: 12px; border-left: 3px solid #00d9ff;">${message || 'No additional details provided.'}</blockquote>
+                <p style="color: #6c8ca5; font-size: 12px; margin-top: 20px;">Cape Secure Solutions &bull; 8.078° N, 77.555° E &bull; Kanyakumari, Tamil Nadu, India</p>
+              </div>
+            `;
+
             const brevoRes = await fetch('https://api.brevo.com/v3/smtp/email', {
               method: 'POST',
               headers: {
@@ -89,19 +124,7 @@ const server = http.createServer(async (req, res) => {
                 sender: { name: 'CapeSecure Leads', email: BREVO_ADMIN_EMAIL },
                 to: [{ email: BREVO_ADMIN_EMAIL, name: 'Cape Secure Admin' }],
                 subject: `[New Lead] ${subject} - ${name}`,
-                htmlContent: `
-                  <div style="font-family: Arial, sans-serif; background: #03111f; color: #f0f6fc; padding: 24px; border-radius: 8px;">
-                    <h2 style="color: #00d9ff; margin-top: 0;">New Client Consultation Request</h2>
-                    <p><strong>Name:</strong> ${name}</p>
-                    <p><strong>Email:</strong> ${email || 'Not provided'}</p>
-                    <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
-                    <p><strong>Company:</strong> ${company || 'Not provided'}</p>
-                    <p><strong>Service:</strong> ${subject}</p>
-                    <p><strong>Message:</strong></p>
-                    <blockquote style="background: rgba(255,255,255,0.05); padding: 12px; border-left: 3px solid #00d9ff;">${message || 'No additional details provided.'}</blockquote>
-                    <p style="color: #6c8ca5; font-size: 12px; margin-top: 20px;">Cape Secure &bull; Kanyakumari, Tamil Nadu, India</p>
-                  </div>
-                `
+                htmlContent: emailHtml
               })
             });
             const brevoData = await brevoRes.json();

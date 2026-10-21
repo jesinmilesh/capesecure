@@ -107,7 +107,7 @@
         if (rad > 16) {
           ctx.beginPath();
           ctx.arc(r.x, r.y, rad * 0.76, 0, Math.PI * 2);
-          ctx.strokeStyle = `rgba(245, 185, 66, ${Math.max(0, alpha * 0.22)})`;
+          ctx.strokeStyle = `rgba(255, 181, 46, ${Math.max(0, alpha * 0.24)})`;
           ctx.lineWidth = 1;
           ctx.shadowBlur = 0;
           ctx.stroke();
@@ -273,9 +273,9 @@
 
       // Three harmonious waves in lower horizon representing the three seas
       const layers = [
-        { baseY: h * 0.68, amp: 9, freq: 0.0014, speed: 0.6, color: 'rgba(0, 119, 182, 0.07)' },
-        { baseY: h * 0.80, amp: 12, freq: 0.0020, speed: -0.4, color: 'rgba(0, 217, 255, 0.05)' },
-        { baseY: h * 0.92, amp: 14, freq: 0.0012, speed: 0.5, color: 'rgba(245, 185, 66, 0.03)' }
+        { baseY: h * 0.68, amp: 9, freq: 0.0014, speed: 0.6, color: 'rgba(0, 119, 182, 0.07)' },     // Ocean Blue (#0077B6) - Indian Ocean
+        { baseY: h * 0.80, amp: 12, freq: 0.0020, speed: -0.4, color: 'rgba(0, 217, 255, 0.05)' },   // Electric Cyan (#00D9FF) - Arabian Sea
+        { baseY: h * 0.92, amp: 14, freq: 0.0012, speed: 0.5, color: 'rgba(255, 181, 46, 0.035)' }  // Warm Sunrise Gold (#FFB52E) - Bay of Bengal Sunrise
       ];
 
       for (let i = 0; i < layers.length; i++) {
@@ -305,7 +305,7 @@
 
       const radial = ctx.createRadialGradient(sunX, sunY, 15, sunX, sunY, w * 0.55);
       radial.addColorStop(0, 'rgba(0, 217, 255, 0.045)');
-      radial.addColorStop(0.5, 'rgba(245, 185, 66, 0.025)');
+      radial.addColorStop(0.5, 'rgba(255, 181, 46, 0.025)');
       radial.addColorStop(1, 'transparent');
 
       ctx.fillStyle = radial;

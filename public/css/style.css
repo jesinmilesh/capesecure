@@ -8,38 +8,38 @@
    1. CSS CUSTOM PROPERTIES / DESIGN TOKENS
    -------------------------------------------------------------------------- */
 :root {
-  /* Color Palette - Ocean, Night Sky, and Sunset */
-  --bg-primary: #06111c;
-  --bg-secondary: #091a29;
-  --bg-tertiary: #0e2438;
-  --bg-card: rgba(10, 28, 43, 0.75);
-  --bg-card-hover: rgba(15, 39, 61, 0.88);
-  --bg-glass: rgba(6, 17, 28, 0.82);
+  /* Color Palette - Kanyakumari Coastal Identity (Phase 3 Spec) */
+  --bg-primary: #03111F;      /* Deep Ocean Navy */
+  --bg-secondary: #061A2E;    /* Midnight Blue */
+  --bg-tertiary: #0A243D;     /* Abyssal Ocean Navy */
+  --bg-card: rgba(6, 26, 46, 0.78);
+  --bg-card-hover: rgba(10, 36, 61, 0.90);
+  --bg-glass: rgba(3, 17, 31, 0.86);
 
   /* Cyber & Ocean Accents */
-  --blue: #0787ff;
-  --blue-dark: #0056b3;
-  --cyan: #00d9ff;
+  --blue: #0077B6;            /* Ocean Blue */
+  --blue-dark: #005A8C;
+  --cyan: #00D9FF;            /* Electric Cyan */
   --cyan-glow: rgba(0, 217, 255, 0.28);
-  --teal: #00b8a9;
+  --teal: #008C95;            /* Deep Teal */
 
-  /* Kanyakumari Sunset Accents */
-  --gold: #f6b73c;
-  --gold-light: #ffd978;
-  --gold-glow: rgba(246, 183, 60, 0.3);
-  --sunset-orange: #ff7b54;
+  /* Kanyakumari Sunrise Accents (Gold only as accent) */
+  --gold: #FFB52E;            /* Warm Sunrise Gold */
+  --gold-light: #FFC857;
+  --gold-glow: rgba(255, 181, 46, 0.28);
+  --sunset-orange: #FF7B54;
 
   /* Text & Contrast */
-  --white: #f8fbff;
-  --text-primary: #f5f7fa;
-  --text-secondary: #aebdca;
-  --text-muted: #698299;
+  --white: #F5FAFF;           /* Soft White */
+  --text-primary: #F5FAFF;
+  --text-secondary: #A8C0D6;
+  --text-muted: #6B87A2;
 
   /* Borders & Overlays */
   --border: rgba(255, 255, 255, 0.10);
   --border-light: rgba(255, 255, 255, 0.18);
   --border-cyan: rgba(0, 217, 255, 0.35);
-  --border-gold: rgba(246, 183, 60, 0.35);
+  --border-gold: rgba(255, 181, 46, 0.35);
 
   /* Shadows */
   --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
