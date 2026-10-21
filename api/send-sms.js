@@ -204,8 +204,10 @@ export default async function handler(req, res) {
       results.email = { ok: false, error: e.message };
     }
 
+    const orderId = `CSS-ORD-${new Date().getFullYear()}-${Date.now().toString().slice(-6)}`;
     return res.status(200).json({
       success: true,
+      orderId,
       message: "Lead processed successfully with Brevo SMS dispatch.",
       results
     });

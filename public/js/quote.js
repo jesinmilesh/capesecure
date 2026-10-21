@@ -472,17 +472,36 @@ Looking forward to your guidance!`;
       const businessType = businessTypeSelect ? businessTypeSelect.value : "";
       const whatsappNumber = form.querySelector('[name="whatsappNumber"]')?.value.trim() || "";
       const emailAddress = form.querySelector('[name="emailAddress"]')?.value.trim() || "";
-      const notes = form.querySelector('[name="notes"]')?.value.trim() || "";
+      // Check infrastructure add-ons
+      const needDomain = Boolean(form.querySelector('[name="needDomain"]:checked'));
+      const needHosting = Boolean(form.querySelector('[name="needHosting"]:checked'));
+      const needSecurity = Boolean(form.querySelector('[name="needSecurity"]:checked'));
+      const needMaintenance = Boolean(form.querySelector('[name="needMaintenance"]:checked'));
+      const needEmail = Boolean(form.querySelector('[name="needEmail"]:checked'));
+      const needSeo = Boolean(form.querySelector('[name="needSeo"]:checked'));
+
+      let packageTier = 'starter';
+      if (budgetValue === '5000-10000') packageTier = 'business';
+      else if (budgetValue === '10000-25000' || budgetValue === '25000+') packageTier = 'custom';
 
       const formData = {
         type: "quote",
+        name: contactName,
         businessName,
         businessType,
+        package: packageTier,
         requirements: selectedReqs,
         budget: budgetValue,
         contactName,
         whatsapp: whatsappNumber,
+        phone: whatsappNumber,
         email: emailAddress,
+        needDomain,
+        needHosting,
+        needSecurity,
+        needMaintenance,
+        needEmail,
+        needSeo,
         notes,
         timestamp: new Date().toISOString()
       };
@@ -518,11 +537,13 @@ Looking forward to your guidance!`;
         // Smooth pause before opening centered success dialog
         await new Promise((r) => setTimeout(r, 450));
 
+        const orderRefText = result && result.orderId ? `\nOrder Reference: ${result.orderId}` : '';
+
         if (typeof window.showCapeDialog === "function") {
           await window.showCapeDialog({
             type: "success",
             title: "Request Submitted Successfully",
-            message: "Thank you for contacting Cape Secure Solutions.\nWe have received your request and will get back to you shortly.",
+            message: `Thank you for contacting Cape Secure Solutions.${orderRefText}\nWe have received your project details and emailed your confirmation.`,
             confirmText: "OK"
           });
         }

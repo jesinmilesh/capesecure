@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Invoice Portal — Cape Secure Solutions</title>
+  <link rel="icon" type="image/png" href="../assets/logo/cape-secure-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css?v=1.2">
+  <style>
+    body { background-color: #031422; color: #f5fafc; min-height: 100vh; padding: 2rem 1rem; }
+    .portal-box { max-width: 820px; margin: 0 auto; background: rgba(6, 36, 61, 0.78); border: 1px solid rgba(0, 184, 200, 0.3); border-radius: 16px; padding: clamp(1.5rem, 4vw, 2.75rem); box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(0,184,200,0.15); }
+    .portal-header { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1.5rem; margin-bottom: 1.75rem; flex-wrap: wrap; gap: 1rem; }
+    .portal-title { margin: 0; font-size: 1.45rem; color: #fff; }
+    .portal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; background: rgba(3, 27, 42, 0.6); padding: 1.25rem; border-radius: 10px; border: 1px solid rgba(0, 184, 200, 0.2); }
+    .table-portal { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; }
+    .table-portal th { padding: 0.75rem 1rem; background: #031b2a; color: #72ddf7; border-bottom: 1px solid rgba(0,184,200,0.3); text-align: left; }
+    .table-portal td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .summary-card { background: #031b2a; border-radius: 10px; padding: 1.25rem; margin-left: auto; max-width: 340px; border: 1px solid rgba(0, 184, 200, 0.3); }
+    .summary-row { display: flex; justify-content: space-between; margin-bottom: 0.65rem; font-size: 0.95rem; }
+    .summary-row.total { border-top: 1px solid rgba(255,255,255,0.15); padding-top: 0.75rem; font-size: 1.15rem; font-weight: 700; color: #fff; }
+    .summary-row.balance { border-top: 1px dashed rgba(246, 183, 60, 0.4); padding-top: 0.75rem; font-size: 1.15rem; font-weight: 700; color: #f6b73c; }
+    .pay-card { background: rgba(8, 126, 139, 0.18); border: 1px solid rgba(0, 184, 200, 0.35); border-radius: 12px; padding: 1.5rem; margin-top: 2rem; }
+    .upi-box { background: #031b2a; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(0,184,200,0.3); display: flex; align-items: center; justify-content: space-between; margin-top: 0.5rem; }
+    @media (max-width: 600px) { .portal-grid { grid-template-columns: 1fr; } .summary-card { max-width: 100%; } }
+  </style>
+</head>
+<body>
+
+  <div class="portal-box" id="portalContainer">
+    <div style="text-align: center; padding: 3rem 1rem;" id="loadingState">
+      <h3 style="color: #00d9ff;">Loading Official Invoice...</h3>
+      <p style="color: var(--text-secondary);">Verifying cryptographic access token...</p>
+    </div>
+
+    <div id="contentState" style="display: none;">
+      <!-- Header -->
+      <div class="portal-header">
+        <div>
+          <h1 class="portal-title">Project Tax Invoice</h1>
+          <span style="color: #00d9ff; font-weight: 700; font-size: 1.15rem;" id="invIdDisplay"></span>
+        </div>
+        <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+          <span id="badgeStatus" class="status-pill"></span>
+          <a id="btnDownloadPdf" href="#" target="_blank" class="btn btn-secondary btn-sm">Download PDF &darr;</a>
+        </div>
+      </div>
+
+      <!-- Client & Reference Info -->
+      <div class="portal-grid">
+        <div>
+          <span style="font-size: 0.75rem; color: #72ddf7; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; display: block; margin-bottom: 0.35rem;">Billed To</span>
+          <strong style="font-size: 1.1rem; color: #fff;" id="clientName"></strong><br>
+          <span style="color: #a8c0d6;" id="clientBusiness"></span><br>
+          <span style="color: #6b87a2; font-size: 0.85rem;" id="clientEmail"></span>
+        </div>
+        <div>
+          <span style="font-size: 0.75rem; color: #72ddf7; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; display: block; margin-bottom: 0.35rem;">Billing References</span>
+          <span style="color: #d1e2f2;">Date: <strong id="invDate"></strong></span><br>
+          <span style="color: #f6b73c;">Due Date: <strong id="invDueDate"></strong></span><br>
+          <span style="color: #a8c0d6; font-size: 0.85rem;">Order Ref: <span id="invOrderId"></span></span>
+        </div>
+      </div>
+
+      <!-- Itemized Table -->
+      <table class="table-portal">
+        <thead>
+          <tr>
+            <th>Deliverable Description</th>
+            <th style="text-align: center;">Qty</th>
+            <th style="text-align: right;">Rate (INR)</th>
+            <th style="text-align: right;">Total</th>
+          </tr>
+        </thead>
+        <tbody id="itemsTableBody"></tbody>
+      </table>
+
+      <!-- Summary Box -->
+      <div class="summary-card">
+        <div class="summary-row">
+          <span>Subtotal:</span>
+          <span id="sumSubtotal">₹0</span>
+        </div>
+        <div class="summary-row" id="rowDiscount" style="display: none; color: #f6b73c;">
+          <span>Discount:</span>
+          <span id="sumDiscount">-₹0</span>
+        </div>
+        <div class="summary-row" id="rowTax" style="display: none;">
+          <span id="taxLabel">Tax / GST:</span>
+          <span id="sumTax">₹0</span>
+        </div>
+        <div class="summary-row total">
+          <span>Total Invoice:</span>
+          <span id="sumTotal">₹0</span>
+        </div>
+        <div class="summary-row" style="color: #00d9ff; font-weight: 600;">
+          <span>Amount Paid:</span>
+          <span id="sumPaid">₹0</span>
+        </div>
+        <div class="summary-row balance">
+          <span>Balance Due:</span>
+          <span id="sumBalance">₹0</span>
+        </div>
+      </div>
+
+      <!-- Payment Settlement Card -->
+      <div class="pay-card" id="payInstructionsCard">
+        <h4 style="color: #fff; margin-top: 0; margin-bottom: 0.5rem;">Payment Settlement Instructions</h4>
+        <p style="color: #a8c0d6; font-size: 0.9rem; margin-bottom: 1rem;">
+          To complete your payment, please use the verified UPI or Bank account details below and include your Invoice ID <strong id="payNoteRef" style="color: #00d9ff;"></strong> in the remarks.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+          <!-- UPI -->
+          <div>
+            <span style="font-size: 0.8rem; color: #72ddf7; font-weight: 700; text-transform: uppercase;">Direct UPI Payment</span>
+            <div class="upi-box">
+              <code style="color: #f6b73c; font-size: 1rem;" id="displayUpi">capesecuresolutions@upi</code>
+              <button type="button" class="btn btn-secondary btn-sm" onclick="copyUpi()">Copy</button>
+            </div>
+          </div>
+          <!-- Bank Details (if configured) -->
+          <div id="bankDetailsBox" style="display: none;">
+            <span style="font-size: 0.8rem; color: #72ddf7; font-weight: 700; text-transform: uppercase;">Bank Wire Transfer</span>
+            <div style="background: #031b2a; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(0,184,200,0.3); font-size: 0.85rem; margin-top: 0.5rem;">
+              <span id="displayBank"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paid State Greeting -->
+      <div id="fullyPaidCard" style="display: none; text-align: center; margin-top: 2rem; padding: 2rem; background: rgba(32, 213, 230, 0.15); border: 1px solid #00b8c8; border-radius: 12px;">
+        <h3 style="color: #00d9ff; margin-top: 0;">✓ Invoice Settled in Full</h3>
+        <p style="color: #d1e2f2; margin: 0;">Thank you! Your payment has been received in full and verified.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../js/dialog.js?v=1.2"></script>
+  <script>
+    (async function() {
+      const params = new URLSearchParams(window.location.search);
+      const invId = params.get('id');
+      const token = params.get('token');
+
+      if (!invId || !token) {
+        document.getElementById('loadingState').innerHTML = `
+          <h3 style="color: #ff6b6b;">Invalid or Missing Invoice Link</h3>
+          <p style="color: #a8c0d6;">Please check the link provided in your invoice notification email.</p>
+        `;
+        return;
+      }
+
+      try {
+        const res = await fetch(`/api/invoices/${invId}?token=${token}`);
+        const data = await res.json();
+        if (!data.success || !data.invoice) {
+          throw new Error(data.message || 'Invoice not found.');
+        }
+
+        const inv = data.invoice;
+        const c = inv.customer || {};
+        const pr = inv.pricing || {};
+
+        document.getElementById('invIdDisplay').textContent = inv.invoiceId;
+        document.getElementById('payNoteRef').textContent = inv.invoiceId;
+        document.getElementById('btnDownloadPdf').href = `/api/invoices/${inv.invoiceId}/pdf?token=${token}`;
+        document.getElementById('clientName').textContent = c.name || 'Client';
+        document.getElementById('clientBusiness').textContent = c.businessName || '';
+        document.getElementById('clientEmail').textContent = c.email || c.phone || '';
+        document.getElementById('invDate').textContent = inv.invoiceDate;
+        document.getElementById('invDueDate').textContent = inv.dueDate;
+        document.getElementById('invOrderId').textContent = inv.orderId;
+
+        const badge = document.getElementById('badgeStatus');
+        const st = (inv.status || 'PENDING').toUpperCase();
+        badge.textContent = st;
+        badge.className = `status-pill ${st.toLowerCase().replace(/\s+/g, '-')}`;
+
+        const tbody = document.getElementById('itemsTableBody');
+        tbody.innerHTML = (pr.items || []).map(it => `
+          <tr>
+            <td><strong>${it.description}</strong></td>
+            <td style="text-align: center;">${it.quantity}</td>
+            <td style="text-align: right;">₹${Number(it.rate).toLocaleString('en-IN')}</td>
+            <td style="text-align: right; font-weight: 600;">₹${Number(it.total).toLocaleString('en-IN')}</td>
+          </tr>
+        `).join('');
+
+        document.getElementById('sumSubtotal').textContent = `₹${Number(pr.subtotal || 0).toLocaleString('en-IN')}`;
+        if (pr.discount > 0) {
+          document.getElementById('rowDiscount').style.display = 'flex';
+          document.getElementById('sumDiscount').textContent = `-₹${Number(pr.discount).toLocaleString('en-IN')}`;
+        }
+        if (pr.taxEnabled && pr.taxAmount > 0) {
+          document.getElementById('rowTax').style.display = 'flex';
+          document.getElementById('taxLabel').textContent = `${pr.taxName || 'GST'} (${pr.taxRate}%):`;
+          document.getElementById('sumTax').textContent = `₹${Number(pr.taxAmount).toLocaleString('en-IN')}`;
+        }
+
+        document.getElementById('sumTotal').textContent = `₹${Number(pr.total || 0).toLocaleString('en-IN')}`;
+        document.getElementById('sumPaid').textContent = `₹${Number(pr.amountPaid || 0).toLocaleString('en-IN')}`;
+        document.getElementById('sumBalance').textContent = `₹${Number(pr.balance || 0).toLocaleString('en-IN')}`;
+
+        if (pr.balance <= 0 && pr.total > 0) {
+          document.getElementById('payInstructionsCard').style.display = 'none';
+          document.getElementById('fullyPaidCard').style.display = 'block';
+        }
+
+        document.getElementById('loadingState').style.display = 'none';
+        document.getElementById('contentState').style.display = 'block';
+      } catch (err) {
+        document.getElementById('loadingState').innerHTML = `
+          <h3 style="color: #ff6b6b;">Error Loading Invoice</h3>
+          <p style="color: #a8c0d6;">${err.message}</p>
+        `;
+      }
+    })();
+
+    window.copyUpi = function() {
+      const upi = document.getElementById('displayUpi').textContent;
+      navigator.clipboard.writeText(upi).then(() => {
+        if (window.showCapeDialog) {
+          window.showCapeDialog({
+            type: 'info',
+            title: 'UPI ID Copied',
+            message: `UPI ID ${upi} copied to clipboard.\nYou can now paste it into Google Pay, PhonePe, or Paytm.`,
+            confirmText: 'OK'
+          });
+        }
+      });
+    };
+  </script>
+</body>
+</html>

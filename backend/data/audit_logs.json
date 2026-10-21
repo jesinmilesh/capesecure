@@ -1,0 +1,180 @@
+[
+  {
+    "id": "AUD-1792567336990-uszu",
+    "timestamp": "2026-10-21T07:22:16.990Z",
+    "action": "PAYMENT_RECORDED",
+    "entityId": "CSS-INV-2026-000001",
+    "actor": "admin",
+    "details": {
+      "amount": 6000,
+      "method": "UPI",
+      "balance": 495
+    }
+  },
+  {
+    "id": "AUD-1792567336988-2cgq",
+    "timestamp": "2026-10-21T07:22:16.988Z",
+    "action": "ORDER_STATUS_UPDATED",
+    "entityId": "CSS-ORD-2026-000001",
+    "actor": "admin",
+    "details": {
+      "newStatus": "partiallyPaid",
+      "totalPaid": 12000,
+      "balance": 495
+    }
+  },
+  {
+    "id": "AUD-1792567336370-9ikw",
+    "timestamp": "2026-10-21T07:22:16.370Z",
+    "action": "QUOTATION_APPROVED",
+    "entityId": "CSS-QTN-2026-000001",
+    "actor": "customer",
+    "details": {
+      "orderId": "CSS-ORD-2026-000002"
+    }
+  },
+  {
+    "id": "AUD-1792567336370-t6em",
+    "timestamp": "2026-10-21T07:22:16.370Z",
+    "action": "ORDER_STATUS_UPDATED",
+    "entityId": "CSS-ORD-2026-000002",
+    "actor": "customer",
+    "details": {
+      "newStatus": "approved",
+      "quotationApproved": true
+    }
+  },
+  {
+    "id": "AUD-1792567331927-6xtw",
+    "timestamp": "2026-10-21T07:22:11.927Z",
+    "action": "QUOTATION_CREATED",
+    "entityId": "CSS-QTN-2026-000001",
+    "actor": "admin",
+    "details": {
+      "orderId": "CSS-ORD-2026-000002",
+      "total": 12495
+    }
+  },
+  {
+    "id": "AUD-1792567331927-t7uq",
+    "timestamp": "2026-10-21T07:22:11.927Z",
+    "action": "ORDER_STATUS_UPDATED",
+    "entityId": "CSS-ORD-2026-000002",
+    "actor": "admin",
+    "details": {
+      "newStatus": "quotation",
+      "quotationId": "CSS-QTN-2026-000001"
+    }
+  },
+  {
+    "id": "AUD-1792567331918-6gfg",
+    "timestamp": "2026-10-21T07:22:11.918Z",
+    "action": "ORDER_CREATED",
+    "entityId": "CSS-ORD-2026-000002",
+    "actor": "system",
+    "details": {
+      "customer": "Dr. S. K. Nathan",
+      "total": 12995
+    }
+  },
+  {
+    "id": "AUD-1792566971430-o2e3",
+    "timestamp": "2026-10-21T07:16:11.430Z",
+    "action": "PAYMENT_RECORDED",
+    "entityId": "CSS-INV-2026-000001",
+    "actor": "admin",
+    "details": {
+      "amount": 6000,
+      "method": "UPI",
+      "balance": 6495
+    }
+  },
+  {
+    "id": "AUD-1792566971429-q2yb",
+    "timestamp": "2026-10-21T07:16:11.429Z",
+    "action": "ORDER_STATUS_UPDATED",
+    "entityId": "CSS-ORD-2026-000001",
+    "actor": "admin",
+    "details": {
+      "newStatus": "partiallyPaid",
+      "totalPaid": 6000,
+      "balance": 6495
+    }
+  },
+  {
+    "id": "AUD-1792566970875-h9wu",
+    "timestamp": "2026-10-21T07:16:10.875Z",
+    "action": "INVOICE_CREATED",
+    "entityId": "CSS-INV-2026-000001",
+    "actor": "system",
+    "details": {
+      "orderId": "CSS-ORD-2026-000001",
+      "total": 12495
+    }
+  },
+  {
+    "id": "AUD-1792566970874-non3",
+    "timestamp": "2026-10-21T07:16:10.874Z",
+    "action": "ORDER_STATUS_UPDATED",
+    "entityId": "CSS-ORD-2026-000001",
+    "actor": "system",
+    "details": {
+      "newStatus": "invoiceGenerated",
+      "invoiceId": "CSS-INV-2026-000001"
+    }
+  },
+  {
+    "id": "AUD-1792566970868-0mfi",
+    "timestamp": "2026-10-21T07:16:10.868Z",
+    "action": "QUOTATION_APPROVED",
+    "entityId": "CSS-QTN-2026-000001",
+    "actor": "customer",
+    "details": {
+      "orderId": "CSS-ORD-2026-000001"
+    }
+  },
+  {
+    "id": "AUD-1792566970866-oywj",
+    "timestamp": "2026-10-21T07:16:10.866Z",
+    "action": "ORDER_STATUS_UPDATED",
+    "entityId": "CSS-ORD-2026-000001",
+    "actor": "customer",
+    "details": {
+      "newStatus": "approved",
+      "quotationApproved": true
+    }
+  },
+  {
+    "id": "AUD-1792566960943-fw49",
+    "timestamp": "2026-10-21T07:16:00.943Z",
+    "action": "QUOTATION_CREATED",
+    "entityId": "CSS-QTN-2026-000001",
+    "actor": "admin",
+    "details": {
+      "orderId": "CSS-ORD-2026-000001",
+      "total": 12495
+    }
+  },
+  {
+    "id": "AUD-1792566960943-uwgu",
+    "timestamp": "2026-10-21T07:16:00.943Z",
+    "action": "ORDER_STATUS_UPDATED",
+    "entityId": "CSS-ORD-2026-000001",
+    "actor": "admin",
+    "details": {
+      "newStatus": "quotation",
+      "quotationId": "CSS-QTN-2026-000001"
+    }
+  },
+  {
+    "id": "AUD-1792566960896-mr1s",
+    "timestamp": "2026-10-21T07:16:00.896Z",
+    "action": "ORDER_CREATED",
+    "entityId": "CSS-ORD-2026-000001",
+    "actor": "system",
+    "details": {
+      "customer": "Dr. S. K. Nathan",
+      "total": 12995
+    }
+  }
+]

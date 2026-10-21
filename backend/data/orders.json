@@ -1,0 +1,166 @@
+[
+  {
+    "orderId": "CSS-ORD-2026-000002",
+    "accessToken": "6cc835abfde60c9ecefc74f79d5744a48118",
+    "status": "approved",
+    "createdAt": "2026-10-21T07:22:11.917Z",
+    "updatedAt": "2026-10-21T07:22:16.369Z",
+    "customer": {
+      "name": "Dr. S. K. Nathan",
+      "businessName": "Cape Diagnostics Laboratory",
+      "email": "capesecuresolutions@gmail.com",
+      "phone": "9840112233",
+      "whatsapp": "9840112233",
+      "businessType": "healthcare",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "service": "healthcare",
+      "requirements": [],
+      "customRequirements": "Need patient blood test report download and doctor appointment system.",
+      "referenceWebsites": "",
+      "targetLaunchDate": null
+    },
+    "infrastructure": {
+      "domain": "capediagnostics.in",
+      "hosting": "Standard Cloud",
+      "maintenance": "Active Care Plan"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (healthcare Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (capediagnostics.in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        },
+        {
+          "description": "Security Hardening & SSL Setup",
+          "quantity": 1,
+          "rate": 1499,
+          "total": 1499
+        }
+      ],
+      "subtotal": 12995,
+      "discount": 0,
+      "taxableAmount": 12995,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 12995,
+      "amountPaid": 0,
+      "balance": 12995,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": "CSS-QTN-2026-000001",
+    "invoiceId": null,
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000001",
+    "accessToken": "2e7be3aacde27fcb19b7cc1a523bb9b389d3",
+    "status": "partiallyPaid",
+    "createdAt": "2026-10-21T07:16:00.895Z",
+    "updatedAt": "2026-10-21T07:22:16.987Z",
+    "customer": {
+      "name": "Dr. S. K. Nathan",
+      "businessName": "Cape Diagnostics Laboratory",
+      "email": "capesecuresolutions@gmail.com",
+      "phone": "9840112233",
+      "whatsapp": "9840112233",
+      "businessType": "healthcare",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "service": "healthcare",
+      "requirements": [],
+      "customRequirements": "Need patient blood test report download and doctor appointment system.",
+      "referenceWebsites": "",
+      "targetLaunchDate": null
+    },
+    "infrastructure": {
+      "domain": "capediagnostics.in",
+      "hosting": "Standard Cloud",
+      "maintenance": "Active Care Plan"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (healthcare Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (capediagnostics.in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        },
+        {
+          "description": "Security Hardening & SSL Setup",
+          "quantity": 1,
+          "rate": 1499,
+          "total": 1499
+        }
+      ],
+      "subtotal": 12995,
+      "discount": 0,
+      "taxableAmount": 12995,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 12995,
+      "amountPaid": 0,
+      "balance": 12995,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": "CSS-QTN-2026-000001",
+    "invoiceId": "CSS-INV-2026-000001",
+    "kickoffDate": null,
+    "deliveryDate": null
+  }
+]

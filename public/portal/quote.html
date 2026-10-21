@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Quotation — Cape Secure Solutions</title>
+  <link rel="icon" type="image/png" href="../assets/logo/cape-secure-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css?v=1.2">
+  <style>
+    body { background-color: #031422; color: #f5fafc; min-height: 100vh; padding: 2rem 1rem; }
+    .portal-box { max-width: 800px; margin: 0 auto; background: rgba(6, 36, 61, 0.78); border: 1px solid rgba(0, 184, 200, 0.3); border-radius: 16px; padding: clamp(1.5rem, 4vw, 2.75rem); box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(0,184,200,0.15); }
+    .portal-header { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1.5rem; margin-bottom: 1.75rem; flex-wrap: wrap; gap: 1rem; }
+    .portal-title { margin: 0; font-size: 1.45rem; color: #fff; }
+    .portal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; background: rgba(3, 27, 42, 0.6); padding: 1.25rem; border-radius: 10px; border: 1px solid rgba(0, 184, 200, 0.2); }
+    .table-portal { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; }
+    .table-portal th { padding: 0.75rem 1rem; background: #031b2a; color: #72ddf7; border-bottom: 1px solid rgba(0,184,200,0.3); text-align: left; }
+    .table-portal td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .summary-card { background: #031b2a; border-radius: 10px; padding: 1.25rem; margin-left: auto; max-width: 320px; border: 1px solid rgba(0, 184, 200, 0.3); }
+    .summary-row { display: flex; justify-content: space-between; margin-bottom: 0.65rem; font-size: 0.95rem; }
+    .summary-row.total { border-top: 1px solid rgba(255,255,255,0.15); padding-top: 0.75rem; font-size: 1.15rem; font-weight: 700; color: #00d9ff; }
+    .btn-approve { background: linear-gradient(135deg, #087e8b 0%, #00b8c8 100%); color: #fff; font-size: 1.05rem; font-weight: 700; padding: 0.95rem 2rem; border-radius: 8px; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; transition: transform 180ms ease; text-decoration: none; }
+    .btn-approve:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,217,255,0.4); }
+    @media (max-width: 600px) { .portal-grid { grid-template-columns: 1fr; } .summary-card { max-width: 100%; } }
+  </style>
+</head>
+<body>
+
+  <div class="portal-box" id="portalContainer">
+    <div style="text-align: center; padding: 3rem 1rem;" id="loadingState">
+      <h3 style="color: #00d9ff;">Loading Official Quotation...</h3>
+      <p style="color: var(--text-secondary);">Verifying cryptographic access token...</p>
+    </div>
+
+    <div id="contentState" style="display: none;">
+      <!-- Header -->
+      <div class="portal-header">
+        <div>
+          <h1 class="portal-title">Project Quotation</h1>
+          <span style="color: #00d9ff; font-weight: 700; font-size: 1.1rem;" id="qIdDisplay"></span>
+        </div>
+        <div style="display: flex; gap: 0.75rem; align-items: center;">
+          <a id="btnDownloadPdf" href="#" target="_blank" class="btn btn-secondary btn-sm">Download PDF &darr;</a>
+          <span id="badgeApproved" class="status-pill paid" style="display: none; padding: 0.45rem 1rem;">✓ Approved</span>
+        </div>
+      </div>
+
+      <!-- Client & Reference Info -->
+      <div class="portal-grid">
+        <div>
+          <span style="font-size: 0.75rem; color: #72ddf7; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; display: block; margin-bottom: 0.35rem;">Prepared For</span>
+          <strong style="font-size: 1.1rem; color: #fff;" id="clientName"></strong><br>
+          <span style="color: #a8c0d6;" id="clientBusiness"></span><br>
+          <span style="color: #6b87a2; font-size: 0.85rem;" id="clientEmail"></span>
+        </div>
+        <div>
+          <span style="font-size: 0.75rem; color: #72ddf7; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; display: block; margin-bottom: 0.35rem;">Quotation Details</span>
+          <span style="color: #d1e2f2;">Date of Issue: <strong id="qDate"></strong></span><br>
+          <span style="color: #f6b73c;">Valid Until: <strong id="qValidUntil"></strong></span><br>
+          <span style="color: #a8c0d6; font-size: 0.85rem;">Order Ref: <span id="qOrderId"></span></span>
+        </div>
+      </div>
+
+      <!-- Scope Header -->
+      <div style="background: rgba(8, 126, 139, 0.25); border-left: 4px solid #00b8c8; padding: 0.85rem 1.25rem; border-radius: 6px; margin-bottom: 1.5rem;">
+        <span style="color: #72ddf7; font-size: 0.82rem; font-weight: 700; text-transform: uppercase;">Project Scope</span>
+        <h4 style="margin: 0.25rem 0 0 0; color: #fff; font-size: 1.05rem;" id="qScope"></h4>
+      </div>
+
+      <!-- Itemized Table -->
+      <table class="table-portal">
+        <thead>
+          <tr>
+            <th>Deliverable Description</th>
+            <th style="text-align: center;">Qty</th>
+            <th style="text-align: right;">Rate (INR)</th>
+            <th style="text-align: right;">Total</th>
+          </tr>
+        </thead>
+        <tbody id="itemsTableBody"></tbody>
+      </table>
+
+      <!-- Summary Box -->
+      <div class="summary-card">
+        <div class="summary-row">
+          <span>Subtotal:</span>
+          <span id="sumSubtotal">₹0</span>
+        </div>
+        <div class="summary-row" id="rowDiscount" style="display: none; color: #f6b73c;">
+          <span>Discount:</span>
+          <span id="sumDiscount">-₹0</span>
+        </div>
+        <div class="summary-row total">
+          <span>Total Quotation:</span>
+          <span id="sumTotal">₹0</span>
+        </div>
+      </div>
+
+      <!-- Terms -->
+      <div style="margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.25rem;">
+        <h5 style="color: #72ddf7; margin: 0 0 0.5rem 0; font-size: 0.85rem; text-transform: uppercase;">Terms & Acceptance</h5>
+        <ul style="color: #8aa7c2; font-size: 0.85rem; padding-left: 18px; margin: 0 0 1.5rem 0; line-height: 1.6;" id="termsList"></ul>
+      </div>
+
+      <!-- Approval Action Box -->
+      <div id="approvalActionBox" style="text-align: center; margin-top: 2rem; padding: 2rem; background: rgba(3, 27, 42, 0.8); border: 1px solid rgba(0, 184, 200, 0.35); border-radius: 12px;">
+        <h3 style="color: #fff; margin-top: 0; margin-bottom: 0.5rem;">Ready to Begin Your Project?</h3>
+        <p style="color: #a8c0d6; font-size: 0.95rem; margin-bottom: 1.5rem;">
+          Clicking approve will confirm this quotation, issue your initial invoice, and reserve your project initiation slot.
+        </p>
+        <button type="button" class="btn-approve" id="btnApproveQuote">
+          <span>✓ Approve Quotation</span>
+        </button>
+      </div>
+
+      <!-- Already Approved Message -->
+      <div id="alreadyApprovedBox" style="display: none; text-align: center; margin-top: 2rem; padding: 2rem; background: rgba(8, 126, 139, 0.2); border: 1px solid #00b8c8; border-radius: 12px;">
+        <h3 style="color: #00d9ff; margin-top: 0;">Quotation Approved!</h3>
+        <p style="color: #d1e2f2; margin-bottom: 1.25rem;">Your project invoice has been generated.</p>
+        <a id="btnGoToInvoice" href="#" class="btn btn-primary">Proceed to Invoice Portal &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../js/dialog.js?v=1.2"></script>
+  <script>
+    (async function() {
+      const params = new URLSearchParams(window.location.search);
+      const qId = params.get('id');
+      const token = params.get('token');
+
+      if (!qId || !token) {
+        document.getElementById('loadingState').innerHTML = `
+          <h3 style="color: #ff6b6b;">Invalid or Missing Quotation Link</h3>
+          <p style="color: #a8c0d6;">Please check the link provided in your quotation email.</p>
+        `;
+        return;
+      }
+
+      try {
+        const res = await fetch(`/api/quotations/${qId}?token=${token}`);
+        const data = await res.json();
+        if (!data.success || !data.quotation) {
+          throw new Error(data.message || 'Quotation not found.');
+        }
+
+        const q = data.quotation;
+        const c = q.customer || {};
+        const p = q.project || {};
+        const pr = q.pricing || {};
+
+        document.getElementById('qIdDisplay').textContent = q.quotationId;
+        document.getElementById('btnDownloadPdf').href = `/api/quotations/${q.quotationId}/pdf?token=${token}`;
+        document.getElementById('clientName').textContent = c.name || 'Client';
+        document.getElementById('clientBusiness').textContent = c.businessName || '';
+        document.getElementById('clientEmail').textContent = c.email || c.phone || '';
+        document.getElementById('qDate').textContent = q.issueDate;
+        document.getElementById('qValidUntil').textContent = q.validUntil;
+        document.getElementById('qOrderId').textContent = q.orderId;
+        document.getElementById('qScope').textContent = `${p.service} [${p.package.toUpperCase()} PACKAGE]`;
+
+        const tbody = document.getElementById('itemsTableBody');
+        tbody.innerHTML = (pr.items || []).map(it => `
+          <tr>
+            <td><strong>${it.description}</strong></td>
+            <td style="text-align: center;">${it.quantity}</td>
+            <td style="text-align: right;">₹${Number(it.rate).toLocaleString('en-IN')}</td>
+            <td style="text-align: right; font-weight: 600;">₹${Number(it.total).toLocaleString('en-IN')}</td>
+          </tr>
+        `).join('');
+
+        document.getElementById('sumSubtotal').textContent = `₹${Number(pr.subtotal || 0).toLocaleString('en-IN')}`;
+        if (pr.discount > 0) {
+          document.getElementById('rowDiscount').style.display = 'flex';
+          document.getElementById('sumDiscount').textContent = `-₹${Number(pr.discount).toLocaleString('en-IN')}`;
+        }
+        document.getElementById('sumTotal').textContent = `₹${Number(pr.total || 0).toLocaleString('en-IN')}`;
+
+        const termsList = document.getElementById('termsList');
+        termsList.innerHTML = (q.terms || []).map(t => `<li>${t}</li>`).join('');
+
+        if (q.status === 'approved') {
+          document.getElementById('badgeApproved').style.display = 'inline-flex';
+          document.getElementById('approvalActionBox').style.display = 'none';
+          document.getElementById('alreadyApprovedBox').style.display = 'block';
+        }
+
+        document.getElementById('btnApproveQuote').addEventListener('click', async () => {
+          if (typeof window.showCapeDialog === 'function') {
+            const confirmed = await window.showCapeDialog({
+              type: 'info',
+              title: 'Confirm Quotation Approval',
+              message: `Approve Quotation ${q.quotationId} for ₹${Number(pr.total).toLocaleString('en-IN')}?\nThis will generate your invoice and advance settlement link.`,
+              confirmText: 'Approve & Continue',
+              showCancel: true
+            });
+            if (!confirmed) return;
+          }
+
+          const approveBtn = document.getElementById('btnApproveQuote');
+          approveBtn.disabled = true;
+          approveBtn.innerHTML = '<span>Processing Approval...</span>';
+
+          try {
+            const appRes = await fetch(`/api/quotations/${q.quotationId}/approve?token=${token}`, { method: 'POST' });
+            const appData = await appRes.json();
+            if (appData.success) {
+              if (typeof window.showCapeDialog === 'function') {
+                await window.showCapeDialog({
+                  type: 'success',
+                  title: 'Quotation Approved!',
+                  message: `Thank you! Your quotation has been officially approved.\nInvoice ${appData.invoice.invoiceId} has been generated.`,
+                  confirmText: 'Proceed to Invoice'
+                });
+              }
+              window.location.href = `/portal/invoice.html?id=${appData.invoice.invoiceId}&token=${appData.invoice.accessToken}`;
+            }
+          } catch (e) {
+            alert('Approval error: ' + e.message);
+          }
+        });
+
+        document.getElementById('loadingState').style.display = 'none';
+        document.getElementById('contentState').style.display = 'block';
+      } catch (err) {
+        document.getElementById('loadingState').innerHTML = `
+          <h3 style="color: #ff6b6b;">Error Loading Quotation</h3>
+          <p style="color: #a8c0d6;">${err.message}</p>
+        `;
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+[
+  {
+    "quotationId": "CSS-QTN-2026-000001",
+    "orderId": "CSS-ORD-2026-000002",
+    "accessToken": "6ba7cd72ac11d6f96196dfd2f3d76f399514",
+    "status": "approved",
+    "issueDate": "2026-10-21",
+    "validUntil": "2026-11-05",
+    "createdAt": "2026-10-21T07:22:11.927Z",
+    "updatedAt": "2026-10-21T07:22:16.369Z",
+    "customer": {
+      "name": "Dr. S. K. Nathan",
+      "businessName": "Cape Diagnostics Laboratory",
+      "email": "capesecuresolutions@gmail.com",
+      "phone": "9840112233",
+      "whatsapp": "9840112233",
+      "businessType": "healthcare",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "service": "healthcare",
+      "requirements": [],
+      "customRequirements": "Need patient blood test report download and doctor appointment system.",
+      "referenceWebsites": "",
+      "targetLaunchDate": null
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (healthcare Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (capediagnostics.in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        },
+        {
+          "description": "Security Hardening & SSL Setup",
+          "quantity": 1,
+          "rate": 1499,
+          "total": 1499
+        }
+      ],
+      "subtotal": 12995,
+      "discount": 500,
+      "taxableAmount": 12495,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 12495,
+      "amountPaid": 0,
+      "balance": 12495,
+      "paymentStatus": "PENDING"
+    },
+    "notes": "Based on your requirements, we have prepared this quotation for your digital solution.",
+    "terms": [
+      "This quotation is valid for 15 days from the date of issue.",
+      "A 50% advance deposit is required to commence development work.",
+      "Balance payment is due upon successful staging and prior to production domain cutover.",
+      "Scope additions beyond this quotation will be billed at standard component rates."
+    ],
+    "approvedAt": "2026-10-21T07:22:16.369Z"
+  },
+  {
+    "quotationId": "CSS-QTN-2026-000001",
+    "orderId": "CSS-ORD-2026-000001",
+    "accessToken": "cf0c2df1e58972c27f52c37efb2f29ea4dde",
+    "status": "approved",
+    "issueDate": "2026-10-21",
+    "validUntil": "2026-11-05",
+    "createdAt": "2026-10-21T07:16:00.943Z",
+    "updatedAt": "2026-10-21T07:16:10.862Z",
+    "customer": {
+      "name": "Dr. S. K. Nathan",
+      "businessName": "Cape Diagnostics Laboratory",
+      "email": "capesecuresolutions@gmail.com",
+      "phone": "9840112233",
+      "whatsapp": "9840112233",
+      "businessType": "healthcare",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "service": "healthcare",
+      "requirements": [],
+      "customRequirements": "Need patient blood test report download and doctor appointment system.",
+      "referenceWebsites": "",
+      "targetLaunchDate": null
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (healthcare Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (capediagnostics.in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        },
+        {
+          "description": "Security Hardening & SSL Setup",
+          "quantity": 1,
+          "rate": 1499,
+          "total": 1499
+        }
+      ],
+      "subtotal": 12995,
+      "discount": 500,
+      "taxableAmount": 12495,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 12495,
+      "amountPaid": 0,
+      "balance": 12495,
+      "paymentStatus": "PENDING"
+    },
+    "notes": "Based on your requirements, we have prepared this quotation for your digital solution.",
+    "terms": [
+      "This quotation is valid for 15 days from the date of issue.",
+      "A 50% advance deposit is required to commence development work.",
+      "Balance payment is due upon successful staging and prior to production domain cutover.",
+      "Scope additions beyond this quotation will be billed at standard component rates."
+    ],
+    "approvedAt": "2026-10-21T07:16:10.862Z"
+  }
+]

@@ -1,12 +1,13 @@
 /**
- * CapeSecure — Local & Production Backend Server
- * Loads environment variables from backend/.env, serves public static assets,
- * and handles /api/send-sms Brevo transactional dispatches.
+ * CapeSecure — Full-Stack Production Backend Server
+ * Serves static frontend assets, manages Orders, Quotations, Invoices,
+ * server-side PDF generation, Brevo transactional emails, and Admin APIs.
  */
 
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const url = require('url');
 
 // 1. Load backend/.env safely
 const envPath = path.join(__dirname, '.env');
@@ -28,9 +29,12 @@ if (fs.existsSync(envPath)) {
 }
 
 const PORT = process.env.PORT || 3000;
-const BREVO_API_KEY = process.env.BREVO_API_KEY || '';
-const BREVO_ADMIN_EMAIL = process.env.BREVO_ADMIN_EMAIL || 'capesecuresolutions@gmail.com';
-const BREVO_SENDER = process.env.BREVO_SENDER || 'CapeSecure';
+const ADMIN_SECRET = process.env.ADMIN_SECRET_KEY || 'cape-secure-admin-2026';
+
+const { getCompanyConfig, updateCompanyConfig } = require('./companyConfig');
+const db = require('./db');
+const { generateDocumentPDF } = require('./pdfService');
+const emailService = require('./emailService');
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -42,19 +46,61 @@ const MIME_TYPES = {
   '.jpeg': 'image/jpeg',
   '.svg': 'image/svg+xml',
   '.ico': 'image/x-icon',
-  '.webp': 'image/webp'
+  '.webp': 'image/webp',
+  '.pdf': 'application/pdf'
 };
 
-// Determine static root: public folder or root
 const PUBLIC_DIR = fs.existsSync(path.join(__dirname, '..', 'public'))
   ? path.join(__dirname, '..', 'public')
   : path.join(__dirname, '..');
 
+// Helper: JSON response
+function sendJson(res, statusCode, data) {
+  res.writeHead(statusCode, {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type, x-admin-token, Authorization',
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS'
+  });
+  res.end(JSON.stringify(data));
+}
+
+// Helper: Parse JSON body with 100KB limit
+function parseBody(req) {
+  return new Promise((resolve, reject) => {
+    let body = '';
+    const MAX_SIZE = 100 * 1024;
+    req.on('data', chunk => {
+      body += chunk;
+      if (body.length > MAX_SIZE) {
+        req.destroy();
+        reject(new Error('PAYLOAD_TOO_LARGE'));
+      }
+    });
+    req.on('end', () => {
+      try {
+        resolve(JSON.parse(body || '{}'));
+      } catch (e) {
+        resolve({});
+      }
+    });
+  });
+}
+
+// Helper: Verify Admin authorization
+function isAdminAuthorized(req, parsedUrl) {
+  const headerToken = req.headers['x-admin-token'] || req.headers['authorization'];
+  const queryToken = parsedUrl.searchParams.get('token') || parsedUrl.searchParams.get('adminToken');
+  const cleanHeader = headerToken ? headerToken.replace(/^Bearer\s+/i, '').trim() : '';
+
+  return cleanHeader === ADMIN_SECRET || queryToken === ADMIN_SECRET;
+}
+
 const server = http.createServer(async (req, res) => {
-  // CORS
+  // CORS Preflight
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-admin-token, Authorization');
 
   if (req.method === 'OPTIONS') {
     res.writeHead(200);
@@ -64,144 +110,437 @@ const server = http.createServer(async (req, res) => {
   const parsedUrl = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
   const pathname = parsedUrl.pathname;
 
-  // 2. Lead & Contact Ingestion Handler (/api/send-sms and /api/contact)
-  if ((pathname === '/api/send-sms' || pathname === '/api/contact') && req.method === 'POST') {
-    let body = '';
-    const MAX_SIZE = 100 * 1024; // 100 KB max payload
+  // ===========================================================================
+  // 2. REST API ROUTES
+  // ===========================================================================
 
-    req.on('data', chunk => {
-      body += chunk;
-      if (body.length > MAX_SIZE) {
-        res.writeHead(413, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ success: false, message: 'Request payload too large.' }));
-        req.destroy();
+  // ---------------------------------------------------------------------------
+  // A. CUSTOMER ORDER & ENQUIRY SUBMISSION (/api/orders/create, /api/send-sms, /api/contact)
+  // ---------------------------------------------------------------------------
+  if (
+    (pathname === '/api/orders/create' || pathname === '/api/send-sms' || pathname === '/api/contact') &&
+    req.method === 'POST'
+  ) {
+    try {
+      const data = await parseBody(req);
+
+      // Anti-Spam Honeypot Verification
+      if ((data.website_trap && String(data.website_trap).trim() !== '') || (data.hp_name && String(data.hp_name).trim() !== '')) {
+        return sendJson(res, 200, {
+          success: true,
+          orderId: 'CSS-ORD-2026-000000',
+          message: 'Your request has been submitted successfully.'
+        });
       }
-    });
 
-    req.on('end', async () => {
-      try {
-        const data = JSON.parse(body || '{}');
+      const name = String(data.name || '').trim();
+      const phone = String(data.phone || data.whatsapp || '').trim();
+      const email = String(data.email || '').trim();
 
-        // Anti-Spam Honeypot Verification
-        if ((data.website_trap && String(data.website_trap).trim() !== '') || (data.hp_name && String(data.hp_name).trim() !== '')) {
-          res.writeHead(200, { 'Content-Type': 'application/json' });
-          return res.end(JSON.stringify({ success: true, message: 'Your request has been submitted successfully.' }));
-        }
-
-        // Input Sanitization helper
-        const sanitize = (str) => typeof str === 'string' ? str.replace(/<[^>]*>?/gm, '').trim() : '';
-
-        const type = sanitize(data.type) || 'contact';
-        const name = sanitize(data.name) || 'Client';
-        const email = sanitize(data.email);
-        const phone = sanitize(data.phone);
-        const businessName = sanitize(data.businessName || data.company);
-        const subject = sanitize(data.subject) || 'Website Inquiry';
-        const budget = sanitize(data.budget);
-        const requirements = Array.isArray(data.requirements) ? data.requirements.map(sanitize) : [];
-        const message = sanitize(data.message);
-
-        // Validation: Name and at least Phone or Email required
-        if (!name || (!phone && !email)) {
-          res.writeHead(400, { 'Content-Type': 'application/json' });
-          return res.end(JSON.stringify({ 
-            success: false, 
-            message: 'Please provide your name and a valid phone number or email address.' 
-          }));
-        }
-
-        console.log(`[LEAD RECEIVED - ${type.toUpperCase()}] From: ${name} (${email || phone}) - Business: ${businessName || 'N/A'}`);
-
-        // If Brevo key is configured, dispatch email/notification
-        if (BREVO_API_KEY && BREVO_API_KEY.startsWith('xkeysib-')) {
-          try {
-            const emailHtml = `
-              <div style="font-family: Arial, sans-serif; background: #031B2A; color: #F5FAFC; padding: 24px; border-radius: 8px;">
-                <h2 style="color: #00B8C8; margin-top: 0;">New ${type === 'quote' ? 'Quote Request' : 'Client Consultation'}</h2>
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email || 'Not provided'}</p>
-                <p><strong>Phone / WhatsApp:</strong> ${phone || 'Not provided'}</p>
-                ${businessName ? `<p><strong>Business Name:</strong> ${businessName}</p>` : ''}
-                ${budget ? `<p><strong>Selected Budget:</strong> ${budget}</p>` : ''}
-                ${requirements.length ? `<p><strong>Requirements:</strong> ${requirements.join(', ')}</p>` : ''}
-                <p><strong>Service / Subject:</strong> ${subject}</p>
-                <p><strong>Message / Brief:</strong></p>
-                <blockquote style="background: rgba(255,255,255,0.06); padding: 12px; border-left: 3px solid #00B8C8;">${message || 'No additional details provided.'}</blockquote>
-                <p style="color: #7899B5; font-size: 12px; margin-top: 20px;">Cape Secure Solutions &bull; Kanyakumari, Tamil Nadu, India</p>
-              </div>
-            `;
-
-            const brevoRes = await fetch('https://api.brevo.com/v3/smtp/email', {
-              method: 'POST',
-              headers: {
-                'accept': 'application/json',
-                'api-key': BREVO_API_KEY,
-                'content-type': 'application/json'
-              },
-              body: JSON.stringify({
-                sender: { name: 'CapeSecure Leads', email: BREVO_ADMIN_EMAIL },
-                to: [{ email: BREVO_ADMIN_EMAIL, name: 'Cape Secure Admin' }],
-                subject: `[New Lead] ${subject} - ${name}`,
-                htmlContent: emailHtml
-              })
-            });
-            const brevoData = await brevoRes.json();
-            console.log('[BREVO DISPATCH SUCCESS]', brevoData);
-          } catch (brevoErr) {
-            console.warn('[BREVO DISPATCH ERROR]', brevoErr.message);
-          }
-        }
-
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ 
-          success: true, 
-          message: 'Your request has been submitted successfully.' 
-        }));
-      } catch (err) {
-        res.writeHead(400, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ 
-          success: false, 
-          message: 'Unable to process your request at this moment.' 
-        }));
+      if (!name || (!phone && !email)) {
+        return sendJson(res, 400, {
+          success: false,
+          message: 'Please provide your name and a valid phone or email address.'
+        });
       }
-    });
-    return;
+
+      // 1. Create order record in database
+      const order = db.createOrder(data);
+
+      // 2. Dispatch Email #1: Customer Enquiry Acknowledgement
+      if (order.customer.email) {
+        emailService.sendCustomerAcknowledgement(order).catch(e => console.warn('[EMAIL ACK ERR]', e.message));
+      }
+
+      // 3. Dispatch Email #2: Admin Notification
+      emailService.sendAdminNotification(order).catch(e => console.warn('[EMAIL ADMIN ERR]', e.message));
+
+      return sendJson(res, 200, {
+        success: true,
+        orderId: order.orderId,
+        accessToken: order.accessToken,
+        total: order.pricing.total,
+        message: 'Your request has been submitted successfully.'
+      });
+    } catch (err) {
+      console.error('[ORDER SUBMIT ERROR]', err);
+      return sendJson(res, 500, { success: false, message: 'Failed to process project request.' });
+    }
   }
 
-  // 3. Static File Serving
+  // ---------------------------------------------------------------------------
+  // B. ORDERS RETRIEVAL
+  // ---------------------------------------------------------------------------
+  if (pathname === '/api/orders' && req.method === 'GET') {
+    if (!isAdminAuthorized(req, parsedUrl)) {
+      return sendJson(res, 401, { success: false, message: 'Admin authentication required.' });
+    }
+    return sendJson(res, 200, { success: true, orders: db.getAllOrders() });
+  }
+
+  const orderMatch = pathname.match(/^\/api\/orders\/([A-Za-z0-9\-]+)$/);
+  if (orderMatch && req.method === 'GET') {
+    const orderId = orderMatch[1];
+    const order = db.getOrder(orderId);
+    if (!order) return sendJson(res, 404, { success: false, message: 'Order not found.' });
+
+    // Customer or admin token validation
+    const token = parsedUrl.searchParams.get('token');
+    if (!isAdminAuthorized(req, parsedUrl) && order.accessToken !== token) {
+      return sendJson(res, 403, { success: false, message: 'Unauthorized document access.' });
+    }
+    return sendJson(res, 200, { success: true, order });
+  }
+
+  // ---------------------------------------------------------------------------
+  // C. QUOTATIONS API
+  // ---------------------------------------------------------------------------
+  if (pathname === '/api/quotations/create' && req.method === 'POST') {
+    if (!isAdminAuthorized(req, parsedUrl)) {
+      return sendJson(res, 401, { success: false, message: 'Admin authentication required.' });
+    }
+    try {
+      const data = await parseBody(req);
+      const quotation = db.createQuotation(data.orderId, data, 'admin');
+
+      // Auto-dispatch Quotation Email if requested
+      if (data.sendEmail && quotation.customer.email) {
+        await emailService.sendQuotationEmail(quotation);
+      }
+
+      return sendJson(res, 200, { success: true, quotation });
+    } catch (err) {
+      return sendJson(res, 400, { success: false, message: err.message });
+    }
+  }
+
+  if (pathname === '/api/quotations' && req.method === 'GET') {
+    if (!isAdminAuthorized(req, parsedUrl)) {
+      return sendJson(res, 401, { success: false, message: 'Admin authentication required.' });
+    }
+    return sendJson(res, 200, { success: true, quotations: db.getAllQuotations() });
+  }
+
+  const quotePdfMatch = pathname.match(/^\/api\/quotations\/([A-Za-z0-9\-]+)\/pdf$/);
+  if (quotePdfMatch && req.method === 'GET') {
+    const quotationId = quotePdfMatch[1];
+    const quotation = db.getQuotation(quotationId);
+    if (!quotation) return sendJson(res, 404, { success: false, message: 'Quotation not found.' });
+
+    const token = parsedUrl.searchParams.get('token');
+    if (!isAdminAuthorized(req, parsedUrl) && quotation.accessToken !== token) {
+      return sendJson(res, 403, { success: false, message: 'Unauthorized document access.' });
+    }
+
+    try {
+      const pdfBuffer = await generateDocumentPDF('quotation', quotation);
+      res.writeHead(200, {
+        'Content-Type': 'application/pdf',
+        'Content-Disposition': `inline; filename="${quotationId}.pdf"`,
+        'Content-Length': pdfBuffer.length
+      });
+      return res.end(pdfBuffer);
+    } catch (e) {
+      console.error('[PDF ERROR]', e);
+      return sendJson(res, 500, { success: false, message: 'Failed to generate quotation PDF.' });
+    }
+  }
+
+  const quoteApproveMatch = pathname.match(/^\/api\/quotations\/([A-Za-z0-9\-]+)\/approve$/);
+  if (quoteApproveMatch && req.method === 'POST') {
+    const quotationId = quoteApproveMatch[1];
+    const quotation = db.getQuotation(quotationId);
+    if (!quotation) return sendJson(res, 404, { success: false, message: 'Quotation not found.' });
+
+    const token = parsedUrl.searchParams.get('token');
+    if (!isAdminAuthorized(req, parsedUrl) && quotation.accessToken !== token) {
+      return sendJson(res, 403, { success: false, message: 'Unauthorized document access.' });
+    }
+
+    const result = db.approveQuotation(quotationId, isAdminAuthorized(req, parsedUrl) ? 'admin' : 'customer');
+    if (result && result.invoice && quotation.customer.email) {
+      // Auto-dispatch Invoice Email upon quotation approval
+      emailService.sendInvoiceEmail(result.invoice).catch(e => console.warn('[EMAIL INV ERR]', e.message));
+    }
+    return sendJson(res, 200, { success: true, ...result });
+  }
+
+  const quoteEmailMatch = pathname.match(/^\/api\/quotations\/([A-Za-z0-9\-]+)\/send-email$/);
+  if (quoteEmailMatch && req.method === 'POST') {
+    if (!isAdminAuthorized(req, parsedUrl)) {
+      return sendJson(res, 401, { success: false, message: 'Admin authentication required.' });
+    }
+    const quotation = db.getQuotation(quoteEmailMatch[1]);
+    if (!quotation) return sendJson(res, 404, { success: false, message: 'Quotation not found.' });
+    const emailRes = await emailService.sendQuotationEmail(quotation);
+    return sendJson(res, 200, { success: true, ...emailRes });
+  }
+
+  const quoteMatch = pathname.match(/^\/api\/quotations\/([A-Za-z0-9\-]+)$/);
+  if (quoteMatch && req.method === 'GET') {
+    const quotation = db.getQuotation(quoteMatch[1]);
+    if (!quotation) return sendJson(res, 404, { success: false, message: 'Quotation not found.' });
+
+    const token = parsedUrl.searchParams.get('token');
+    if (!isAdminAuthorized(req, parsedUrl) && quotation.accessToken !== token) {
+      return sendJson(res, 403, { success: false, message: 'Unauthorized access.' });
+    }
+    return sendJson(res, 200, { success: true, quotation });
+  }
+
+  // ---------------------------------------------------------------------------
+  // D. INVOICES API
+  // ---------------------------------------------------------------------------
+  if (pathname === '/api/invoices/create' && req.method === 'POST') {
+    if (!isAdminAuthorized(req, parsedUrl)) {
+      return sendJson(res, 401, { success: false, message: 'Admin authentication required.' });
+    }
+    try {
+      const data = await parseBody(req);
+      const invoice = db.createInvoice(data.orderId, data, 'admin');
+
+      if (data.sendEmail && invoice.customer.email) {
+        await emailService.sendInvoiceEmail(invoice);
+      }
+      return sendJson(res, 200, { success: true, invoice });
+    } catch (err) {
+      return sendJson(res, 400, { success: false, message: err.message });
+    }
+  }
+
+  if (pathname === '/api/invoices' && req.method === 'GET') {
+    if (!isAdminAuthorized(req, parsedUrl)) {
+      return sendJson(res, 401, { success: false, message: 'Admin authentication required.' });
+    }
+    return sendJson(res, 200, { success: true, invoices: db.getAllInvoices() });
+  }
+
+  const invPdfMatch = pathname.match(/^\/api\/invoices\/([A-Za-z0-9\-]+)\/pdf$/);
+  if (invPdfMatch && req.method === 'GET') {
+    const invoiceId = invPdfMatch[1];
+    const invoice = db.getInvoice(invoiceId);
+    if (!invoice) return sendJson(res, 404, { success: false, message: 'Invoice not found.' });
+
+    const token = parsedUrl.searchParams.get('token');
+    if (!isAdminAuthorized(req, parsedUrl) && invoice.accessToken !== token) {
+      return sendJson(res, 403, { success: false, message: 'Unauthorized document access.' });
+    }
+
+    try {
+      const pdfBuffer = await generateDocumentPDF('invoice', invoice);
+      res.writeHead(200, {
+        'Content-Type': 'application/pdf',
+        'Content-Disposition': `inline; filename="${invoiceId}.pdf"`,
+        'Content-Length': pdfBuffer.length
+      });
+      return res.end(pdfBuffer);
+    } catch (e) {
+      console.error('[PDF ERROR]', e);
+      return sendJson(res, 500, { success: false, message: 'Failed to generate invoice PDF.' });
+    }
+  }
+
+  const invPayMatch = pathname.match(/^\/api\/invoices\/([A-Za-z0-9\-]+)\/payment$/);
+  if (invPayMatch && req.method === 'POST') {
+    if (!isAdminAuthorized(req, parsedUrl)) {
+      return sendJson(res, 401, { success: false, message: 'Admin authentication required.' });
+    }
+    try {
+      const data = await parseBody(req);
+      const result = db.recordPayment(invPayMatch[1], data, 'admin');
+
+      if (data.sendReceipt && result.invoice.customer.email) {
+        await emailService.sendPaymentConfirmation(result.invoice, result.payment);
+      }
+      return sendJson(res, 200, { success: true, ...result });
+    } catch (err) {
+      return sendJson(res, 400, { success: false, message: err.message });
+    }
+  }
+
+  const invEmailMatch = pathname.match(/^\/api\/invoices\/([A-Za-z0-9\-]+)\/send-email$/);
+  if (invEmailMatch && req.method === 'POST') {
+    if (!isAdminAuthorized(req, parsedUrl)) {
+      return sendJson(res, 401, { success: false, message: 'Admin authentication required.' });
+    }
+    const invoice = db.getInvoice(invEmailMatch[1]);
+    if (!invoice) return sendJson(res, 404, { success: false, message: 'Invoice not found.' });
+    const emailRes = await emailService.sendInvoiceEmail(invoice);
+    return sendJson(res, 200, { success: true, ...emailRes });
+  }
+
+  const invMatch = pathname.match(/^\/api\/invoices\/([A-Za-z0-9\-]+)$/);
+  if (invMatch && req.method === 'GET') {
+    const invoice = db.getInvoice(invMatch[1]);
+    if (!invoice) return sendJson(res, 404, { success: false, message: 'Invoice not found.' });
+
+    const token = parsedUrl.searchParams.get('token');
+    if (!isAdminAuthorized(req, parsedUrl) && invoice.accessToken !== token) {
+      return sendJson(res, 403, { success: false, message: 'Unauthorized access.' });
+    }
+    return sendJson(res, 200, { success: true, invoice });
+  }
+
+  // ---------------------------------------------------------------------------
+  // E. PROJECT LIFECYCLE DISPATCHES (Kickoff, Deliver, Renewal)
+  // ---------------------------------------------------------------------------
+  const kickoffMatch = pathname.match(/^\/api\/orders\/([A-Za-z0-9\-]+)\/kickoff$/);
+  if (kickoffMatch && req.method === 'POST') {
+    if (!isAdminAuthorized(req, parsedUrl)) {
+      return sendJson(res, 401, { success: false, message: 'Admin authentication required.' });
+    }
+    const orderId = kickoffMatch[1];
+    const order = db.getOrder(orderId);
+    if (!order) return sendJson(res, 404, { success: false, message: 'Order not found.' });
+
+    db.updateOrderStatus(orderId, 'development', { kickoffDate: new Date().toISOString() });
+    if (order.customer.email) {
+      await emailService.sendProjectKickoff(order);
+    }
+    return sendJson(res, 200, { success: true, message: 'Project kickoff email dispatched.' });
+  }
+
+  const deliverMatch = pathname.match(/^\/api\/orders\/([A-Za-z0-9\-]+)\/deliver$/);
+  if (deliverMatch && req.method === 'POST') {
+    if (!isAdminAuthorized(req, parsedUrl)) {
+      return sendJson(res, 401, { success: false, message: 'Admin authentication required.' });
+    }
+    const orderId = deliverMatch[1];
+    const order = db.getOrder(orderId);
+    if (!order) return sendJson(res, 404, { success: false, message: 'Order not found.' });
+
+    const data = await parseBody(req);
+    db.updateOrderStatus(orderId, 'delivered', { deliveryDate: new Date().toISOString() });
+    if (order.customer.email) {
+      await emailService.sendProjectDelivery(order, data);
+    }
+    return sendJson(res, 200, { success: true, message: 'Project delivery email dispatched.' });
+  }
+
+  const renewalMatch = pathname.match(/^\/api\/orders\/([A-Za-z0-9\-]+)\/renewal$/);
+  if (renewalMatch && req.method === 'POST') {
+    if (!isAdminAuthorized(req, parsedUrl)) {
+      return sendJson(res, 401, { success: false, message: 'Admin authentication required.' });
+    }
+    const orderId = renewalMatch[1];
+    const order = db.getOrder(orderId);
+    if (!order) return sendJson(res, 404, { success: false, message: 'Order not found.' });
+
+    const data = await parseBody(req);
+    if (order.customer.email) {
+      await emailService.sendRenewalReminder(order, data);
+    }
+    return sendJson(res, 200, { success: true, message: 'Renewal reminder dispatched.' });
+  }
+
+  // ---------------------------------------------------------------------------
+  // F. ADMIN DASHBOARD METRICS & LOGS
+  // ---------------------------------------------------------------------------
+  if (pathname === '/api/admin/metrics' && req.method === 'GET') {
+    if (!isAdminAuthorized(req, parsedUrl)) {
+      return sendJson(res, 401, { success: false, message: 'Admin authentication required.' });
+    }
+
+    const orders = db.getAllOrders();
+    const quotations = db.getAllQuotations();
+    const invoices = db.getAllInvoices();
+
+    let totalRevenue = 0;
+    let pendingBalance = 0;
+
+    invoices.forEach(inv => {
+      totalRevenue += (inv.pricing?.amountPaid || 0);
+      pendingBalance += (inv.pricing?.balance || 0);
+    });
+
+    return sendJson(res, 200, {
+      success: true,
+      metrics: {
+        totalOrders: orders.length,
+        totalQuotations: quotations.length,
+        totalInvoices: invoices.length,
+        totalRevenue,
+        pendingBalance,
+        activeDevelopment: orders.filter(o => o.status === 'development' || o.status === 'paid').length
+      }
+    });
+  }
+
+  if (pathname === '/api/admin/logs' && req.method === 'GET') {
+    if (!isAdminAuthorized(req, parsedUrl)) {
+      return sendJson(res, 401, { success: false, message: 'Admin authentication required.' });
+    }
+    return sendJson(res, 200, {
+      success: true,
+      auditLogs: db.getAuditLogs(50),
+      emailLogs: db.getEmailLogs(50)
+    });
+  }
+
+  if (pathname === '/api/admin/settings' && req.method === 'GET') {
+    if (!isAdminAuthorized(req, parsedUrl)) {
+      return sendJson(res, 401, { success: false, message: 'Admin authentication required.' });
+    }
+    return sendJson(res, 200, { success: true, config: getCompanyConfig() });
+  }
+
+  if (pathname === '/api/admin/settings' && req.method === 'POST') {
+    if (!isAdminAuthorized(req, parsedUrl)) {
+      return sendJson(res, 401, { success: false, message: 'Admin authentication required.' });
+    }
+    try {
+      const data = await parseBody(req);
+      const updated = updateCompanyConfig(data);
+      return sendJson(res, 200, { success: true, config: updated });
+    } catch (err) {
+      return sendJson(res, 400, { success: false, message: err.message });
+    }
+  }
+
+  // ===========================================================================
+  // 3. STATIC FILE SERVING
+  // ===========================================================================
   let reqPath = decodeURI(pathname);
   if (reqPath === '/' || reqPath === '') reqPath = '/index.html';
 
   let filePath = path.join(PUBLIC_DIR, reqPath);
 
-  // If not found in PUBLIC_DIR, check project root
+  // If directory, serve index.html inside
+  if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
+    filePath = path.join(filePath, 'index.html');
+  }
+
+  // Fallback to project root if not in public
   if (!fs.existsSync(filePath)) {
     filePath = path.join(__dirname, '..', reqPath);
   }
 
   fs.stat(filePath, (err, stats) => {
     if (err || !stats.isFile()) {
-      // 404 handler
       const notFoundPath = fs.existsSync(path.join(PUBLIC_DIR, '404.html'))
         ? path.join(PUBLIC_DIR, '404.html')
-        : path.join(__dirname, '..', '404.html');
+        : path.join(__dirname, '..', 'public', '404.html');
 
-      fs.readFile(notFoundPath, (err404, data404) => {
+      if (fs.existsSync(notFoundPath)) {
         res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
-        res.end(data404 || '<h1>404 Not Found</h1>');
-      });
-      return;
+        return fs.createReadStream(notFoundPath).pipe(res);
+      }
+      res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
+      return res.end('404 Not Found');
     }
 
     const ext = path.extname(filePath).toLowerCase();
     const contentType = MIME_TYPES[ext] || 'application/octet-stream';
 
-    res.writeHead(200, { 'Content-Type': contentType });
+    res.writeHead(200, {
+      'Content-Type': contentType,
+      'Cache-Control': ext === '.html' ? 'no-cache' : 'public, max-age=86400'
+    });
     fs.createReadStream(filePath).pipe(res);
   });
 });
 
-server.listen(PORT, '127.0.0.1', () => {
+server.listen(PORT, '0.0.0.0', () => {
   console.log(`[CAPE SECURE SERVER] Running at http://127.0.0.1:${PORT}/`);
   console.log(`[BACKEND ENV] Loaded from: ${envPath}`);
   console.log(`[PUBLIC DIR] Serving from: ${PUBLIC_DIR}`);
