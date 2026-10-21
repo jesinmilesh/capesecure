@@ -105,7 +105,9 @@
 
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = `<span>Sending Message...</span>`;
+        submitBtn.classList.remove('btn-submitted', 'btn-error');
+        submitBtn.classList.add('btn-submitting');
+        submitBtn.innerHTML = `<span>Sending...</span>`;
       }
       if (loadingBox) loadingBox.style.display = 'flex';
       if (successBox) successBox.style.display = 'none';
@@ -124,6 +126,26 @@
         }
 
         if (loadingBox) loadingBox.style.display = 'none';
+
+        // Button changes to Submitted with checkmark
+        if (submitBtn) {
+          submitBtn.classList.remove('btn-submitting');
+          submitBtn.classList.add('btn-submitted');
+          submitBtn.innerHTML = `<span>✓ Submitted</span>`;
+        }
+
+        // Smooth pause before opening centered success dialog
+        await new Promise((r) => setTimeout(r, 450));
+
+        if (typeof window.showCapeDialog === 'function') {
+          await window.showCapeDialog({
+            type: 'success',
+            title: 'Request Submitted Successfully',
+            message: 'Thank you for contacting Cape Secure Solutions.\nWe have received your message and will get back to you shortly.',
+            confirmText: 'OK'
+          });
+        }
+
         if (successBox) successBox.style.display = 'block';
         if (submitBtn) submitBtn.style.display = 'none';
 
@@ -141,18 +163,29 @@
         if (loadingBox) loadingBox.style.display = 'none';
         if (submitBtn) {
           submitBtn.disabled = false;
-          submitBtn.innerHTML = originalBtnText;
+          submitBtn.classList.remove('btn-submitting');
+          submitBtn.classList.add('btn-error');
+          submitBtn.innerHTML = `<span>Try Again</span>`;
         }
 
-        const errorDiv = document.createElement('div');
-        errorDiv.className = 'contact-inline-error';
-        errorDiv.style.cssText = 'margin-top: 1rem; padding: 1rem; background: rgba(255, 107, 107, 0.12); border: 1px solid rgba(255, 107, 107, 0.4); border-radius: 8px; color: #ffb4b4; font-size: 0.9rem; line-height: 1.5; text-align: center;';
-        errorDiv.innerHTML = `
-          <strong>We couldn't send your message right now.</strong><br>
-          Please reach out directly via WhatsApp or email us at 
-          <a href="mailto:capesecuresolutions@gmail.com" style="color: #00d9ff; text-decoration: underline;">capesecuresolutions@gmail.com</a>.
-        `;
-        contactForm.appendChild(errorDiv);
+        if (typeof window.showCapeDialog === 'function') {
+          window.showCapeDialog({
+            type: 'error',
+            title: 'Something Went Wrong',
+            message: 'We couldn\'t send your message right now.\nPlease try again or reach out to us directly via WhatsApp.',
+            confirmText: 'Close'
+          });
+        } else {
+          const errorDiv = document.createElement('div');
+          errorDiv.className = 'contact-inline-error';
+          errorDiv.style.cssText = 'margin-top: 1rem; padding: 1rem; background: rgba(255, 107, 107, 0.12); border: 1px solid rgba(255, 107, 107, 0.4); border-radius: 8px; color: #ffb4b4; font-size: 0.9rem; line-height: 1.5; text-align: center;';
+          errorDiv.innerHTML = `
+            <strong>We couldn't send your message right now.</strong><br>
+            Please reach out directly via WhatsApp or email us at 
+            <a href="mailto:capesecuresolutions@gmail.com" style="color: #00d9ff; text-decoration: underline;">capesecuresolutions@gmail.com</a>.
+          `;
+          contactForm.appendChild(errorDiv);
+        }
       }
     });
   });

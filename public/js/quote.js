@@ -487,15 +487,18 @@ Looking forward to your guidance!`;
         timestamp: new Date().toISOString()
       };
 
-      const originalBtnText = submitBtn ? submitBtn.innerHTML : "Submit";
+      const originalBtnText = submitBtn ? submitBtn.innerHTML : "Submit Request";
 
       // Hide any previous inline error
       const existingError = form.querySelector(".quote-inline-error");
       if (existingError) existingError.remove();
 
+      // Form submission animation sequence
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = `<span>Processing Request...</span>`;
+        submitBtn.classList.remove("btn-submitted", "btn-error");
+        submitBtn.classList.add("btn-submitting");
+        submitBtn.innerHTML = `<span>Sending...</span>`;
       }
       if (loadingBox) loadingBox.style.display = "flex";
       if (successBox) successBox.style.display = "none";
@@ -504,6 +507,27 @@ Looking forward to your guidance!`;
         const result = await window.sendCapeSMS(formData);
 
         if (loadingBox) loadingBox.style.display = "none";
+
+        // Button changes to Submitted with checkmark
+        if (submitBtn) {
+          submitBtn.classList.remove("btn-submitting");
+          submitBtn.classList.add("btn-submitted");
+          submitBtn.innerHTML = `<span>✓ Submitted</span>`;
+        }
+
+        // Smooth pause before opening centered success dialog
+        await new Promise((r) => setTimeout(r, 450));
+
+        if (typeof window.showCapeDialog === "function") {
+          await window.showCapeDialog({
+            type: "success",
+            title: "Request Submitted Successfully",
+            message: "Thank you for contacting Cape Secure Solutions.\nWe have received your request and will get back to you shortly.",
+            confirmText: "OK"
+          });
+        }
+
+        // Hide form fields after dialog confirmation
         if (fieldsWrapper) fieldsWrapper.style.display = "none";
         if (panesContainer) panesContainer.style.display = "none";
         if (progressContainer) progressContainer.style.display = "none";
@@ -512,6 +536,11 @@ Looking forward to your guidance!`;
         if (successBox) {
           successBox.style.display = "block";
           successBox.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+
+        // If inside modal, close it cleanly
+        if (type === "modal" && typeof window.closeQuoteModal === "function") {
+          window.closeQuoteModal();
         }
 
         window.trackCapeEvent("cape:quote_submit", {
@@ -523,19 +552,29 @@ Looking forward to your guidance!`;
         if (loadingBox) loadingBox.style.display = "none";
         if (submitBtn) {
           submitBtn.disabled = false;
-          submitBtn.innerHTML = originalBtnText;
+          submitBtn.classList.remove("btn-submitting");
+          submitBtn.classList.add("btn-error");
+          submitBtn.innerHTML = `<span>Try Again</span>`;
         }
 
-        // Professional inline error banner (no browser alert())
-        const errorDiv = document.createElement("div");
-        errorDiv.className = "quote-inline-error";
-        errorDiv.style.cssText = "margin-top: 1rem; padding: 1rem; background: rgba(255, 107, 107, 0.12); border: 1px solid rgba(255, 107, 107, 0.4); border-radius: 8px; color: #ffb4b4; font-size: 0.9rem; line-height: 1.5; text-align: center;";
-        errorDiv.innerHTML = `
-          <strong>We couldn't submit your request right now.</strong><br>
-          Please message us directly via WhatsApp or email us at 
-          <a href="mailto:capesecuresolutions@gmail.com" style="color: #00d9ff; text-decoration: underline;">capesecuresolutions@gmail.com</a>.
-        `;
-        form.appendChild(errorDiv);
+        if (typeof window.showCapeDialog === "function") {
+          window.showCapeDialog({
+            type: "error",
+            title: "Something Went Wrong",
+            message: "We couldn't submit your request right now.\nPlease try again or message us directly via WhatsApp.",
+            confirmText: "Close"
+          });
+        } else {
+          const errorDiv = document.createElement("div");
+          errorDiv.className = "quote-inline-error";
+          errorDiv.style.cssText = "margin-top: 1rem; padding: 1rem; background: rgba(255, 107, 107, 0.12); border: 1px solid rgba(255, 107, 107, 0.4); border-radius: 8px; color: #ffb4b4; font-size: 0.9rem; line-height: 1.5; text-align: center;";
+          errorDiv.innerHTML = `
+            <strong>We couldn't submit your request right now.</strong><br>
+            Please message us directly via WhatsApp or email us at 
+            <a href="mailto:capesecuresolutions@gmail.com" style="color: #00d9ff; text-decoration: underline;">capesecuresolutions@gmail.com</a>.
+          `;
+          form.appendChild(errorDiv);
+        }
       }
     });
 

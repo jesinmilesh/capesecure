@@ -382,3 +382,26 @@
 
 
 
+
+/* Centralized Dialog Mobile Responsiveness */
+@media screen and (max-width: 480px) {
+  .cape-dialog-card {
+    padding: 2rem 1.25rem 1.5rem;
+    width: calc(100% - 1rem);
+    max-height: 88vh;
+  }
+  .cape-dialog-title {
+    font-size: 1.18rem;
+  }
+  .cape-dialog-desc {
+    font-size: 0.88rem;
+  }
+  .cape-dialog-badge {
+    width: 52px;
+    height: 52px;
+  }
+  .cape-dialog-badge svg {
+    width: 28px;
+    height: 28px;
+  }
+}
