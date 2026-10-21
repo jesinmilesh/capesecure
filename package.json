@@ -4,6 +4,7 @@
   "description": "Cape Secure Solutions — Where Three Seas Meet, Security Begins",
   "main": "backend/server.js",
   "scripts": {
+    "build": "node scripts/validate.js",
     "start": "node backend/server.js",
     "dev": "node backend/server.js",
     "test": "node tests/security_and_separation.test.js && node tests/enquiry_and_security.test.js",
