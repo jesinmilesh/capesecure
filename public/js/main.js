@@ -128,8 +128,14 @@ document.addEventListener("DOMContentLoaded", () => {
       if (el.tagName === "A") el.href = url;
     });
     dev1Portfolio.forEach((el) => {
-      const url = siteConfig.developers?.developerOne?.portfolio || "work.html";
-      if (el.tagName === "A") el.href = url;
+      const url = siteConfig.developers?.developerOne?.portfolio || "https://jesinmileshm.vercel.app/";
+      if (el.tagName === "A") {
+        el.href = url;
+        if (url.startsWith("http")) {
+          el.target = "_blank";
+          el.rel = "noopener noreferrer";
+        }
+      }
     });
 
     // Developer 2
@@ -151,6 +157,20 @@ document.addEventListener("DOMContentLoaded", () => {
     dev2Portfolio.forEach((el) => {
       const url = siteConfig.developers?.developerTwo?.portfolio || "work.html";
       if (el.tagName === "A") el.href = url;
+    });
+
+    
+    // Developer Photos
+    const dev1Images = document.querySelectorAll("[data-config='dev1-image']");
+    const dev1ImgSrc = siteConfig.developers?.developerOne?.image || "assets/images/JesinMilesh.jpeg";
+    dev1Images.forEach((img) => {
+      if (img.tagName === "IMG") img.src = dev1ImgSrc;
+    });
+
+    const dev2Images = document.querySelectorAll("[data-config='dev2-image']");
+    const dev2ImgSrc = siteConfig.developers?.developerTwo?.image || "assets/images/Libinesh.png";
+    dev2Images.forEach((img) => {
+      if (img.tagName === "IMG") img.src = dev2ImgSrc;
     });
 
     // Contact Elements

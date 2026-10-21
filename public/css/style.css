@@ -1683,6 +1683,15 @@ img, svg {
   font-weight: 700;
   flex-shrink: 0;
   box-shadow: 0 0 16px rgba(0, 217, 255, 0.22);
+  overflow: hidden;
+  position: relative;
+}
+
+.developer-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .developer-name {

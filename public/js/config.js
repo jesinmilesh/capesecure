@@ -43,7 +43,8 @@ const siteConfig = {
             bio: "Specializes in building high-performance, mobile-first websites and secure web architectures that help local businesses establish a commanding online presence.",
             specialties: ["Modern Semantic HTML/CSS", "Vanilla JS & Core Web Vitals", "Backend APIs & Database Architecture", "Security Hardening & HTTPS"],
             linkedin: "https://www.linkedin.com/in/jesin-milesh-m-7981bb347/",
-            portfolio: "work.html"
+            portfolio: "https://jesinmileshm.vercel.app/",
+            image: "assets/images/JesinMilesh.jpeg"
         },
         developerTwo: {
             id: "dev-2",
@@ -53,7 +54,8 @@ const siteConfig = {
             bio: "Focuses on translating business needs into intuitive customer journeys, seamless booking workflows, and conversion-focused digital experiences for clients.",
             specialties: ["Client Strategy & Requirements", "Responsive UI/UX Systems", "Digital Menus & Enquiries", "SEO & Local Search Optimization"],
             linkedin: "https://www.linkedin.com/in/libinesh-r-u-59496a370",
-            portfolio: "work.html"
+            portfolio: "work.html",
+            image: "assets/images/Libinesh.png"
         }
     },
 
