@@ -4,11 +4,11 @@
     "orderId": "CSS-ORD-2026-000001",
     "quotationId": "CSS-QTN-2026-000001",
     "accessToken": "1d12d09284069a051356dd749c4f4dcae7d3",
-    "status": "PARTIALLY PAID",
+    "status": "PAID",
     "invoiceDate": "2026-10-21",
     "dueDate": "2026-10-28",
     "createdAt": "2026-10-21T07:16:10.871Z",
-    "updatedAt": "2026-10-21T07:22:16.987Z",
+    "updatedAt": "2026-10-21T08:25:18.930Z",
     "customer": {
       "name": "Dr. S. K. Nathan",
       "businessName": "Cape Diagnostics Laboratory",
@@ -71,9 +71,9 @@
       "taxName": "GST",
       "taxAmount": 0,
       "total": 12495,
-      "amountPaid": 12000,
-      "balance": 495,
-      "paymentStatus": "PARTIALLY PAID"
+      "amountPaid": 12495,
+      "balance": 0,
+      "paymentStatus": "PAID"
     },
     "payments": [
       {
@@ -95,6 +95,26 @@
         "notes": "50% advance for project initiation",
         "recordedAt": "2026-10-21T07:22:16.986Z",
         "recordedBy": "admin"
+      },
+      {
+        "paymentId": "PAY-1792570945151-v70u",
+        "amount": 6000,
+        "method": "UPI",
+        "transactionId": "UPI-2026-9988776655",
+        "paymentDate": "2026-10-21",
+        "notes": "50% advance for project initiation",
+        "recordedAt": "2026-10-21T08:22:25.151Z",
+        "recordedBy": "admin@capesecure.com"
+      },
+      {
+        "paymentId": "PAY-1792571118930-bxmw",
+        "amount": 6000,
+        "method": "UPI",
+        "transactionId": "UPI-2026-9988776655",
+        "paymentDate": "2026-10-21",
+        "notes": "50% advance for project initiation",
+        "recordedAt": "2026-10-21T08:25:18.930Z",
+        "recordedBy": "admin@capesecure.com"
       }
     ],
     "notes": "Thank you for choosing Cape Secure Solutions. Where Three Seas Meet, Security Begins.",
@@ -103,6 +123,7 @@
       "Hosting, domain registration, and SSL certificates are provisioned upon receipt of advance.",
       "Annual maintenance and renewal fees will be invoiced 30 days prior to cycle expiration.",
       "All intellectual property rights transfer to the client upon full payment settlement."
-    ]
+    ],
+    "invoiceNumber": "CSS-INV-2026-000001"
   }
 ]

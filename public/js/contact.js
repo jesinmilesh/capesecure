@@ -114,15 +114,24 @@
 
       try {
         let result = null;
-        if (typeof window.sendCapeSMS === 'function') {
-          result = await window.sendCapeSMS(payload);
-        } else {
-          const res = await fetch('/api/send-sms', {
+        try {
+          const res = await fetch('/api/public/contact', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
           });
           result = await res.json().catch(() => ({ success: true }));
+        } catch (e) {
+          if (typeof window.sendCapeSMS === 'function') {
+            result = await window.sendCapeSMS(payload);
+          } else {
+            const res = await fetch('/api/send-sms', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            });
+            result = await res.json().catch(() => ({ success: true }));
+          }
         }
 
         if (loadingBox) loadingBox.style.display = 'none';

@@ -1,0 +1,21 @@
+/**
+ * Cape Secure Solutions — Public Pricing API
+ * Vercel Serverless Function: /api/public/pricing
+ */
+
+import { CATALOG } from '../../backend/services/pricingEngine.js';
+
+export default function handler(req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  res.setHeader('Cache-Control', 'public, max-age=3600, s-maxage=3600');
+
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
+  return res.status(200).json({
+    success: true,
+    pricing: CATALOG
+  });
+}

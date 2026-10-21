@@ -1,0 +1,2493 @@
+[
+  {
+    "orderId": "CSS-ORD-2026-000033",
+    "accessToken": "d937e2b3175bea0313318117feaea5f86e57",
+    "enquiryId": "CSS-ENQ-2026-000017",
+    "status": "paymentPending",
+    "createdAt": "2026-10-21T09:36:29.300Z",
+    "updatedAt": "2026-10-21T09:36:30.919Z",
+    "customer": {
+      "name": "Dr. S. K. Nathan",
+      "businessName": "Cape Diagnostics Laboratory",
+      "email": "capesecuresolutions@gmail.com",
+      "phone": "9840112233",
+      "whatsapp": "9840112233",
+      "businessType": "healthcare",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [],
+      "notes": "Need patient blood test report download and doctor appointment system.",
+      "businessType": "healthcare"
+    },
+    "infrastructure": {
+      "domain": "capediagnostics.in",
+      "hosting": "Standard Cloud",
+      "maintenance": "Active Care Plan"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (healthcare Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (capediagnostics.in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        },
+        {
+          "description": "Security Hardening & SSL Setup",
+          "quantity": 1,
+          "rate": 1499,
+          "total": 1499
+        }
+      ],
+      "subtotal": 12995,
+      "discount": 0,
+      "taxableAmount": 12995,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 12995,
+      "amountPaid": 0,
+      "balance": 12995,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": "CSS-QTN-2026-000013",
+    "invoiceId": "CSS-INV-2026-000010",
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000032",
+    "accessToken": "c899895526a07ede160f89013723405a7361",
+    "enquiryId": "CSS-ENQ-2026-000016",
+    "status": "invoiceGenerated",
+    "createdAt": "2026-10-21T09:36:13.210Z",
+    "updatedAt": "2026-10-21T09:36:13.350Z",
+    "customer": {
+      "name": "Karthik Subramanian",
+      "businessName": "Subramanian Maritime Logistics",
+      "email": "karthik.subramanian@gmail.com",
+      "phone": "9840123456",
+      "whatsapp": "9840123456",
+      "businessType": "Export & Shipping",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [
+        "Custom Cargo Tracking Portal",
+        "WhatsApp Delivery Alerts",
+        "SSL Security Hardening"
+      ],
+      "notes": "Need high security infrastructure with Indian data residency.",
+      "businessType": "Export & Shipping"
+    },
+    "infrastructure": {
+      "domain": "Required",
+      "hosting": "Standard Cloud",
+      "maintenance": "Active Care Plan"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Export & Shipping Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (Required)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        }
+      ],
+      "subtotal": 11496,
+      "discount": 0,
+      "taxableAmount": 11496,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 11496,
+      "amountPaid": 0,
+      "balance": 11496,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": "CSS-QTN-2026-000012",
+    "invoiceId": "CSS-INV-2026-000009",
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000031",
+    "accessToken": "783d11313e4ea7313b4b8d0dfbb9de68b99c",
+    "enquiryId": "CSS-ENQ-2026-000015",
+    "status": "enquiry",
+    "createdAt": "2026-10-21T09:36:12.708Z",
+    "updatedAt": "2026-10-21T09:36:12.708Z",
+    "customer": {
+      "name": "Verification Client",
+      "businessName": "",
+      "email": "verify@capesecure.test",
+      "phone": "+91 94444 00000",
+      "whatsapp": "+91 94444 00000",
+      "businessType": "Standard",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [],
+      "notes": "",
+      "businessType": "Standard"
+    },
+    "infrastructure": {
+      "domain": "Required",
+      "hosting": "Standard Cloud",
+      "maintenance": "Standard Delivery Warranty"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Standard Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (Required)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        }
+      ],
+      "subtotal": 8997,
+      "discount": 0,
+      "taxableAmount": 8997,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 8997,
+      "amountPaid": 0,
+      "balance": 8997,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": null,
+    "invoiceId": null,
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000030",
+    "accessToken": "6051de1e69cd1afd1647bad236beb50413ad",
+    "enquiryId": "CSS-ENQ-2026-000014",
+    "status": "enquiry",
+    "createdAt": "2026-10-21T09:35:14.980Z",
+    "updatedAt": "2026-10-21T09:35:14.980Z",
+    "customer": {
+      "name": "Karthik Subramanian",
+      "businessName": "Subramanian Maritime Logistics",
+      "email": "karthik.subramanian@gmail.com",
+      "phone": "9840123456",
+      "whatsapp": "9840123456",
+      "businessType": "Export & Shipping",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [
+        "Custom Cargo Tracking Portal",
+        "WhatsApp Delivery Alerts",
+        "SSL Security Hardening"
+      ],
+      "notes": "Need high security infrastructure with Indian data residency.",
+      "businessType": "Export & Shipping"
+    },
+    "infrastructure": {
+      "domain": "Required",
+      "hosting": "Standard Cloud",
+      "maintenance": "Active Care Plan"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Export & Shipping Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (Required)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        }
+      ],
+      "subtotal": 11496,
+      "discount": 0,
+      "taxableAmount": 11496,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 11496,
+      "amountPaid": 0,
+      "balance": 11496,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": null,
+    "invoiceId": null,
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000029",
+    "accessToken": "b218806515c6c8e5285b328997139cb2ed8f",
+    "enquiryId": "CSS-ENQ-2026-000013",
+    "status": "enquiry",
+    "createdAt": "2026-10-21T09:35:14.615Z",
+    "updatedAt": "2026-10-21T09:35:14.615Z",
+    "customer": {
+      "name": "Verification Client",
+      "businessName": "",
+      "email": "verify@capesecure.test",
+      "phone": "+91 94444 00000",
+      "whatsapp": "+91 94444 00000",
+      "businessType": "Standard",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [],
+      "notes": "",
+      "businessType": "Standard"
+    },
+    "infrastructure": {
+      "domain": "Required",
+      "hosting": "Standard Cloud",
+      "maintenance": "Standard Delivery Warranty"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Standard Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (Required)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        }
+      ],
+      "subtotal": 8997,
+      "discount": 0,
+      "taxableAmount": 8997,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 8997,
+      "amountPaid": 0,
+      "balance": 8997,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": null,
+    "invoiceId": null,
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000028",
+    "accessToken": "d44ea1a1514b9934afd79ce96e8b99fd635d",
+    "enquiryId": "CSS-ENQ-2026-000012",
+    "status": "enquiry",
+    "createdAt": "2026-10-21T09:32:26.698Z",
+    "updatedAt": "2026-10-21T09:32:26.698Z",
+    "customer": {
+      "name": "Karthik Subramanian",
+      "businessName": "Subramanian Maritime Logistics",
+      "email": "karthik.subramanian@gmail.com",
+      "phone": "9840123456",
+      "whatsapp": "9840123456",
+      "businessType": "Export & Shipping",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [
+        "Custom Cargo Tracking Portal",
+        "WhatsApp Delivery Alerts",
+        "SSL Security Hardening"
+      ],
+      "notes": "Need high security infrastructure with Indian data residency.",
+      "businessType": "Export & Shipping"
+    },
+    "infrastructure": {
+      "domain": "Required",
+      "hosting": "Standard Cloud",
+      "maintenance": "Active Care Plan"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Export & Shipping Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (Required)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        }
+      ],
+      "subtotal": 11496,
+      "discount": 0,
+      "taxableAmount": 11496,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 11496,
+      "amountPaid": 0,
+      "balance": 11496,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": null,
+    "invoiceId": null,
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000027",
+    "accessToken": "a0f483a5fc88d91b7158943be30ba88ef6b9",
+    "enquiryId": "CSS-ENQ-2026-000011",
+    "status": "enquiry",
+    "createdAt": "2026-10-21T09:32:26.277Z",
+    "updatedAt": "2026-10-21T09:32:26.277Z",
+    "customer": {
+      "name": "Verification Client",
+      "businessName": "",
+      "email": "verify@capesecure.test",
+      "phone": "+91 94444 00000",
+      "whatsapp": "+91 94444 00000",
+      "businessType": "Standard",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [],
+      "notes": "",
+      "businessType": "Standard"
+    },
+    "infrastructure": {
+      "domain": "Required",
+      "hosting": "Standard Cloud",
+      "maintenance": "Standard Delivery Warranty"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Standard Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (Required)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        }
+      ],
+      "subtotal": 8997,
+      "discount": 0,
+      "taxableAmount": 8997,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 8997,
+      "amountPaid": 0,
+      "balance": 8997,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": null,
+    "invoiceId": null,
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000026",
+    "accessToken": "42788b3ee4d979811ef61bb86efcba24af15",
+    "enquiryId": "CSS-ENQ-2026-000010",
+    "status": "invoiceGenerated",
+    "createdAt": "2026-10-21T09:32:04.785Z",
+    "updatedAt": "2026-10-21T09:32:04.907Z",
+    "customer": {
+      "name": "Karthik Subramanian",
+      "businessName": "Subramanian Maritime Logistics",
+      "email": "karthik.subramanian@gmail.com",
+      "phone": "9840123456",
+      "whatsapp": "9840123456",
+      "businessType": "Export & Shipping",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [
+        "Custom Cargo Tracking Portal",
+        "WhatsApp Delivery Alerts",
+        "SSL Security Hardening"
+      ],
+      "notes": "Need high security infrastructure with Indian data residency.",
+      "businessType": "Export & Shipping"
+    },
+    "infrastructure": {
+      "domain": "Required",
+      "hosting": "Standard Cloud",
+      "maintenance": "Active Care Plan"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Export & Shipping Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (Required)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        }
+      ],
+      "subtotal": 11496,
+      "discount": 0,
+      "taxableAmount": 11496,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 11496,
+      "amountPaid": 0,
+      "balance": 11496,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": "CSS-QTN-2026-000011",
+    "invoiceId": "CSS-INV-2026-000008",
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000025",
+    "accessToken": "f96d45e05d00577ee2d26a844f6156c5d8e5",
+    "enquiryId": "CSS-ENQ-2026-000009",
+    "status": "enquiry",
+    "createdAt": "2026-10-21T09:31:19.788Z",
+    "updatedAt": "2026-10-21T09:31:19.788Z",
+    "customer": {
+      "name": "Karthik Subramanian",
+      "businessName": "Subramanian Maritime Logistics",
+      "email": "karthik.subramanian@gmail.com",
+      "phone": "9840123456",
+      "whatsapp": "9840123456",
+      "businessType": "Export & Shipping",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [
+        "Custom Cargo Tracking Portal",
+        "WhatsApp Delivery Alerts",
+        "SSL Security Hardening"
+      ],
+      "notes": "Need high security infrastructure with Indian data residency.",
+      "businessType": "Export & Shipping"
+    },
+    "infrastructure": {
+      "domain": "Required",
+      "hosting": "Standard Cloud",
+      "maintenance": "Active Care Plan"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Export & Shipping Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (Required)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        }
+      ],
+      "subtotal": 11496,
+      "discount": 0,
+      "taxableAmount": 11496,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 11496,
+      "amountPaid": 0,
+      "balance": 11496,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": null,
+    "invoiceId": null,
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000024",
+    "accessToken": "25ca2cddc37ee76efd44cdd8d253f12177ba",
+    "enquiryId": "CSS-ENQ-2026-000008",
+    "status": "enquiry",
+    "createdAt": "2026-10-21T09:31:19.330Z",
+    "updatedAt": "2026-10-21T09:31:19.330Z",
+    "customer": {
+      "name": "Verification Client",
+      "businessName": "",
+      "email": "verify@capesecure.test",
+      "phone": "+91 94444 00000",
+      "whatsapp": "+91 94444 00000",
+      "businessType": "Standard",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [],
+      "notes": "",
+      "businessType": "Standard"
+    },
+    "infrastructure": {
+      "domain": "Required",
+      "hosting": "Standard Cloud",
+      "maintenance": "Standard Delivery Warranty"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Standard Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (Required)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        }
+      ],
+      "subtotal": 8997,
+      "discount": 0,
+      "taxableAmount": 8997,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 8997,
+      "amountPaid": 0,
+      "balance": 8997,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": null,
+    "invoiceId": null,
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000023",
+    "accessToken": "dd22dfdbdee59d5c28c199062a6969bb1afd",
+    "enquiryId": "CSS-ENQ-2026-000007",
+    "status": "paymentPending",
+    "createdAt": "2026-10-21T09:27:25.930Z",
+    "updatedAt": "2026-10-21T09:27:27.588Z",
+    "customer": {
+      "name": "Dr. S. K. Nathan",
+      "businessName": "Cape Diagnostics Laboratory",
+      "email": "capesecuresolutions@gmail.com",
+      "phone": "9840112233",
+      "whatsapp": "9840112233",
+      "businessType": "healthcare",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [],
+      "notes": "Need patient blood test report download and doctor appointment system.",
+      "businessType": "healthcare"
+    },
+    "infrastructure": {
+      "domain": "capediagnostics.in",
+      "hosting": "Standard Cloud",
+      "maintenance": "Active Care Plan"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (healthcare Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (capediagnostics.in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        },
+        {
+          "description": "Security Hardening & SSL Setup",
+          "quantity": 1,
+          "rate": 1499,
+          "total": 1499
+        }
+      ],
+      "subtotal": 12995,
+      "discount": 0,
+      "taxableAmount": 12995,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 12995,
+      "amountPaid": 0,
+      "balance": 12995,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": "CSS-QTN-2026-000010",
+    "invoiceId": "CSS-INV-2026-000007",
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000022",
+    "accessToken": "6123215ad54776b8dfb363ae93be3a6eacdd",
+    "enquiryId": "CSS-ENQ-2026-000006",
+    "status": "invoiceGenerated",
+    "createdAt": "2026-10-21T09:27:04.102Z",
+    "updatedAt": "2026-10-21T09:27:04.215Z",
+    "customer": {
+      "name": "Karthik Subramanian",
+      "businessName": "Subramanian Maritime Logistics",
+      "email": "karthik.subramanian@gmail.com",
+      "phone": "9840123456",
+      "whatsapp": "9840123456",
+      "businessType": "Export & Shipping",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [
+        "Custom Cargo Tracking Portal",
+        "WhatsApp Delivery Alerts",
+        "SSL Security Hardening"
+      ],
+      "notes": "Need high security infrastructure with Indian data residency.",
+      "businessType": "Export & Shipping"
+    },
+    "infrastructure": {
+      "domain": "Required",
+      "hosting": "Standard Cloud",
+      "maintenance": "Active Care Plan"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Export & Shipping Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (Required)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        }
+      ],
+      "subtotal": 11496,
+      "discount": 0,
+      "taxableAmount": 11496,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 11496,
+      "amountPaid": 0,
+      "balance": 11496,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": "CSS-QTN-2026-000009",
+    "invoiceId": "CSS-INV-2026-000006",
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000021",
+    "accessToken": "85093d1be0dab4ad31bb7f54c425f1a946e6",
+    "enquiryId": "CSS-ENQ-2026-000005",
+    "status": "enquiry",
+    "createdAt": "2026-10-21T09:27:03.630Z",
+    "updatedAt": "2026-10-21T09:27:03.630Z",
+    "customer": {
+      "name": "Verification Client",
+      "businessName": "",
+      "email": "verify@capesecure.test",
+      "phone": "+91 94444 00000",
+      "whatsapp": "+91 94444 00000",
+      "businessType": "Standard",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [],
+      "notes": "",
+      "businessType": "Standard"
+    },
+    "infrastructure": {
+      "domain": "Required",
+      "hosting": "Standard Cloud",
+      "maintenance": "Standard Delivery Warranty"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Standard Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (Required)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        }
+      ],
+      "subtotal": 8997,
+      "discount": 0,
+      "taxableAmount": 8997,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 8997,
+      "amountPaid": 0,
+      "balance": 8997,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": null,
+    "invoiceId": null,
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000020",
+    "accessToken": "0fd7417ddc9a2dcc6c063e5cb6c802921cd4",
+    "enquiryId": "CSS-ENQ-2026-000004",
+    "status": "invoiceGenerated",
+    "createdAt": "2026-10-21T09:26:28.364Z",
+    "updatedAt": "2026-10-21T09:26:28.443Z",
+    "customer": {
+      "name": "Karthik Subramanian",
+      "businessName": "Subramanian Maritime Logistics",
+      "email": "karthik.subramanian@gmail.com",
+      "phone": "9840123456",
+      "whatsapp": "9840123456",
+      "businessType": "Export & Shipping",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [
+        "Custom Cargo Tracking Portal",
+        "WhatsApp Delivery Alerts",
+        "SSL Security Hardening"
+      ],
+      "notes": "Need high security infrastructure with Indian data residency.",
+      "businessType": "Export & Shipping"
+    },
+    "infrastructure": {
+      "domain": "Required",
+      "hosting": "Standard Cloud",
+      "maintenance": "Active Care Plan"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Export & Shipping Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (Required)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        }
+      ],
+      "subtotal": 11496,
+      "discount": 0,
+      "taxableAmount": 11496,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 11496,
+      "amountPaid": 0,
+      "balance": 11496,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": "CSS-QTN-2026-000008",
+    "invoiceId": "CSS-INV-2026-000005",
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000019",
+    "accessToken": "0f007792d539cf2fd970897f9559a8eb0f64",
+    "enquiryId": "CSS-ENQ-2026-000003",
+    "status": "enquiry",
+    "createdAt": "2026-10-21T09:25:05.632Z",
+    "updatedAt": "2026-10-21T09:25:05.632Z",
+    "customer": {
+      "name": "Karthik Subramanian",
+      "businessName": "Subramanian Maritime Logistics",
+      "email": "karthik.subramanian@gmail.com",
+      "phone": "9840123456",
+      "whatsapp": "9840123456",
+      "businessType": "Export & Shipping",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [
+        "Custom Cargo Tracking Portal",
+        "WhatsApp Delivery Alerts",
+        "SSL Security Hardening"
+      ],
+      "notes": "Need high security infrastructure with Indian data residency.",
+      "businessType": "Export & Shipping"
+    },
+    "infrastructure": {
+      "domain": "Required",
+      "hosting": "Standard Cloud",
+      "maintenance": "Active Care Plan"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Export & Shipping Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (Required)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        }
+      ],
+      "subtotal": 11496,
+      "discount": 0,
+      "taxableAmount": 11496,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 11496,
+      "amountPaid": 0,
+      "balance": 11496,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": null,
+    "invoiceId": null,
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000018",
+    "accessToken": "56afad1ac8e902c45a3e2c28ea5ad9c0a351",
+    "enquiryId": "CSS-ENQ-2026-000002",
+    "status": "paymentPending",
+    "createdAt": "2026-10-21T09:08:35.637Z",
+    "updatedAt": "2026-10-21T09:08:36.933Z",
+    "customer": {
+      "name": "Dr. S. K. Nathan",
+      "businessName": "Cape Diagnostics Laboratory",
+      "email": "capesecuresolutions@gmail.com",
+      "phone": "9840112233",
+      "whatsapp": "9840112233",
+      "businessType": "healthcare",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [],
+      "notes": "Need patient blood test report download and doctor appointment system.",
+      "businessType": "healthcare"
+    },
+    "infrastructure": {
+      "domain": "capediagnostics.in",
+      "hosting": "Standard Cloud",
+      "maintenance": "Active Care Plan"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (healthcare Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (capediagnostics.in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        },
+        {
+          "description": "Security Hardening & SSL Setup",
+          "quantity": 1,
+          "rate": 1499,
+          "total": 1499
+        }
+      ],
+      "subtotal": 12995,
+      "discount": 0,
+      "taxableAmount": 12995,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 12995,
+      "amountPaid": 0,
+      "balance": 12995,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": "CSS-QTN-2026-000007",
+    "invoiceId": "CSS-INV-2026-000004",
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000017",
+    "accessToken": "5cb5dae5da7c3a0cb49613085e4b2dec9e3f",
+    "enquiryId": "CSS-ENQ-2026-000001",
+    "status": "enquiry",
+    "createdAt": "2026-10-21T09:08:27.192Z",
+    "updatedAt": "2026-10-21T09:08:27.192Z",
+    "customer": {
+      "name": "Verification Client",
+      "businessName": "",
+      "email": "verify@capesecure.test",
+      "phone": "+91 94444 00000",
+      "whatsapp": "+91 94444 00000",
+      "businessType": "Standard",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [],
+      "notes": "",
+      "businessType": "Standard"
+    },
+    "infrastructure": {
+      "domain": "Required",
+      "hosting": "Standard Cloud",
+      "maintenance": "Standard Delivery Warranty"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Standard Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (Required)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        }
+      ],
+      "subtotal": 8997,
+      "discount": 0,
+      "taxableAmount": 8997,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 8997,
+      "amountPaid": 0,
+      "balance": 8997,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": null,
+    "invoiceId": null,
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000016",
+    "accessToken": "dc7750a41b14887dcf28ba3c2a61945d9860",
+    "status": "enquiry",
+    "createdAt": "2026-10-21T08:54:26.453Z",
+    "updatedAt": "2026-10-21T08:54:26.453Z",
+    "customer": {
+      "name": "Verification Client",
+      "businessName": "",
+      "email": "verify@capesecure.test",
+      "phone": "+91 94444 00000",
+      "whatsapp": "+91 94444 00000",
+      "businessType": "Standard",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [],
+      "notes": "",
+      "businessType": "Standard"
+    },
+    "infrastructure": {
+      "domain": "Required",
+      "hosting": "Standard Cloud",
+      "maintenance": "Standard Delivery Warranty"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Standard Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        }
+      ],
+      "subtotal": 8997,
+      "discount": 0,
+      "taxableAmount": 8997,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 8997,
+      "amountPaid": 0,
+      "balance": 8997,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": null,
+    "invoiceId": null,
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000015",
+    "accessToken": "831245256c104081553e49734c6109387bee",
+    "status": "paymentPending",
+    "createdAt": "2026-10-21T08:54:10.789Z",
+    "updatedAt": "2026-10-21T08:54:11.562Z",
+    "customer": {
+      "name": "Dr. S. K. Nathan",
+      "businessName": "Cape Diagnostics Laboratory",
+      "email": "capesecuresolutions@gmail.com",
+      "phone": "9840112233",
+      "whatsapp": "9840112233",
+      "businessType": "healthcare",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [],
+      "notes": "Need patient blood test report download and doctor appointment system.",
+      "businessType": "healthcare"
+    },
+    "infrastructure": {
+      "domain": "capediagnostics.in",
+      "hosting": "Standard Cloud",
+      "maintenance": "Active Care Plan"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (healthcare Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (capediagnostics.in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        },
+        {
+          "description": "Security Hardening & SSL Setup",
+          "quantity": 1,
+          "rate": 1499,
+          "total": 1499
+        }
+      ],
+      "subtotal": 12995,
+      "discount": 0,
+      "taxableAmount": 12995,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 12995,
+      "amountPaid": 0,
+      "balance": 12995,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": "CSS-QTN-2026-000006",
+    "invoiceId": "CSS-INV-2026-000003",
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000014",
+    "accessToken": "f659165c79eed97ba475bf8a8e5d79f3efdf",
+    "status": "invoiceGenerated",
+    "createdAt": "2026-10-21T08:53:13.992Z",
+    "updatedAt": "2026-10-21T08:53:14.359Z",
+    "customer": {
+      "name": "Dr. S. K. Nathan",
+      "businessName": "Cape Diagnostics Laboratory",
+      "email": "capesecuresolutions@gmail.com",
+      "phone": "9840112233",
+      "whatsapp": "9840112233",
+      "businessType": "healthcare",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [],
+      "notes": "Need patient blood test report download and doctor appointment system.",
+      "businessType": "healthcare"
+    },
+    "infrastructure": {
+      "domain": "capediagnostics.in",
+      "hosting": "Standard Cloud",
+      "maintenance": "Active Care Plan"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (healthcare Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (capediagnostics.in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        },
+        {
+          "description": "Security Hardening & SSL Setup",
+          "quantity": 1,
+          "rate": 1499,
+          "total": 1499
+        }
+      ],
+      "subtotal": 12995,
+      "discount": 0,
+      "taxableAmount": 12995,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 12995,
+      "amountPaid": 0,
+      "balance": 12995,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": "CSS-QTN-2026-000005",
+    "invoiceId": "CSS-INV-2026-000002",
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000013",
+    "accessToken": "2970d9bb941363994c02e5d31f5b564553ee",
+    "status": "enquiry",
+    "createdAt": "2026-10-21T08:52:30.901Z",
+    "updatedAt": "2026-10-21T08:52:30.901Z",
+    "customer": {
+      "name": "Dr. S. K. Nathan",
+      "businessName": "Cape Diagnostics Laboratory",
+      "email": "capesecuresolutions@gmail.com",
+      "phone": "9840112233",
+      "whatsapp": "9840112233",
+      "businessType": "healthcare",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [],
+      "notes": "Need patient blood test report download and doctor appointment system.",
+      "businessType": "healthcare"
+    },
+    "infrastructure": {
+      "domain": "capediagnostics.in",
+      "hosting": "Standard Cloud",
+      "maintenance": "Active Care Plan"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (healthcare Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (capediagnostics.in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        },
+        {
+          "description": "Security Hardening & SSL Setup",
+          "quantity": 1,
+          "rate": 1499,
+          "total": 1499
+        }
+      ],
+      "subtotal": 12995,
+      "discount": 0,
+      "taxableAmount": 12995,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 12995,
+      "amountPaid": 0,
+      "balance": 12995,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": null,
+    "invoiceId": null,
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000012",
+    "accessToken": "c6b184d65c4f01a4028953ac817a010da6eb",
+    "status": "enquiry",
+    "createdAt": "2026-10-21T08:52:19.352Z",
+    "updatedAt": "2026-10-21T08:52:19.352Z",
+    "customer": {
+      "name": "Verification Client",
+      "businessName": "",
+      "email": "verify@capesecure.test",
+      "phone": "+91 94444 00000",
+      "whatsapp": "+91 94444 00000",
+      "businessType": "Standard",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [],
+      "notes": "",
+      "businessType": "Standard"
+    },
+    "infrastructure": {
+      "domain": "Required",
+      "hosting": "Standard Cloud",
+      "maintenance": "Standard Delivery Warranty"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Standard Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        }
+      ],
+      "subtotal": 8997,
+      "discount": 0,
+      "taxableAmount": 8997,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 8997,
+      "amountPaid": 0,
+      "balance": 8997,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": null,
+    "invoiceId": null,
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000011",
+    "accessToken": "2ea55eb6210fdf8be3f4d338f0358150e907",
+    "status": "enquiry",
+    "createdAt": "2026-10-21T08:51:31.775Z",
+    "updatedAt": "2026-10-21T08:51:31.775Z",
+    "customer": {
+      "name": "Verification Client",
+      "businessName": "",
+      "email": "verify@capesecure.test",
+      "phone": "+91 94444 00000",
+      "whatsapp": "+91 94444 00000",
+      "businessType": "Standard",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [],
+      "notes": "",
+      "businessType": "Standard"
+    },
+    "infrastructure": {
+      "domain": "Required",
+      "hosting": "Standard Cloud",
+      "maintenance": "Standard Delivery Warranty"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Standard Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        }
+      ],
+      "subtotal": 8997,
+      "discount": 0,
+      "taxableAmount": 8997,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 8997,
+      "amountPaid": 0,
+      "balance": 8997,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": null,
+    "invoiceId": null,
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000010",
+    "accessToken": "09ca323dc42ec92199dbb6b635131be5c13e",
+    "status": "enquiry",
+    "createdAt": "2026-10-21T08:49:29.685Z",
+    "updatedAt": "2026-10-21T08:49:29.685Z",
+    "customer": {
+      "name": "Verification Client",
+      "businessName": "",
+      "email": "verify@capesecure.test",
+      "phone": "+91 94444 00000",
+      "whatsapp": "+91 94444 00000",
+      "businessType": "Standard",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [],
+      "notes": "",
+      "businessType": "Standard"
+    },
+    "infrastructure": {
+      "domain": "Required",
+      "hosting": "Standard Cloud",
+      "maintenance": "Standard Delivery Warranty"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Standard Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        }
+      ],
+      "subtotal": 8997,
+      "discount": 0,
+      "taxableAmount": 8997,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 8997,
+      "amountPaid": 0,
+      "balance": 8997,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": null,
+    "invoiceId": null,
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000009",
+    "accessToken": "adaeaf01c5c098367329720236812559d847",
+    "status": "approved",
+    "createdAt": "2026-10-21T08:25:14.090Z",
+    "updatedAt": "2026-10-21T08:25:17.772Z",
+    "customer": {
+      "name": "Dr. S. K. Nathan",
+      "businessName": "Cape Diagnostics Laboratory",
+      "email": "capesecuresolutions@gmail.com",
+      "phone": "9840112233",
+      "whatsapp": "9840112233",
+      "businessType": "healthcare",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "service": "healthcare",
+      "requirements": [],
+      "customRequirements": "Need patient blood test report download and doctor appointment system.",
+      "referenceWebsites": "",
+      "targetLaunchDate": null
+    },
+    "infrastructure": {
+      "domain": "capediagnostics.in",
+      "hosting": "Standard Cloud",
+      "maintenance": "Active Care Plan"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (healthcare Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (capediagnostics.in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        },
+        {
+          "description": "Security Hardening & SSL Setup",
+          "quantity": 1,
+          "rate": 1499,
+          "total": 1499
+        }
+      ],
+      "subtotal": 12995,
+      "discount": 0,
+      "taxableAmount": 12995,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 12995,
+      "amountPaid": 0,
+      "balance": 12995,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": "CSS-QTN-2026-000004",
+    "invoiceId": null,
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000008",
+    "accessToken": "b27f17727f3579b2bc46fcb171f069912435",
+    "status": "enquiry",
+    "createdAt": "2026-10-21T08:24:56.359Z",
+    "updatedAt": "2026-10-21T08:24:56.359Z",
+    "customer": {
+      "name": "Verification Client",
+      "businessName": "",
+      "email": "verify@capesecure.test",
+      "phone": "+91 94444 00000",
+      "whatsapp": "+91 94444 00000",
+      "businessType": "Standard",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "service": "Enterprise Web Application",
+      "requirements": [],
+      "customRequirements": "",
+      "referenceWebsites": "",
+      "targetLaunchDate": null
+    },
+    "infrastructure": {
+      "domain": "Required",
+      "hosting": "Standard Cloud",
+      "maintenance": "Standard Delivery Warranty"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Standard Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        }
+      ],
+      "subtotal": 8997,
+      "discount": 0,
+      "taxableAmount": 8997,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 8997,
+      "amountPaid": 0,
+      "balance": 8997,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": null,
+    "invoiceId": null,
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000007",
+    "accessToken": "8709f7df17d75f86a5f2570fad0a6a8eb1e0",
+    "status": "approved",
+    "createdAt": "2026-10-21T08:22:20.404Z",
+    "updatedAt": "2026-10-21T08:22:23.585Z",
+    "customer": {
+      "name": "Dr. S. K. Nathan",
+      "businessName": "Cape Diagnostics Laboratory",
+      "email": "capesecuresolutions@gmail.com",
+      "phone": "9840112233",
+      "whatsapp": "9840112233",
+      "businessType": "healthcare",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "service": "healthcare",
+      "requirements": [],
+      "customRequirements": "Need patient blood test report download and doctor appointment system.",
+      "referenceWebsites": "",
+      "targetLaunchDate": null
+    },
+    "infrastructure": {
+      "domain": "capediagnostics.in",
+      "hosting": "Standard Cloud",
+      "maintenance": "Active Care Plan"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (healthcare Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (capediagnostics.in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        },
+        {
+          "description": "Security Hardening & SSL Setup",
+          "quantity": 1,
+          "rate": 1499,
+          "total": 1499
+        }
+      ],
+      "subtotal": 12995,
+      "discount": 0,
+      "taxableAmount": 12995,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 12995,
+      "amountPaid": 0,
+      "balance": 12995,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": "CSS-QTN-2026-000003",
+    "invoiceId": null,
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000006",
+    "accessToken": "89651012b28b27fac1e733aa2113416409ae",
+    "status": "enquiry",
+    "createdAt": "2026-10-21T08:20:36.959Z",
+    "updatedAt": "2026-10-21T08:20:36.959Z",
+    "customer": {
+      "name": "Dr. S. K. Nathan",
+      "businessName": "Cape Diagnostics Laboratory",
+      "email": "capesecuresolutions@gmail.com",
+      "phone": "9840112233",
+      "whatsapp": "9840112233",
+      "businessType": "healthcare",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "service": "healthcare",
+      "requirements": [],
+      "customRequirements": "Need patient blood test report download and doctor appointment system.",
+      "referenceWebsites": "",
+      "targetLaunchDate": null
+    },
+    "infrastructure": {
+      "domain": "capediagnostics.in",
+      "hosting": "Standard Cloud",
+      "maintenance": "Active Care Plan"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (healthcare Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (capediagnostics.in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        },
+        {
+          "description": "Security Hardening & SSL Setup",
+          "quantity": 1,
+          "rate": 1499,
+          "total": 1499
+        }
+      ],
+      "subtotal": 12995,
+      "discount": 0,
+      "taxableAmount": 12995,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 12995,
+      "amountPaid": 0,
+      "balance": 12995,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": null,
+    "invoiceId": null,
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000005",
+    "accessToken": "7183de945960fe0c97ada328215bb8cab892",
+    "status": "enquiry",
+    "createdAt": "2026-10-21T08:20:21.662Z",
+    "updatedAt": "2026-10-21T08:20:21.662Z",
+    "customer": {
+      "name": "Verification Client",
+      "businessName": "",
+      "email": "verify@capesecure.test",
+      "phone": "+91 94444 00000",
+      "whatsapp": "+91 94444 00000",
+      "businessType": "Standard",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "service": "Enterprise Web Application",
+      "requirements": [],
+      "customRequirements": "",
+      "referenceWebsites": "",
+      "targetLaunchDate": null
+    },
+    "infrastructure": {
+      "domain": "Required",
+      "hosting": "Standard Cloud",
+      "maintenance": "Standard Delivery Warranty"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Standard Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        }
+      ],
+      "subtotal": 8997,
+      "discount": 0,
+      "taxableAmount": 8997,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 8997,
+      "amountPaid": 0,
+      "balance": 8997,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": null,
+    "invoiceId": null,
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000004",
+    "accessToken": "215906797556faf0c312ab8dc507e9b7a487",
+    "status": "enquiry",
+    "createdAt": "2026-10-21T07:43:14.581Z",
+    "updatedAt": "2026-10-21T07:43:14.581Z",
+    "customer": {
+      "name": "Verification Client",
+      "businessName": "",
+      "email": "verify@capesecure.test",
+      "phone": "+91 94444 00000",
+      "whatsapp": "+91 94444 00000",
+      "businessType": "Standard",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "service": "Enterprise Web Application",
+      "requirements": [],
+      "customRequirements": "",
+      "referenceWebsites": "",
+      "targetLaunchDate": null
+    },
+    "infrastructure": {
+      "domain": "Required",
+      "hosting": "Standard Cloud",
+      "maintenance": "Standard Delivery Warranty"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Standard Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        }
+      ],
+      "subtotal": 8997,
+      "discount": 0,
+      "taxableAmount": 8997,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 8997,
+      "amountPaid": 0,
+      "balance": 8997,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": null,
+    "invoiceId": null,
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000003",
+    "accessToken": "45254fa8cdf3c1486722823099ef68f344c6",
+    "status": "enquiry",
+    "createdAt": "2026-10-21T07:42:04.424Z",
+    "updatedAt": "2026-10-21T07:42:04.424Z",
+    "customer": {
+      "name": "Verification Client",
+      "businessName": "",
+      "email": "verify@capesecure.test",
+      "phone": "+91 94444 00000",
+      "whatsapp": "+91 94444 00000",
+      "businessType": "Standard",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "service": "Enterprise Web Application",
+      "requirements": [],
+      "customRequirements": "",
+      "referenceWebsites": "",
+      "targetLaunchDate": null
+    },
+    "infrastructure": {
+      "domain": "Required",
+      "hosting": "Standard Cloud",
+      "maintenance": "Standard Delivery Warranty"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Standard Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        }
+      ],
+      "subtotal": 8997,
+      "discount": 0,
+      "taxableAmount": 8997,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 8997,
+      "amountPaid": 0,
+      "balance": 8997,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": null,
+    "invoiceId": null,
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000002",
+    "accessToken": "6cc835abfde60c9ecefc74f79d5744a48118",
+    "status": "approved",
+    "createdAt": "2026-10-21T07:22:11.917Z",
+    "updatedAt": "2026-10-21T07:22:16.369Z",
+    "customer": {
+      "name": "Dr. S. K. Nathan",
+      "businessName": "Cape Diagnostics Laboratory",
+      "email": "capesecuresolutions@gmail.com",
+      "phone": "9840112233",
+      "whatsapp": "9840112233",
+      "businessType": "healthcare",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "service": "healthcare",
+      "requirements": [],
+      "customRequirements": "Need patient blood test report download and doctor appointment system.",
+      "referenceWebsites": "",
+      "targetLaunchDate": null
+    },
+    "infrastructure": {
+      "domain": "capediagnostics.in",
+      "hosting": "Standard Cloud",
+      "maintenance": "Active Care Plan"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (healthcare Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (capediagnostics.in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        },
+        {
+          "description": "Security Hardening & SSL Setup",
+          "quantity": 1,
+          "rate": 1499,
+          "total": 1499
+        }
+      ],
+      "subtotal": 12995,
+      "discount": 0,
+      "taxableAmount": 12995,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 12995,
+      "amountPaid": 0,
+      "balance": 12995,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": "CSS-QTN-2026-000002",
+    "invoiceId": null,
+    "kickoffDate": null,
+    "deliveryDate": null
+  },
+  {
+    "orderId": "CSS-ORD-2026-000001",
+    "accessToken": "2e7be3aacde27fcb19b7cc1a523bb9b389d3",
+    "status": "paid",
+    "createdAt": "2026-10-21T07:16:00.895Z",
+    "updatedAt": "2026-10-21T08:25:18.933Z",
+    "customer": {
+      "name": "Dr. S. K. Nathan",
+      "businessName": "Cape Diagnostics Laboratory",
+      "email": "capesecuresolutions@gmail.com",
+      "phone": "9840112233",
+      "whatsapp": "9840112233",
+      "businessType": "healthcare",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "service": "healthcare",
+      "requirements": [],
+      "customRequirements": "Need patient blood test report download and doctor appointment system.",
+      "referenceWebsites": "",
+      "targetLaunchDate": null
+    },
+    "infrastructure": {
+      "domain": "capediagnostics.in",
+      "hosting": "Standard Cloud",
+      "maintenance": "Active Care Plan"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (healthcare Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (capediagnostics.in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        },
+        {
+          "description": "Security Hardening & SSL Setup",
+          "quantity": 1,
+          "rate": 1499,
+          "total": 1499
+        }
+      ],
+      "subtotal": 12995,
+      "discount": 0,
+      "taxableAmount": 12995,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 12995,
+      "amountPaid": 0,
+      "balance": 12995,
+      "paymentStatus": "PENDING"
+    },
+    "quotationId": "CSS-QTN-2026-000001",
+    "invoiceId": "CSS-INV-2026-000001",
+    "kickoffDate": null,
+    "deliveryDate": null
+  }
+]

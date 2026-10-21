@@ -141,7 +141,7 @@
       }
 
       try {
-        const res = await fetch(`/api/quotations/${qId}?token=${token}`);
+        const res = await fetch(`/api/public/quotations/${qId}?token=${token}`);
         const data = await res.json();
         if (!data.success || !data.quotation) {
           throw new Error(data.message || 'Quotation not found.');
@@ -153,7 +153,7 @@
         const pr = q.pricing || {};
 
         document.getElementById('qIdDisplay').textContent = q.quotationId;
-        document.getElementById('btnDownloadPdf').href = `/api/quotations/${q.quotationId}/pdf?token=${token}`;
+        document.getElementById('btnDownloadPdf').href = `/api/public/quotations/${q.quotationId}/pdf?token=${token}`;
         document.getElementById('clientName').textContent = c.name || 'Client';
         document.getElementById('clientBusiness').textContent = c.businessName || '';
         document.getElementById('clientEmail').textContent = c.email || c.phone || '';
@@ -205,7 +205,7 @@
           approveBtn.innerHTML = '<span>Processing Approval...</span>';
 
           try {
-            const appRes = await fetch(`/api/quotations/${q.quotationId}/approve?token=${token}`, { method: 'POST' });
+            const appRes = await fetch(`/api/public/quotations/${q.quotationId}/approve?token=${token}`, { method: 'POST' });
             const appData = await appRes.json();
             if (appData.success) {
               if (typeof window.showCapeDialog === 'function') {

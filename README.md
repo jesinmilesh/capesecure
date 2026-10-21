@@ -1,87 +1,152 @@
-# CAPE SECURE &mdash; Cybersecurity Solutions
+# Cape Secure Solutions
 
-> **Securing the Digital Horizon &bull; From Kanyakumari, Tamil Nadu, India**
+> **"Where Three Seas Meet, Security Begins"**  
+> *Professional Freelance Web Development & Digital Solutions • Kanyakumari, Tamil Nadu, India*
 
-Cape Secure is an independent, premium cybersecurity and secure technology service inspired by the meeting of three oceans at Kanyakumari (Indian Ocean, Arabian Sea, and Bay of Bengal).
-
----
-
-## Brand Architecture & Visual Identity
-
-1. **Kanyakumari Heritage**: Rooted in the steadfast endurance of the Thiruvalluvar Statue, Vivekananda Rock Memorial, and coastal maritime lighthouses.
-2. **Three Seas Convergence**: The Arabian Sea (Edge Defense), Indian Ocean (Core Granite Resilience), and Bay of Bengal (Continuous Monitoring) converge into a single unbreakable cybersecurity shield.
-3. **Palette Tokens**:
-   - **Deep Navy (`#03111F`)**: Depth, security, and enterprise stability.
-   - **Ocean Blue (`#0066FF`)**: Maritime power and dynamic current.
-   - **Electric Cyan (`#00D9FF`)**: Technological precision, active defense, and telemetry.
-   - **Kanyakumari Gold (`#FFB52E`)**: Sunrise/sunset horizon, heritage, and integrity.
-   - **Sunset Orange (`#FF7A18`)**: Golden hour atmospheric aura.
+Cape Secure Solutions is an independent web development and digital solutions studio based at the meeting of the three oceans in Kanyakumari (Indian Ocean, Arabian Sea, and Bay of Bengal). We build high-performance, mobile-first business websites, booking engines, and secure web applications for local and global enterprises.
 
 ---
 
-## Technology Stack
+## 1. Project Architecture
 
-- **Structure**: Semantic HTML5 with complete ARIA landmarks and Open Graph / SEO metadata.
-- **Styling**: Modern vanilla CSS3 with CSS custom properties, glassmorphism (`backdrop-filter`), and GPU-accelerated micro-interactions.
-- **Dynamic Ocean Engine**: Canvas API rendering multi-frequency sine wave strata, sunset specular reflections, foam crests, and floating cyber telemetry particles (`js/ocean.js`).
-- **Water Interaction Cursor**: Optimized fluid droplet cursor with spring physics, disturbance trailing, and circular shockwaves upon click (`js/cursor.js`).
-- **Offensive Threat Defense Simulation**: Real-time vector interception arena and telemetry dashboard (`js/animations.js`).
-- **Transactional Communication**: Brevo SMS & webhook lead pipeline (`api/send-sms.js` & `js/contact.js`).
-
----
-
-## File Structure
+The project is decoupled into three primary tiers:
 
 ```
-/
-├── index.html              # Main Experience: Hero, Three Seas, 10 Services, Threat Arena, Demo Monitor
-├── about.html              # Security From the Southern Edge, Heritage & Specialist Profiles
-├── services.html           # Full breakdown of all 10 specialized cybersecurity disciplines
-├── projects.html           # Selected Work & Case Studies (clearly labeled Case Studies / Demos)
-├── contact.html            # Confidential inquiry portal & engineer contact details
-├── 404.html                # Custom 404 error page with ocean theme
-├── favicon.png             # Official Cape Secure circular brand favicon
-├── css/
-│   ├── style.css           # Core design system, typography, cards, and layouts
-│   ├── animations.css      # Keyframe animations, pulse effects, and reduced-motion rules
-│   └── responsive.css      # Dedicated mobile & tablet breakpoints (320px to 1440px+)
-├── js/
-│   ├── main.js             # Loading screen, glass navbar, and drawer navigation
-│   ├── ocean.js            # Canvas layered wave physics and sunset particle atmosphere
-│   ├── cursor.js           # Custom water droplet cursor and ocean wave trail
-│   ├── animations.js       # Threat defense simulation, counters, and scroll reveals
-│   └── contact.js          # Client-side validation and secure dispatch handler
-├── api/
-│   └── send-sms.js         # Vercel serverless function for Brevo transactional notifications
-└── assets/
-    ├── images/             # Realistic Kanyakumari coastal photography and heritage
-    ├── logo/               # Official Cape Secure emblem, shields, and assets
-    └── projects/           # High-resolution case study interface screenshots
+Cape-Secure-Solutions/
+│
+├── vercel.json                 # Vercel deployment routing, caching & security headers
+├── README.md                   # Comprehensive system documentation
+├── package.json                # Project dependencies, scripts & metadata
+├── package-lock.json           # Locked dependency tree
+├── .gitignore                  # Git exclusion rules
+│
+├── backend/                    # Authoritative backend engine (Node.js REST API & Business Logic)
+│   ├── config/                 # Centralized configuration (company.js, env.js, .env.example)
+│   ├── controllers/            # Route controllers (public, auth, admin)
+│   ├── middleware/             # Security middleware (auth.js, security.js, errorHandler.js)
+│   ├── models/                 # Persistent data layer & atomic file store (db.js, data/*.json)
+│   ├── routes/                 # Endpoint routing (publicRoutes, authRoutes, adminRoutes)
+│   ├── services/               # Core business services
+│   │   ├── pricingEngine.js    # Authoritative server-side price calculation
+│   │   ├── pdfService.js       # Vector PDF engine for Quotations and Tax Invoices
+│   │   ├── emailService.js     # Brevo transactional email engine with 8 templates
+│   │   └── realtimeService.js  # Server-Sent Events (SSE) pub/sub for admin updates
+│   ├── templates/              # Branded templates (email/emailTemplates.js, pdf/pdfStyles.js)
+│   ├── utils/                  # Formatters, ID generators, structured logger
+│   ├── validators/             # Input validation (quoteValidator, contactValidator, authValidator)
+│   └── server.js               # Production HTTP application server
+│
+├── public/                     # Public customer-facing website (Static HTML/CSS/JS)
+│   ├── index.html              # Homepage (Hero, Three Seas, Services, Portfolio, FAQ)
+│   ├── services.html           # Detailed web development & digital solutions
+│   ├── pricing.html            # Transparent starting packages (Starter, Business, Custom)
+│   ├── work.html               # Live portfolio showcase & client case studies
+│   ├── about.html              # Kanyakumari heritage & developer team profiles
+│   ├── contact.html            # Direct inquiry form with anti-spam honeypot
+│   ├── quote.html              # Interactive custom package & quote estimator
+│   ├── portal/                 # Customer-facing secure token review portals
+│   │   ├── quote.html          # Client quotation review and one-click approval
+│   │   └── invoice.html        # Client invoice review, UPI copy, and payment instructions
+│   ├── css/                    # Modular design system (style, responsive, animations, water)
+│   ├── js/                     # Vanilla JS modules (navigation, quote, contact, dialog, etc.)
+│   └── assets/                 # Brand logos, photography, trust badges, and project demos
+│
+├── api/                        # Vercel serverless integration endpoints
+│   ├── health.js               # Production health check endpoint (/api/health)
+│   ├── send-sms.js             # Brevo transactional notification dispatcher (/api/send-sms)
+│   ├── contact.js              # Serverless contact submission handler (/api/contact)
+│   ├── public/                 # Public serverless routes (/api/public/*)
+│   ├── auth/                   # Authentication serverless routes (/api/auth/*)
+│   └── admin/                  # Protected administrative serverless routes (/api/admin/*)
+│
+├── tests/                      # Automated test suites
+│   ├── security_and_separation.test.js  # 25-point architectural & security test suite
+│   └── workflow.test.js        # Full order -> quote -> invoice -> payment verification
+│
+├── scripts/                    # Development & maintenance tools
+│   ├── validate.js             # Syntax and HTML asset integrity validator
+│   └── generate-favicons.js    # Multi-resolution favicon generator
+│
+└── docs/                       # Architecture, security, API & deployment documentation
 ```
 
 ---
 
-## Deployment Instructions
+## 2. Security & Application Separation
 
-### 1. Vercel (Recommended)
-1. Push this repository to GitHub.
-2. Import the repository into your Vercel Dashboard.
-3. (Optional) Set environment variables for transactional SMS:
-   - `BREVO_API_KEY`: Your Brevo REST API v3 Key.
-   - `BREVO_ADMIN_PHONE`: Admin phone number in international format (e.g., `919876543210`).
-   - `BREVO_ADMIN_EMAIL`: Admin alert notification email.
-4. Click **Deploy**. Vercel will automatically serve the static website and the `/api/send-sms` serverless function.
-
-### 2. GitHub Pages / Netlify / Cloudflare Pages
-- This project consists of pure standards-based HTML5, CSS3, and modern ES6 JavaScript. Simply set the publish directory to `/` (root) on any static web host.
+- **Public Website (`https://capesecure.vercel.app`):** Contains zero administrative code, secrets, or internal controllers. Direct navigation to `/admin` returns HTTP 404.
+- **Admin Console (`https://admin.capesecure.vercel.app`):** Hosted independently. Interacts exclusively with authenticated REST APIs (`/api/auth/*` and `/api/admin/*`).
+- **Database Access:** Stored securely server-side under `backend/models/data/`. Zero client-side database connections.
+- **Zero-Trust Pricing:** Total calculations for orders, quotations, and invoices are computed exclusively server-side via `backend/services/pricingEngine.js`.
+- **PBKDF2 Password Hashing:** 100,000 rounds of SHA-512 with unique salts per user.
+- **Session Tokens:** Cryptographically signed HMAC-SHA256 tokens with server-side revocation checks.
+- **Strict CORS & Headers:** Dynamic whitelist of administrative origins. Enforces CSP, nosniff, and clickjacking prevention (`X-Frame-Options: SAMEORIGIN`).
 
 ---
 
-## Founders & Engineering Team
+## 3. API Reference
 
-- **Jesin Milesh M** &mdash; Founder &bull; Lead Cybersecurity & Systems Engineer ([LinkedIn](https://www.linkedin.com/in/jesin-milesh-m-7981bb347/))
-- **Libinesh R U** &mdash; Co-Founder &bull; Strategy &amp; Application Development ([LinkedIn](https://www.linkedin.com/in/libinesh-r-u-59496a370))
-- **Location**: Kanyakumari, Tamil Nadu, India (8.078&deg; N, 77.555&deg; E)
-- **Email**: [capesecuresolutions@gmail.com](mailto:capesecuresolutions@gmail.com)
+### Public Endpoints
+- `GET /api/health` — System health check and status.
+- `GET /api/public/services` — Public services and add-on catalog.
+- `GET /api/public/pricing` — Starting packages and rates.
+- `GET /api/public/projects` — Portfolio showcases.
+- `POST /api/public/contact` — Contact inquiry submission.
+- `POST /api/public/quote` — Project quote request (returns order reference).
+- `GET /api/public/orders/:id?token=` — Customer order status portal.
+- `GET /api/public/quotations/:id?token=` — Customer quotation review.
+- `GET /api/public/quotations/:id/pdf?token=` — Stream vector quotation PDF.
+- `POST /api/public/quotations/:id/approve?token=` — Customer quotation approval.
+- `GET /api/public/invoices/:id?token=` — Customer invoice portal.
+- `GET /api/public/invoices/:id/pdf?token=` — Stream vector tax invoice PDF.
 
-&copy; 2026 Cape Secure. All rights reserved.
+### Authentication Endpoints
+- `POST /api/auth/login` — Administrator login (returns session token).
+- `POST /api/auth/logout` — Revokes session token.
+- `GET /api/auth/me` — Inspects authenticated administrator profile.
+- `POST /api/auth/refresh` — Refreshes session token.
+
+### Administrative Endpoints (Bearer Token Required)
+- `GET /api/admin/dashboard` — Aggregated revenue, order, and project metrics.
+- `GET /api/admin/events` — Server-Sent Events (SSE) real-time event stream.
+- `GET /api/admin/customers` — Consolidated customer profiles.
+- `GET /api/admin/orders` — All client orders.
+- `PUT /api/admin/orders/:id/status` — Updates project order status.
+- `GET /api/admin/quotations` — All issued quotations.
+- `POST /api/admin/quotations` — Generates quotation & dispatches vector PDF email.
+- `GET /api/admin/invoices` — All tax invoices.
+- `POST /api/admin/invoices` — Generates tax invoice & dispatches vector PDF email.
+- `POST /api/admin/invoices/:id/payments` — Records payment & dispatches receipt email.
+- `GET /api/admin/audit-logs` — Immutable security audit logs.
+- `GET /api/admin/email-logs` — Transactional email delivery logs.
+- `GET /api/admin/config` — Company settings & wire payment instructions.
+- `PUT /api/admin/config` — Updates company business settings.
+
+---
+
+## 4. Development & Testing Commands
+
+```bash
+# Install dependencies
+npm install
+
+# Start local server (Port 3000)
+npm start
+
+# Run architectural & security test suite (25 test cases)
+npm test
+
+# Run end-to-end customer order-to-payment workflow test
+npm run test:workflow
+
+# Validate HTML asset references & JavaScript syntax
+npm run validate
+```
+
+---
+
+## 5. Production Deployment
+
+- **Public Website:** Deploy `Cape Secure` to Vercel (serves `public/` and serverless `api/`).
+- **Admin Website:** Deploy `admin-app/` (or `Cape Secure Admin`) to Vercel with `API_BASE_URL` pointing to the production domain.
+- **Configure Environment Variables:** Add `BREVO_API_KEY`, `ADMIN_ORIGIN`, and secrets in Vercel project settings.

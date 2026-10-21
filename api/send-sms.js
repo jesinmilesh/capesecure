@@ -11,10 +11,19 @@ import path from 'path';
 let BREVO_API_KEY = process.env.BREVO_API_KEY || "";
 if (!BREVO_API_KEY) {
   try {
-    const envPath = path.join(process.cwd(), 'backend', '.env');
-    if (fs.existsSync(envPath)) {
-      const match = fs.readFileSync(envPath, 'utf8').match(/BREVO_API_KEY=([^\r\n]+)/);
-      if (match) BREVO_API_KEY = match[1].trim();
+    const envPaths = [
+      path.join(process.cwd(), 'backend', 'config', '.env'),
+      path.join(process.cwd(), 'backend', '.env'),
+      path.join(process.cwd(), '.env')
+    ];
+    for (const envPath of envPaths) {
+      if (fs.existsSync(envPath)) {
+        const match = fs.readFileSync(envPath, 'utf8').match(/BREVO_API_KEY=([^\r\n]+)/);
+        if (match) {
+          BREVO_API_KEY = match[1].trim();
+          break;
+        }
+      }
     }
   } catch (e) {}
 }
@@ -204,9 +213,14 @@ export default async function handler(req, res) {
       results.email = { ok: false, error: e.message };
     }
 
-    const orderId = `CSS-ORD-${new Date().getFullYear()}-${Date.now().toString().slice(-6)}`;
+    const nowYear = new Date().getFullYear();
+    const suffix = Date.now().toString().slice(-6);
+    const orderId = `CSS-ORD-${nowYear}-${suffix}`;
+    const enquiryId = `CSS-ENQ-${nowYear}-${suffix}`;
+
     return res.status(200).json({
       success: true,
+      enquiryId,
       orderId,
       message: "Lead processed successfully with Brevo SMS dispatch.",
       results

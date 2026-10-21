@@ -1,0 +1,12 @@
+[
+  {
+    "id": "USR-ADMIN-01",
+    "name": "Cape Secure Administrator",
+    "email": "admin@capesecure.com",
+    "role": "admin",
+    "salt": "15201cb3f8d2531793b4f49dc23e8afe",
+    "hash": "04e0766115e3176eeafa85e296e0599d276efbb02843de88a28f53ad1b464c2dc1fc76583ce1b647f76206089cb7b980764b77902138a4650b02a852c1e628c2",
+    "createdAt": "2026-10-21T07:41:13.941Z",
+    "passwordHash": "04e0766115e3176eeafa85e296e0599d276efbb02843de88a28f53ad1b464c2dc1fc76583ce1b647f76206089cb7b980764b77902138a4650b02a852c1e628c2"
+  }
+]

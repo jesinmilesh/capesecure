@@ -1,0 +1,1165 @@
+[
+  {
+    "id": "EML-1792575396644-kp91",
+    "timestamp": "2026-10-21T09:36:36.644Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "Invoice #CSS-INV-2026-000010 from Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210936.39709042882@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575393423-bo3u",
+    "timestamp": "2026-10-21T09:36:33.423Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "Quotation #CSS-QTN-2026-000013 from Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210936.98491241384@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575392587-gutl",
+    "timestamp": "2026-10-21T09:36:32.587Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000033 - Dr. S. K. Nathan (Cape Diagnostics Laboratory)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210936.22448804655@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575392121-lxse",
+    "timestamp": "2026-10-21T09:36:32.121Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[APPROVED] Quotation CSS-QTN-2026-000013 - Dr. S. K. Nathan",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210936.79518582976@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575391560-cg2u",
+    "timestamp": "2026-10-21T09:36:31.560Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "Payment Receipt: PAY-MVHX3RUU - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210936.30527061061@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575390676-rhxd",
+    "timestamp": "2026-10-21T09:36:30.676Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "Order Confirmation: CSS-ORD-2026-000033 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210936.95404771639@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575381058-wrp8",
+    "timestamp": "2026-10-21T09:36:21.058Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000032 - Karthik Subramanian (Subramanian Maritime Logistics)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210936.84717439340@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575378297-2t0w",
+    "timestamp": "2026-10-21T09:36:18.297Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "karthik.subramanian@gmail.com",
+    "subject": "Invoice #CSS-INV-2026-000009 from Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210936.46056600893@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575377932-hxfc",
+    "timestamp": "2026-10-21T09:36:17.932Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "karthik.subramanian@gmail.com",
+    "subject": "Quotation #CSS-QTN-2026-000012 from Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210936.20255029916@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575375025-ry5n",
+    "timestamp": "2026-10-21T09:36:15.025Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "verify@capesecure.test",
+    "subject": "Order Confirmation: CSS-ORD-2026-000031 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210936.53657611622@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575374765-esyd",
+    "timestamp": "2026-10-21T09:36:14.765Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "karthik.subramanian@gmail.com",
+    "subject": "Order Confirmation: CSS-ORD-2026-000032 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210936.45846801422@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575373664-m38a",
+    "timestamp": "2026-10-21T09:36:13.664Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000031 - Verification Client (business)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210936.51450098663@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575323030-m027",
+    "timestamp": "2026-10-21T09:35:23.030Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "verify@capesecure.test",
+    "subject": "Order Confirmation: CSS-ORD-2026-000029 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210935.52563462185@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575316681-em0x",
+    "timestamp": "2026-10-21T09:35:16.681Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000030 - Karthik Subramanian (Subramanian Maritime Logistics)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210935.44457538005@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575316675-5mas",
+    "timestamp": "2026-10-21T09:35:16.675Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "karthik.subramanian@gmail.com",
+    "subject": "Order Confirmation: CSS-ORD-2026-000030 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210935.59651626399@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575316666-ys08",
+    "timestamp": "2026-10-21T09:35:16.666Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000029 - Verification Client (business)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210935.35748138286@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575148706-nmmp",
+    "timestamp": "2026-10-21T09:32:28.706Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000028 - Karthik Subramanian (Subramanian Maritime Logistics)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210932.11106772639@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575147742-p41q",
+    "timestamp": "2026-10-21T09:32:27.742Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "karthik.subramanian@gmail.com",
+    "subject": "Order Confirmation: CSS-ORD-2026-000028 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210932.92179225076@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575147545-fe6q",
+    "timestamp": "2026-10-21T09:32:27.545Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "verify@capesecure.test",
+    "subject": "Order Confirmation: CSS-ORD-2026-000027 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210932.85376091838@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575147540-tymu",
+    "timestamp": "2026-10-21T09:32:27.540Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000027 - Verification Client (business)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210932.87305887115@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575128830-y05n",
+    "timestamp": "2026-10-21T09:32:08.830Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "karthik.subramanian@gmail.com",
+    "subject": "Invoice #CSS-INV-2026-000008 from Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210932.38549080087@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575127224-7agf",
+    "timestamp": "2026-10-21T09:32:07.224Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "karthik.subramanian@gmail.com",
+    "subject": "Quotation #CSS-QTN-2026-000011 from Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210932.86837387802@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575125918-4n0u",
+    "timestamp": "2026-10-21T09:32:05.918Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "karthik.subramanian@gmail.com",
+    "subject": "Order Confirmation: CSS-ORD-2026-000026 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210932.31881186925@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575125851-trzz",
+    "timestamp": "2026-10-21T09:32:05.851Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000026 - Karthik Subramanian (Subramanian Maritime Logistics)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210932.13728388166@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575080712-83mq",
+    "timestamp": "2026-10-21T09:31:20.712Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "karthik.subramanian@gmail.com",
+    "subject": "Order Confirmation: CSS-ORD-2026-000025 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210931.49186309567@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575080649-8wu8",
+    "timestamp": "2026-10-21T09:31:20.649Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000025 - Karthik Subramanian (Subramanian Maritime Logistics)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210931.94633693677@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575080372-okjy",
+    "timestamp": "2026-10-21T09:31:20.372Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000024 - Verification Client (business)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210931.96690578415@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792575080246-2pev",
+    "timestamp": "2026-10-21T09:31:20.246Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "verify@capesecure.test",
+    "subject": "Order Confirmation: CSS-ORD-2026-000024 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210931.26701486483@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792574850057-erkt",
+    "timestamp": "2026-10-21T09:27:30.057Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "Invoice #CSS-INV-2026-000007 from Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210927.51331619711@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792574849473-7b4p",
+    "timestamp": "2026-10-21T09:27:29.473Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "Quotation #CSS-QTN-2026-000010 from Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210927.12470957863@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792574848024-9mgj",
+    "timestamp": "2026-10-21T09:27:28.025Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[APPROVED] Quotation CSS-QTN-2026-000010 - Dr. S. K. Nathan",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210927.47842231259@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792574848019-m9hi",
+    "timestamp": "2026-10-21T09:27:28.019Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "Payment Receipt: PAY-MVHWS4MC - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210927.48853908697@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792574847582-8ses",
+    "timestamp": "2026-10-21T09:27:27.582Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000023 - Dr. S. K. Nathan (Cape Diagnostics Laboratory)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210927.11588228647@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792574847577-kxoh",
+    "timestamp": "2026-10-21T09:27:27.577Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "Order Confirmation: CSS-ORD-2026-000023 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210927.18939696416@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792574832292-is7i",
+    "timestamp": "2026-10-21T09:27:12.292Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "karthik.subramanian@gmail.com",
+    "subject": "Quotation #CSS-QTN-2026-000009 from Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210927.27231240853@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792574830434-zs3r",
+    "timestamp": "2026-10-21T09:27:10.434Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "karthik.subramanian@gmail.com",
+    "subject": "Invoice #CSS-INV-2026-000006 from Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210927.77565903933@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792574825585-en1m",
+    "timestamp": "2026-10-21T09:27:05.585Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "karthik.subramanian@gmail.com",
+    "subject": "Order Confirmation: CSS-ORD-2026-000022 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210927.38656202328@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792574825393-mnd0",
+    "timestamp": "2026-10-21T09:27:05.393Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000022 - Karthik Subramanian (Subramanian Maritime Logistics)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210927.33027089408@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792574825391-ldtc",
+    "timestamp": "2026-10-21T09:27:05.391Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000021 - Verification Client (business)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210927.38470060667@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792574825386-lg64",
+    "timestamp": "2026-10-21T09:27:05.386Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "verify@capesecure.test",
+    "subject": "Order Confirmation: CSS-ORD-2026-000021 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210927.27241821790@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792574799607-qypr",
+    "timestamp": "2026-10-21T09:26:39.607Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "karthik.subramanian@gmail.com",
+    "subject": "Quotation #CSS-QTN-2026-000008 from Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210926.72616131906@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792574797830-ibxd",
+    "timestamp": "2026-10-21T09:26:37.830Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "karthik.subramanian@gmail.com",
+    "subject": "Invoice #CSS-INV-2026-000005 from Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210926.27157042137@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792574789717-n6bv",
+    "timestamp": "2026-10-21T09:26:29.717Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000020 - Karthik Subramanian (Subramanian Maritime Logistics)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210926.12129820754@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792574789630-5a7w",
+    "timestamp": "2026-10-21T09:26:29.630Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "karthik.subramanian@gmail.com",
+    "subject": "Order Confirmation: CSS-ORD-2026-000020 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210926.11454836924@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792574706611-5bc7",
+    "timestamp": "2026-10-21T09:25:06.611Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "karthik.subramanian@gmail.com",
+    "subject": "Order Confirmation: CSS-ORD-2026-000019 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210925.62347367299@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792574706378-g8vi",
+    "timestamp": "2026-10-21T09:25:06.378Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000019 - Karthik Subramanian (Subramanian Maritime Logistics)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210925.75272428574@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792573722245-3tz8",
+    "timestamp": "2026-10-21T09:08:42.245Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "Invoice #CSS-INV-2026-000004 from Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210908.33632337970@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792573719515-zjbe",
+    "timestamp": "2026-10-21T09:08:39.515Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "Quotation #CSS-QTN-2026-000007 from Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210908.26277896883@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792573717470-v0r6",
+    "timestamp": "2026-10-21T09:08:37.470Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[APPROVED] Quotation CSS-QTN-2026-000007 - Dr. S. K. Nathan",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210908.66165750873@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792573717315-67w3",
+    "timestamp": "2026-10-21T09:08:37.315Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "Payment Receipt: PAY-MVHW3W79 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210908.55958573014@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792573716928-xp0a",
+    "timestamp": "2026-10-21T09:08:36.928Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "Order Confirmation: CSS-ORD-2026-000018 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210908.57993473899@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792573716797-hpo2",
+    "timestamp": "2026-10-21T09:08:36.797Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000018 - Dr. S. K. Nathan (Cape Diagnostics Laboratory)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210908.27704528407@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792573708768-mmu7",
+    "timestamp": "2026-10-21T09:08:28.768Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "verify@capesecure.test",
+    "subject": "Order Confirmation: CSS-ORD-2026-000017 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210908.42893426093@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792573708601-073g",
+    "timestamp": "2026-10-21T09:08:28.601Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000017 - Verification Client (business)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210908.39009014495@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792572867690-kd8v",
+    "timestamp": "2026-10-21T08:54:27.690Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "verify@capesecure.test",
+    "subject": "Order Confirmation: CSS-ORD-2026-000016 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210854.10989880766@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792572867493-h664",
+    "timestamp": "2026-10-21T08:54:27.493Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000016 - Verification Client (business)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210854.53381355528@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792572853600-hth0",
+    "timestamp": "2026-10-21T08:54:13.600Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "Quotation #CSS-QTN-2026-000006 from Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210854.10004861695@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792572853437-yuhn",
+    "timestamp": "2026-10-21T08:54:13.437Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "Invoice #CSS-INV-2026-000003 from Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210854.12464776540@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792572853351-eh0c",
+    "timestamp": "2026-10-21T08:54:13.351Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "Payment Receipt: PAY-MVHVLCH6 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210854.18067262346@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792572852274-zbid",
+    "timestamp": "2026-10-21T08:54:12.274Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[APPROVED] Quotation CSS-QTN-2026-000006 - Dr. S. K. Nathan",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210854.26056692912@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792572851962-dwjf",
+    "timestamp": "2026-10-21T08:54:11.962Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000015 - Dr. S. K. Nathan (Cape Diagnostics Laboratory)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210854.60129827293@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792572851959-cdyw",
+    "timestamp": "2026-10-21T08:54:11.959Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "Order Confirmation: CSS-ORD-2026-000015 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210854.22211880319@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792572800338-btrn",
+    "timestamp": "2026-10-21T08:53:20.338Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "Invoice #CSS-INV-2026-000002 from Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210853.21317381151@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792572798174-frqj",
+    "timestamp": "2026-10-21T08:53:18.174Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "Quotation #CSS-QTN-2026-000005 from Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210853.90548937134@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792572795286-vsb7",
+    "timestamp": "2026-10-21T08:53:15.286Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[APPROVED] Quotation CSS-QTN-2026-000005 - Dr. S. K. Nathan",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210853.18818145473@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792572795082-tvxy",
+    "timestamp": "2026-10-21T08:53:15.082Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000014 - Dr. S. K. Nathan (Cape Diagnostics Laboratory)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210853.11900194586@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792572794889-7qk5",
+    "timestamp": "2026-10-21T08:53:14.889Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "Order Confirmation: CSS-ORD-2026-000014 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210853.32512782987@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792572751823-h8zz",
+    "timestamp": "2026-10-21T08:52:31.823Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000013 - Dr. S. K. Nathan (Cape Diagnostics Laboratory)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210852.98989653688@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792572751803-6vpg",
+    "timestamp": "2026-10-21T08:52:31.803Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "Order Confirmation: CSS-ORD-2026-000013 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210852.29245616083@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792572740345-fczc",
+    "timestamp": "2026-10-21T08:52:20.345Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "verify@capesecure.test",
+    "subject": "Order Confirmation: CSS-ORD-2026-000012 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210852.50737179578@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792572740285-2i4p",
+    "timestamp": "2026-10-21T08:52:20.285Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000012 - Verification Client (business)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210852.23237454925@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792572692903-ifwm",
+    "timestamp": "2026-10-21T08:51:32.903Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000011 - Verification Client (business)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210851.84515051080@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792572692900-anr8",
+    "timestamp": "2026-10-21T08:51:32.900Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "verify@capesecure.test",
+    "subject": "Order Confirmation: CSS-ORD-2026-000011 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210851.12895871681@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792572570803-c2fd",
+    "timestamp": "2026-10-21T08:49:30.803Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "verify@capesecure.test",
+    "subject": "Order Confirmation: CSS-ORD-2026-000010 - Cape Secure Solutions",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210849.77696793706@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792572570664-zg16",
+    "timestamp": "2026-10-21T08:49:30.664Z",
+    "template": "BREVO_TRANSACTIONAL",
+    "recipient": "capesecuresolutions@gmail.com",
+    "subject": "[LEAD] CSS-ORD-2026-000010 - Verification Client (business)",
+    "status": "SENT",
+    "details": {
+      "messageId": "<202610210849.10648224286@smtp-relay.mailin.fr>"
+    }
+  },
+  {
+    "id": "EML-1792571120534-86n0",
+    "timestamp": "2026-10-21T08:25:20.534Z",
+    "orderId": "CSS-ORD-2026-000001",
+    "invoiceId": "CSS-INV-2026-000001",
+    "quotationId": null,
+    "recipient": "capesecuresolutions@gmail.com",
+    "emailType": "INVOICE_EMAIL",
+    "subject": "Invoice CSS-INV-2026-000001 — Cape Secure Solutions",
+    "status": "sent",
+    "providerMessageId": "<202610210825.45742725796@smtp-relay.mailin.fr>",
+    "error": null
+  },
+  {
+    "id": "EML-1792571117062-la66",
+    "timestamp": "2026-10-21T08:25:17.062Z",
+    "orderId": "CSS-ORD-2026-000009",
+    "invoiceId": null,
+    "quotationId": "CSS-QTN-2026-000001",
+    "recipient": "capesecuresolutions@gmail.com",
+    "emailType": "QUOTATION_EMAIL",
+    "subject": "Project Quotation CSS-QTN-2026-000001 — Cape Secure Solutions",
+    "status": "sent",
+    "providerMessageId": "<202610210825.71114745988@smtp-relay.mailin.fr>",
+    "error": null
+  },
+  {
+    "id": "EML-1792571115323-zb5j",
+    "timestamp": "2026-10-21T08:25:15.323Z",
+    "orderId": "CSS-ORD-2026-000009",
+    "invoiceId": null,
+    "quotationId": null,
+    "recipient": "capesecuresolutions@gmail.com",
+    "emailType": "ENQUIRY_ACKNOWLEDGEMENT",
+    "subject": "Thank You for Contacting Cape Secure Solutions — Request Received [CSS-ORD-2026-000009]",
+    "status": "sent",
+    "providerMessageId": "<202610210825.41741595042@smtp-relay.mailin.fr>",
+    "error": null
+  },
+  {
+    "id": "EML-1792571115321-ew9q",
+    "timestamp": "2026-10-21T08:25:15.321Z",
+    "orderId": "CSS-ORD-2026-000009",
+    "invoiceId": null,
+    "quotationId": null,
+    "recipient": "capesecuresolutions@gmail.com",
+    "emailType": "ADMIN_NOTIFICATION",
+    "subject": "[New Request] CSS-ORD-2026-000009 — Dr. S. K. Nathan (Cape Diagnostics Laboratory)",
+    "status": "sent",
+    "providerMessageId": "<202610210825.22743803734@smtp-relay.mailin.fr>",
+    "error": null
+  },
+  {
+    "id": "EML-1792571097868-6tlp",
+    "timestamp": "2026-10-21T08:24:57.868Z",
+    "orderId": "CSS-ORD-2026-000008",
+    "invoiceId": null,
+    "quotationId": null,
+    "recipient": "capesecuresolutions@gmail.com",
+    "emailType": "ADMIN_NOTIFICATION",
+    "subject": "[New Request] CSS-ORD-2026-000008 — Verification Client (Direct)",
+    "status": "sent",
+    "providerMessageId": "<202610210824.63928779510@smtp-relay.mailin.fr>",
+    "error": null
+  },
+  {
+    "id": "EML-1792571097805-d7l1",
+    "timestamp": "2026-10-21T08:24:57.805Z",
+    "orderId": "CSS-ORD-2026-000008",
+    "invoiceId": null,
+    "quotationId": null,
+    "recipient": "verify@capesecure.test",
+    "emailType": "ENQUIRY_ACKNOWLEDGEMENT",
+    "subject": "Thank You for Contacting Cape Secure Solutions — Request Received [CSS-ORD-2026-000008]",
+    "status": "sent",
+    "providerMessageId": "<202610210824.95705640155@smtp-relay.mailin.fr>",
+    "error": null
+  },
+  {
+    "id": "EML-1792570946352-rape",
+    "timestamp": "2026-10-21T08:22:26.352Z",
+    "orderId": "CSS-ORD-2026-000001",
+    "invoiceId": "CSS-INV-2026-000001",
+    "quotationId": null,
+    "recipient": "capesecuresolutions@gmail.com",
+    "emailType": "INVOICE_EMAIL",
+    "subject": "Invoice CSS-INV-2026-000001 — Cape Secure Solutions",
+    "status": "sent",
+    "providerMessageId": "<202610210822.20509799883@smtp-relay.mailin.fr>",
+    "error": null
+  },
+  {
+    "id": "EML-1792570942874-el7v",
+    "timestamp": "2026-10-21T08:22:22.874Z",
+    "orderId": "CSS-ORD-2026-000007",
+    "invoiceId": null,
+    "quotationId": "CSS-QTN-2026-000001",
+    "recipient": "capesecuresolutions@gmail.com",
+    "emailType": "QUOTATION_EMAIL",
+    "subject": "Project Quotation CSS-QTN-2026-000001 — Cape Secure Solutions",
+    "status": "sent",
+    "providerMessageId": "<202610210822.70337687400@smtp-relay.mailin.fr>",
+    "error": null
+  },
+  {
+    "id": "EML-1792570942202-86az",
+    "timestamp": "2026-10-21T08:22:22.202Z",
+    "orderId": "CSS-ORD-2026-000007",
+    "invoiceId": null,
+    "quotationId": null,
+    "recipient": "capesecuresolutions@gmail.com",
+    "emailType": "ENQUIRY_ACKNOWLEDGEMENT",
+    "subject": "Thank You for Contacting Cape Secure Solutions — Request Received [CSS-ORD-2026-000007]",
+    "status": "sent",
+    "providerMessageId": "<202610210822.45626895708@smtp-relay.mailin.fr>",
+    "error": null
+  },
+  {
+    "id": "EML-1792570941714-z1mr",
+    "timestamp": "2026-10-21T08:22:21.714Z",
+    "orderId": "CSS-ORD-2026-000007",
+    "invoiceId": null,
+    "quotationId": null,
+    "recipient": "capesecuresolutions@gmail.com",
+    "emailType": "ADMIN_NOTIFICATION",
+    "subject": "[New Request] CSS-ORD-2026-000007 — Dr. S. K. Nathan (Cape Diagnostics Laboratory)",
+    "status": "sent",
+    "providerMessageId": "<202610210822.99053695034@smtp-relay.mailin.fr>",
+    "error": null
+  },
+  {
+    "id": "EML-1792570838113-u4hd",
+    "timestamp": "2026-10-21T08:20:38.113Z",
+    "orderId": "CSS-ORD-2026-000006",
+    "invoiceId": null,
+    "quotationId": null,
+    "recipient": "capesecuresolutions@gmail.com",
+    "emailType": "ADMIN_NOTIFICATION",
+    "subject": "[New Request] CSS-ORD-2026-000006 — Dr. S. K. Nathan (Cape Diagnostics Laboratory)",
+    "status": "sent",
+    "providerMessageId": "<202610210820.71463255349@smtp-relay.mailin.fr>",
+    "error": null
+  },
+  {
+    "id": "EML-1792570837659-ql5n",
+    "timestamp": "2026-10-21T08:20:37.659Z",
+    "orderId": "CSS-ORD-2026-000006",
+    "invoiceId": null,
+    "quotationId": null,
+    "recipient": "capesecuresolutions@gmail.com",
+    "emailType": "ENQUIRY_ACKNOWLEDGEMENT",
+    "subject": "Thank You for Contacting Cape Secure Solutions — Request Received [CSS-ORD-2026-000006]",
+    "status": "sent",
+    "providerMessageId": "<202610210820.56633613511@smtp-relay.mailin.fr>",
+    "error": null
+  },
+  {
+    "id": "EML-1792570822973-wxbt",
+    "timestamp": "2026-10-21T08:20:22.973Z",
+    "orderId": "CSS-ORD-2026-000005",
+    "invoiceId": null,
+    "quotationId": null,
+    "recipient": "capesecuresolutions@gmail.com",
+    "emailType": "ADMIN_NOTIFICATION",
+    "subject": "[New Request] CSS-ORD-2026-000005 — Verification Client (Direct)",
+    "status": "sent",
+    "providerMessageId": "<202610210820.47721220932@smtp-relay.mailin.fr>",
+    "error": null
+  },
+  {
+    "id": "EML-1792570822833-xoh0",
+    "timestamp": "2026-10-21T08:20:22.833Z",
+    "orderId": "CSS-ORD-2026-000005",
+    "invoiceId": null,
+    "quotationId": null,
+    "recipient": "verify@capesecure.test",
+    "emailType": "ENQUIRY_ACKNOWLEDGEMENT",
+    "subject": "Thank You for Contacting Cape Secure Solutions — Request Received [CSS-ORD-2026-000005]",
+    "status": "sent",
+    "providerMessageId": "<202610210820.81916467206@smtp-relay.mailin.fr>",
+    "error": null
+  },
+  {
+    "id": "EML-1792568595765-43r3",
+    "timestamp": "2026-10-21T07:43:15.765Z",
+    "orderId": "CSS-ORD-2026-000004",
+    "invoiceId": null,
+    "quotationId": null,
+    "recipient": "capesecuresolutions@gmail.com",
+    "emailType": "ADMIN_NOTIFICATION",
+    "subject": "[New Request] CSS-ORD-2026-000004 — Verification Client (Direct)",
+    "status": "sent",
+    "providerMessageId": "<202610210743.49853473185@smtp-relay.mailin.fr>",
+    "error": null
+  },
+  {
+    "id": "EML-1792568595692-rbzr",
+    "timestamp": "2026-10-21T07:43:15.692Z",
+    "orderId": "CSS-ORD-2026-000004",
+    "invoiceId": null,
+    "quotationId": null,
+    "recipient": "verify@capesecure.test",
+    "emailType": "ENQUIRY_ACKNOWLEDGEMENT",
+    "subject": "Thank You for Contacting Cape Secure Solutions — Request Received [CSS-ORD-2026-000004]",
+    "status": "sent",
+    "providerMessageId": "<202610210743.48257709530@smtp-relay.mailin.fr>",
+    "error": null
+  },
+  {
+    "id": "EML-1792568526135-d0u0",
+    "timestamp": "2026-10-21T07:42:06.135Z",
+    "orderId": "CSS-ORD-2026-000003",
+    "invoiceId": null,
+    "quotationId": null,
+    "recipient": "verify@capesecure.test",
+    "emailType": "ENQUIRY_ACKNOWLEDGEMENT",
+    "subject": "Thank You for Contacting Cape Secure Solutions — Request Received [CSS-ORD-2026-000003]",
+    "status": "sent",
+    "providerMessageId": "<202610210742.33745061674@smtp-relay.mailin.fr>",
+    "error": null
+  },
+  {
+    "id": "EML-1792568526131-yugj",
+    "timestamp": "2026-10-21T07:42:06.131Z",
+    "orderId": "CSS-ORD-2026-000003",
+    "invoiceId": null,
+    "quotationId": null,
+    "recipient": "capesecuresolutions@gmail.com",
+    "emailType": "ADMIN_NOTIFICATION",
+    "subject": "[New Request] CSS-ORD-2026-000003 — Verification Client (Direct)",
+    "status": "sent",
+    "providerMessageId": "<202610210742.27099860719@smtp-relay.mailin.fr>",
+    "error": null
+  },
+  {
+    "id": "EML-1792567339783-o1ag",
+    "timestamp": "2026-10-21T07:22:19.783Z",
+    "orderId": "CSS-ORD-2026-000001",
+    "invoiceId": "CSS-INV-2026-000001",
+    "quotationId": null,
+    "recipient": "capesecuresolutions@gmail.com",
+    "emailType": "INVOICE_EMAIL",
+    "subject": "Invoice CSS-INV-2026-000001 — Cape Secure Solutions",
+    "status": "sent",
+    "providerMessageId": "<202610210722.85143322439@smtp-relay.mailin.fr>",
+    "error": null
+  },
+  {
+    "id": "EML-1792567336029-8q5h",
+    "timestamp": "2026-10-21T07:22:16.029Z",
+    "orderId": "CSS-ORD-2026-000002",
+    "invoiceId": null,
+    "quotationId": "CSS-QTN-2026-000001",
+    "recipient": "capesecuresolutions@gmail.com",
+    "emailType": "QUOTATION_EMAIL",
+    "subject": "Project Quotation CSS-QTN-2026-000001 — Cape Secure Solutions",
+    "status": "sent",
+    "providerMessageId": "<202610210722.97936637795@smtp-relay.mailin.fr>",
+    "error": null
+  },
+  {
+    "id": "EML-1792567333053-9h5h",
+    "timestamp": "2026-10-21T07:22:13.053Z",
+    "orderId": "CSS-ORD-2026-000002",
+    "invoiceId": null,
+    "quotationId": null,
+    "recipient": "capesecuresolutions@gmail.com",
+    "emailType": "ADMIN_NOTIFICATION",
+    "subject": "[New Request] CSS-ORD-2026-000002 — Dr. S. K. Nathan (Cape Diagnostics Laboratory)",
+    "status": "sent",
+    "providerMessageId": "<202610210722.94720918636@smtp-relay.mailin.fr>",
+    "error": null
+  },
+  {
+    "id": "EML-1792567332667-2yh2",
+    "timestamp": "2026-10-21T07:22:12.667Z",
+    "orderId": "CSS-ORD-2026-000002",
+    "invoiceId": null,
+    "quotationId": null,
+    "recipient": "capesecuresolutions@gmail.com",
+    "emailType": "ENQUIRY_ACKNOWLEDGEMENT",
+    "subject": "Thank You for Contacting Cape Secure Solutions — Request Received [CSS-ORD-2026-000002]",
+    "status": "sent",
+    "providerMessageId": "<202610210722.13031888442@smtp-relay.mailin.fr>",
+    "error": null
+  },
+  {
+    "id": "EML-1792566974105-6mv4",
+    "timestamp": "2026-10-21T07:16:14.105Z",
+    "orderId": "CSS-ORD-2026-000001",
+    "invoiceId": "CSS-INV-2026-000001",
+    "quotationId": null,
+    "recipient": "capesecuresolutions@gmail.com",
+    "emailType": "INVOICE_EMAIL",
+    "subject": "Invoice CSS-INV-2026-000001 — Cape Secure Solutions",
+    "status": "sent",
+    "providerMessageId": "<202610210716.51018489527@smtp-relay.mailin.fr>",
+    "error": null
+  },
+  {
+    "id": "EML-1792566970644-iqe8",
+    "timestamp": "2026-10-21T07:16:10.644Z",
+    "orderId": "CSS-ORD-2026-000001",
+    "invoiceId": null,
+    "quotationId": "CSS-QTN-2026-000001",
+    "recipient": "capesecuresolutions@gmail.com",
+    "emailType": "QUOTATION_EMAIL",
+    "subject": "Project Quotation CSS-QTN-2026-000001 — Cape Secure Solutions",
+    "status": "sent",
+    "providerMessageId": "<202610210716.65928436985@smtp-relay.mailin.fr>",
+    "error": null
+  },
+  {
+    "id": "EML-1792566962043-w33a",
+    "timestamp": "2026-10-21T07:16:02.043Z",
+    "orderId": "CSS-ORD-2026-000001",
+    "invoiceId": null,
+    "quotationId": null,
+    "recipient": "capesecuresolutions@gmail.com",
+    "emailType": "ADMIN_NOTIFICATION",
+    "subject": "[New Request] CSS-ORD-2026-000001 — Dr. S. K. Nathan (Cape Diagnostics Laboratory)",
+    "status": "sent",
+    "providerMessageId": "<202610210716.23549785138@smtp-relay.mailin.fr>",
+    "error": null
+  },
+  {
+    "id": "EML-1792566962016-vkkh",
+    "timestamp": "2026-10-21T07:16:02.016Z",
+    "orderId": "CSS-ORD-2026-000001",
+    "invoiceId": null,
+    "quotationId": null,
+    "recipient": "capesecuresolutions@gmail.com",
+    "emailType": "ENQUIRY_ACKNOWLEDGEMENT",
+    "subject": "Thank You for Contacting Cape Secure Solutions — Request Received [CSS-ORD-2026-000001]",
+    "status": "sent",
+    "providerMessageId": "<202610210716.69468776281@smtp-relay.mailin.fr>",
+    "error": null
+  }
+]

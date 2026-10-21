@@ -10,3 +10,4 @@ capesecure/
 .env*.local
 **/.env
 backend/.env
+server/config/.env

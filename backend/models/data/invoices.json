@@ -1,0 +1,924 @@
+[
+  {
+    "invoiceId": "CSS-INV-2026-000010",
+    "invoiceNumber": "CSS-INV-2026-000010",
+    "orderId": "CSS-ORD-2026-000033",
+    "quotationId": "CSS-QTN-2026-000013",
+    "enquiryId": "CSS-ENQ-2026-000017",
+    "accessToken": "672d4498282ad9ca116312d2385d44f7e1ca",
+    "status": "partiallyPaid",
+    "invoiceDate": "2026-10-21",
+    "dueDate": "2026-10-28",
+    "createdAt": "2026-10-21T09:36:30.127Z",
+    "updatedAt": "2026-10-21T09:36:30.924Z",
+    "customer": {
+      "name": "Dr. S. K. Nathan",
+      "businessName": "Cape Diagnostics Laboratory",
+      "email": "capesecuresolutions@gmail.com",
+      "phone": "9840112233",
+      "whatsapp": "9840112233",
+      "businessType": "healthcare",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [],
+      "notes": "Need patient blood test report download and doctor appointment system.",
+      "businessType": "healthcare"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (healthcare Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (capediagnostics.in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        },
+        {
+          "description": "Security Hardening & SSL Setup",
+          "quantity": 1,
+          "rate": 1499,
+          "total": 1499
+        }
+      ],
+      "subtotal": 12995,
+      "discount": 500,
+      "taxableAmount": 12495,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 12495,
+      "amountPaid": 6000,
+      "balance": 6495,
+      "paymentStatus": "PARTIALLY PAID"
+    },
+    "payments": [
+      {
+        "paymentId": "PAY-MVHX3RUU",
+        "date": "2026-10-21T09:36:30.918Z",
+        "amount": 6000,
+        "method": "UPI",
+        "transactionRef": "UPI-2026-9988776655",
+        "notes": "50% advance for project initiation",
+        "recordedBy": "admin@capesecure.com"
+      }
+    ],
+    "notes": "Thank you for choosing Cape Secure Solutions. We appreciate your partnership.",
+    "terms": [
+      "Payment is due within 7 days of the invoice date unless otherwise agreed in writing.",
+      "Hosting, domain registration, and SSL certificates are provisioned upon receipt of advance.",
+      "Annual maintenance and renewal fees will be invoiced 30 days prior to cycle expiration.",
+      "All intellectual property rights transfer to the client upon full payment settlement."
+    ]
+  },
+  {
+    "invoiceId": "CSS-INV-2026-000009",
+    "invoiceNumber": "CSS-INV-2026-000009",
+    "orderId": "CSS-ORD-2026-000032",
+    "quotationId": "CSS-QTN-2026-000012",
+    "enquiryId": "CSS-ENQ-2026-000016",
+    "accessToken": "823fcb2869fc08a1958f8eda2c5206c07e5c",
+    "status": "unpaid",
+    "invoiceDate": "2026-10-21",
+    "dueDate": "2026-10-28",
+    "createdAt": "2026-10-21T09:36:13.348Z",
+    "updatedAt": "2026-10-21T09:36:13.348Z",
+    "customer": {
+      "name": "Karthik Subramanian",
+      "businessName": "Subramanian Maritime Logistics",
+      "email": "karthik.subramanian@gmail.com",
+      "phone": "9840123456",
+      "whatsapp": "9840123456",
+      "businessType": "Export & Shipping",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [
+        "Custom Cargo Tracking Portal",
+        "WhatsApp Delivery Alerts",
+        "SSL Security Hardening"
+      ],
+      "notes": "Need high security infrastructure with Indian data residency.",
+      "businessType": "Export & Shipping"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Export & Shipping Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (Required)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        }
+      ],
+      "subtotal": 11496,
+      "discount": 0,
+      "taxableAmount": 11496,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 11496,
+      "amountPaid": 0,
+      "balance": 11496,
+      "paymentStatus": "PENDING"
+    },
+    "payments": [],
+    "notes": "Advance 50% invoice",
+    "terms": [
+      "Payment is due within 7 days of the invoice date unless otherwise agreed in writing.",
+      "Hosting, domain registration, and SSL certificates are provisioned upon receipt of advance.",
+      "Annual maintenance and renewal fees will be invoiced 30 days prior to cycle expiration.",
+      "All intellectual property rights transfer to the client upon full payment settlement."
+    ]
+  },
+  {
+    "invoiceId": "CSS-INV-2026-000008",
+    "invoiceNumber": "CSS-INV-2026-000008",
+    "orderId": "CSS-ORD-2026-000026",
+    "quotationId": "CSS-QTN-2026-000011",
+    "enquiryId": "CSS-ENQ-2026-000010",
+    "accessToken": "355a4b5d11dc6c26ebff291e9fda7a73547e",
+    "status": "unpaid",
+    "invoiceDate": "2026-10-21",
+    "dueDate": "2026-10-28",
+    "createdAt": "2026-10-21T09:32:04.905Z",
+    "updatedAt": "2026-10-21T09:32:04.905Z",
+    "customer": {
+      "name": "Karthik Subramanian",
+      "businessName": "Subramanian Maritime Logistics",
+      "email": "karthik.subramanian@gmail.com",
+      "phone": "9840123456",
+      "whatsapp": "9840123456",
+      "businessType": "Export & Shipping",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [
+        "Custom Cargo Tracking Portal",
+        "WhatsApp Delivery Alerts",
+        "SSL Security Hardening"
+      ],
+      "notes": "Need high security infrastructure with Indian data residency.",
+      "businessType": "Export & Shipping"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Export & Shipping Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (Required)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        }
+      ],
+      "subtotal": 11496,
+      "discount": 0,
+      "taxableAmount": 11496,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 11496,
+      "amountPaid": 0,
+      "balance": 11496,
+      "paymentStatus": "PENDING"
+    },
+    "payments": [],
+    "notes": "Advance 50% invoice",
+    "terms": [
+      "Payment is due within 7 days of the invoice date unless otherwise agreed in writing.",
+      "Hosting, domain registration, and SSL certificates are provisioned upon receipt of advance.",
+      "Annual maintenance and renewal fees will be invoiced 30 days prior to cycle expiration.",
+      "All intellectual property rights transfer to the client upon full payment settlement."
+    ]
+  },
+  {
+    "invoiceId": "CSS-INV-2026-000007",
+    "invoiceNumber": "CSS-INV-2026-000007",
+    "orderId": "CSS-ORD-2026-000023",
+    "quotationId": "CSS-QTN-2026-000010",
+    "enquiryId": "CSS-ENQ-2026-000007",
+    "accessToken": "c175b5d243ce2e915a532a6f020d5f1ff33e",
+    "status": "partiallyPaid",
+    "invoiceDate": "2026-10-21",
+    "dueDate": "2026-10-28",
+    "createdAt": "2026-10-21T09:27:26.954Z",
+    "updatedAt": "2026-10-21T09:27:27.592Z",
+    "customer": {
+      "name": "Dr. S. K. Nathan",
+      "businessName": "Cape Diagnostics Laboratory",
+      "email": "capesecuresolutions@gmail.com",
+      "phone": "9840112233",
+      "whatsapp": "9840112233",
+      "businessType": "healthcare",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [],
+      "notes": "Need patient blood test report download and doctor appointment system.",
+      "businessType": "healthcare"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (healthcare Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (capediagnostics.in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        },
+        {
+          "description": "Security Hardening & SSL Setup",
+          "quantity": 1,
+          "rate": 1499,
+          "total": 1499
+        }
+      ],
+      "subtotal": 12995,
+      "discount": 500,
+      "taxableAmount": 12495,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 12495,
+      "amountPaid": 6000,
+      "balance": 6495,
+      "paymentStatus": "PARTIALLY PAID"
+    },
+    "payments": [
+      {
+        "paymentId": "PAY-MVHWS4MC",
+        "date": "2026-10-21T09:27:27.588Z",
+        "amount": 6000,
+        "method": "UPI",
+        "transactionRef": "UPI-2026-9988776655",
+        "notes": "50% advance for project initiation",
+        "recordedBy": "admin@capesecure.com"
+      }
+    ],
+    "notes": "Thank you for choosing Cape Secure Solutions. We appreciate your partnership.",
+    "terms": [
+      "Payment is due within 7 days of the invoice date unless otherwise agreed in writing.",
+      "Hosting, domain registration, and SSL certificates are provisioned upon receipt of advance.",
+      "Annual maintenance and renewal fees will be invoiced 30 days prior to cycle expiration.",
+      "All intellectual property rights transfer to the client upon full payment settlement."
+    ]
+  },
+  {
+    "invoiceId": "CSS-INV-2026-000006",
+    "invoiceNumber": "CSS-INV-2026-000006",
+    "orderId": "CSS-ORD-2026-000022",
+    "quotationId": "CSS-QTN-2026-000009",
+    "enquiryId": "CSS-ENQ-2026-000006",
+    "accessToken": "aa1d26024fccf782ca323a069abcecec0ceb",
+    "status": "unpaid",
+    "invoiceDate": "2026-10-21",
+    "dueDate": "2026-10-28",
+    "createdAt": "2026-10-21T09:27:04.211Z",
+    "updatedAt": "2026-10-21T09:27:04.211Z",
+    "customer": {
+      "name": "Karthik Subramanian",
+      "businessName": "Subramanian Maritime Logistics",
+      "email": "karthik.subramanian@gmail.com",
+      "phone": "9840123456",
+      "whatsapp": "9840123456",
+      "businessType": "Export & Shipping",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [
+        "Custom Cargo Tracking Portal",
+        "WhatsApp Delivery Alerts",
+        "SSL Security Hardening"
+      ],
+      "notes": "Need high security infrastructure with Indian data residency.",
+      "businessType": "Export & Shipping"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Export & Shipping Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (Required)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        }
+      ],
+      "subtotal": 11496,
+      "discount": 0,
+      "taxableAmount": 11496,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 11496,
+      "amountPaid": 0,
+      "balance": 11496,
+      "paymentStatus": "PENDING"
+    },
+    "payments": [],
+    "notes": "Advance 50% invoice",
+    "terms": [
+      "Payment is due within 7 days of the invoice date unless otherwise agreed in writing.",
+      "Hosting, domain registration, and SSL certificates are provisioned upon receipt of advance.",
+      "Annual maintenance and renewal fees will be invoiced 30 days prior to cycle expiration.",
+      "All intellectual property rights transfer to the client upon full payment settlement."
+    ]
+  },
+  {
+    "invoiceId": "CSS-INV-2026-000005",
+    "invoiceNumber": "CSS-INV-2026-000005",
+    "orderId": "CSS-ORD-2026-000020",
+    "quotationId": "CSS-QTN-2026-000008",
+    "enquiryId": "CSS-ENQ-2026-000004",
+    "accessToken": "d361facb83148a1b17c350cd8d079c5062aa",
+    "status": "unpaid",
+    "invoiceDate": "2026-10-21",
+    "dueDate": "2026-10-28",
+    "createdAt": "2026-10-21T09:26:28.442Z",
+    "updatedAt": "2026-10-21T09:26:28.442Z",
+    "customer": {
+      "name": "Karthik Subramanian",
+      "businessName": "Subramanian Maritime Logistics",
+      "email": "karthik.subramanian@gmail.com",
+      "phone": "9840123456",
+      "whatsapp": "9840123456",
+      "businessType": "Export & Shipping",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [
+        "Custom Cargo Tracking Portal",
+        "WhatsApp Delivery Alerts",
+        "SSL Security Hardening"
+      ],
+      "notes": "Need high security infrastructure with Indian data residency.",
+      "businessType": "Export & Shipping"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (Export & Shipping Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (Required)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        }
+      ],
+      "subtotal": 11496,
+      "discount": 0,
+      "taxableAmount": 11496,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 11496,
+      "amountPaid": 0,
+      "balance": 11496,
+      "paymentStatus": "PENDING"
+    },
+    "payments": [],
+    "notes": "Advance 50% invoice",
+    "terms": [
+      "Payment is due within 7 days of the invoice date unless otherwise agreed in writing.",
+      "Hosting, domain registration, and SSL certificates are provisioned upon receipt of advance.",
+      "Annual maintenance and renewal fees will be invoiced 30 days prior to cycle expiration.",
+      "All intellectual property rights transfer to the client upon full payment settlement."
+    ]
+  },
+  {
+    "invoiceId": "CSS-INV-2026-000004",
+    "invoiceNumber": "CSS-INV-2026-000004",
+    "orderId": "CSS-ORD-2026-000018",
+    "quotationId": "CSS-QTN-2026-000007",
+    "enquiryId": "CSS-ENQ-2026-000002",
+    "accessToken": "d7313e056c2978ca5d92ed884bcff02eb29e",
+    "status": "partiallyPaid",
+    "invoiceDate": "2026-10-21",
+    "dueDate": "2026-10-28",
+    "createdAt": "2026-10-21T09:08:36.452Z",
+    "updatedAt": "2026-10-21T09:08:36.936Z",
+    "customer": {
+      "name": "Dr. S. K. Nathan",
+      "businessName": "Cape Diagnostics Laboratory",
+      "email": "capesecuresolutions@gmail.com",
+      "phone": "9840112233",
+      "whatsapp": "9840112233",
+      "businessType": "healthcare",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [],
+      "notes": "Need patient blood test report download and doctor appointment system.",
+      "businessType": "healthcare"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (healthcare Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (capediagnostics.in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        },
+        {
+          "description": "Security Hardening & SSL Setup",
+          "quantity": 1,
+          "rate": 1499,
+          "total": 1499
+        }
+      ],
+      "subtotal": 12995,
+      "discount": 500,
+      "taxableAmount": 12495,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 12495,
+      "amountPaid": 6000,
+      "balance": 6495,
+      "paymentStatus": "PARTIALLY PAID"
+    },
+    "payments": [
+      {
+        "paymentId": "PAY-MVHW3W79",
+        "date": "2026-10-21T09:08:36.933Z",
+        "amount": 6000,
+        "method": "UPI",
+        "transactionRef": "UPI-2026-9988776655",
+        "notes": "50% advance for project initiation",
+        "recordedBy": "admin@capesecure.com"
+      }
+    ],
+    "notes": "Thank you for choosing Cape Secure Solutions. We appreciate your partnership.",
+    "terms": [
+      "Payment is due within 7 days of the invoice date unless otherwise agreed in writing.",
+      "Hosting, domain registration, and SSL certificates are provisioned upon receipt of advance.",
+      "Annual maintenance and renewal fees will be invoiced 30 days prior to cycle expiration.",
+      "All intellectual property rights transfer to the client upon full payment settlement."
+    ]
+  },
+  {
+    "invoiceId": "CSS-INV-2026-000003",
+    "invoiceNumber": "CSS-INV-2026-000003",
+    "orderId": "CSS-ORD-2026-000015",
+    "quotationId": "CSS-QTN-2026-000006",
+    "accessToken": "ff03f0d042fde47ca0adb0c31f592c97b2b0",
+    "status": "partiallyPaid",
+    "invoiceDate": "2026-10-21",
+    "dueDate": "2026-10-28",
+    "createdAt": "2026-10-21T08:54:11.228Z",
+    "updatedAt": "2026-10-21T08:54:11.563Z",
+    "customer": {
+      "name": "Dr. S. K. Nathan",
+      "businessName": "Cape Diagnostics Laboratory",
+      "email": "capesecuresolutions@gmail.com",
+      "phone": "9840112233",
+      "whatsapp": "9840112233",
+      "businessType": "healthcare",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [],
+      "notes": "Need patient blood test report download and doctor appointment system.",
+      "businessType": "healthcare"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (healthcare Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (capediagnostics.in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        },
+        {
+          "description": "Security Hardening & SSL Setup",
+          "quantity": 1,
+          "rate": 1499,
+          "total": 1499
+        }
+      ],
+      "subtotal": 12995,
+      "discount": 500,
+      "taxableAmount": 12495,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 12495,
+      "amountPaid": 6000,
+      "balance": 6495,
+      "paymentStatus": "PARTIALLY PAID"
+    },
+    "payments": [
+      {
+        "paymentId": "PAY-MVHVLCH6",
+        "date": "2026-10-21T08:54:11.562Z",
+        "amount": 6000,
+        "method": "UPI",
+        "transactionRef": "UPI-2026-9988776655",
+        "notes": "50% advance for project initiation",
+        "recordedBy": "admin@capesecure.com"
+      }
+    ],
+    "notes": "Thank you for choosing Cape Secure Solutions. We appreciate your partnership.",
+    "terms": [
+      "Payment is due within 7 days of the invoice date unless otherwise agreed in writing.",
+      "Hosting, domain registration, and SSL certificates are provisioned upon receipt of advance.",
+      "Annual maintenance and renewal fees will be invoiced 30 days prior to cycle expiration.",
+      "All intellectual property rights transfer to the client upon full payment settlement."
+    ]
+  },
+  {
+    "invoiceId": "CSS-INV-2026-000002",
+    "invoiceNumber": "CSS-INV-2026-000002",
+    "orderId": "CSS-ORD-2026-000014",
+    "quotationId": "CSS-QTN-2026-000005",
+    "accessToken": "5e349d520a144a7fb1f38760906a1aec2c00",
+    "status": "unpaid",
+    "invoiceDate": "2026-10-21",
+    "dueDate": "2026-10-28",
+    "createdAt": "2026-10-21T08:53:14.358Z",
+    "updatedAt": "2026-10-21T08:53:14.358Z",
+    "customer": {
+      "name": "Dr. S. K. Nathan",
+      "businessName": "Cape Diagnostics Laboratory",
+      "email": "capesecuresolutions@gmail.com",
+      "phone": "9840112233",
+      "whatsapp": "9840112233",
+      "businessType": "healthcare",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "requirements": [],
+      "notes": "Need patient blood test report download and doctor appointment system.",
+      "businessType": "healthcare"
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (healthcare Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (capediagnostics.in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        },
+        {
+          "description": "Security Hardening & SSL Setup",
+          "quantity": 1,
+          "rate": 1499,
+          "total": 1499
+        }
+      ],
+      "subtotal": 12995,
+      "discount": 500,
+      "taxableAmount": 12495,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 12495,
+      "amountPaid": 0,
+      "balance": 12495,
+      "paymentStatus": "PENDING"
+    },
+    "payments": [],
+    "notes": "Thank you for choosing Cape Secure Solutions. We appreciate your partnership.",
+    "terms": [
+      "Payment is due within 7 days of the invoice date unless otherwise agreed in writing.",
+      "Hosting, domain registration, and SSL certificates are provisioned upon receipt of advance.",
+      "Annual maintenance and renewal fees will be invoiced 30 days prior to cycle expiration.",
+      "All intellectual property rights transfer to the client upon full payment settlement."
+    ]
+  },
+  {
+    "invoiceId": "CSS-INV-2026-000001",
+    "orderId": "CSS-ORD-2026-000001",
+    "quotationId": "CSS-QTN-2026-000001",
+    "accessToken": "1d12d09284069a051356dd749c4f4dcae7d3",
+    "status": "PAID",
+    "invoiceDate": "2026-10-21",
+    "dueDate": "2026-10-28",
+    "createdAt": "2026-10-21T07:16:10.871Z",
+    "updatedAt": "2026-10-21T08:25:18.930Z",
+    "customer": {
+      "name": "Dr. S. K. Nathan",
+      "businessName": "Cape Diagnostics Laboratory",
+      "email": "capesecuresolutions@gmail.com",
+      "phone": "9840112233",
+      "whatsapp": "9840112233",
+      "businessType": "healthcare",
+      "address": "",
+      "city": "Kanyakumari",
+      "state": "Tamil Nadu",
+      "country": "India",
+      "pincode": ""
+    },
+    "project": {
+      "package": "business",
+      "service": "healthcare",
+      "requirements": [],
+      "customRequirements": "Need patient blood test report download and doctor appointment system.",
+      "referenceWebsites": "",
+      "targetLaunchDate": null
+    },
+    "pricing": {
+      "items": [
+        {
+          "description": "Business Growth Package (healthcare Layout)",
+          "quantity": 1,
+          "rate": 5999,
+          "total": 5999
+        },
+        {
+          "description": "Custom Domain Registration (.com / .in) (capediagnostics.in)",
+          "quantity": 1,
+          "rate": 999,
+          "total": 999
+        },
+        {
+          "description": "High-Speed Cloud Hosting",
+          "quantity": 1,
+          "rate": 1999,
+          "total": 1999
+        },
+        {
+          "description": "Annual Care & Maintenance Plan",
+          "quantity": 1,
+          "rate": 2499,
+          "total": 2499
+        },
+        {
+          "description": "Security Hardening & SSL Setup",
+          "quantity": 1,
+          "rate": 1499,
+          "total": 1499
+        }
+      ],
+      "subtotal": 12995,
+      "discount": 500,
+      "taxableAmount": 12495,
+      "taxEnabled": false,
+      "taxRate": 0,
+      "taxName": "GST",
+      "taxAmount": 0,
+      "total": 12495,
+      "amountPaid": 12495,
+      "balance": 0,
+      "paymentStatus": "PAID"
+    },
+    "payments": [
+      {
+        "paymentId": "PAY-1792566971425-9vk6",
+        "amount": 6000,
+        "method": "UPI",
+        "transactionId": "UPI-2026-9988776655",
+        "paymentDate": "2026-10-21",
+        "notes": "50% advance for project initiation",
+        "recordedAt": "2026-10-21T07:16:11.425Z",
+        "recordedBy": "admin"
+      },
+      {
+        "paymentId": "PAY-1792567336986-7f0d",
+        "amount": 6000,
+        "method": "UPI",
+        "transactionId": "UPI-2026-9988776655",
+        "paymentDate": "2026-10-21",
+        "notes": "50% advance for project initiation",
+        "recordedAt": "2026-10-21T07:22:16.986Z",
+        "recordedBy": "admin"
+      },
+      {
+        "paymentId": "PAY-1792570945151-v70u",
+        "amount": 6000,
+        "method": "UPI",
+        "transactionId": "UPI-2026-9988776655",
+        "paymentDate": "2026-10-21",
+        "notes": "50% advance for project initiation",
+        "recordedAt": "2026-10-21T08:22:25.151Z",
+        "recordedBy": "admin@capesecure.com"
+      },
+      {
+        "paymentId": "PAY-1792571118930-bxmw",
+        "amount": 6000,
+        "method": "UPI",
+        "transactionId": "UPI-2026-9988776655",
+        "paymentDate": "2026-10-21",
+        "notes": "50% advance for project initiation",
+        "recordedAt": "2026-10-21T08:25:18.930Z",
+        "recordedBy": "admin@capesecure.com"
+      }
+    ],
+    "notes": "Thank you for choosing Cape Secure Solutions. Where Three Seas Meet, Security Begins.",
+    "terms": [
+      "Payment is due within 7 days of the invoice date unless otherwise agreed in writing.",
+      "Hosting, domain registration, and SSL certificates are provisioned upon receipt of advance.",
+      "Annual maintenance and renewal fees will be invoiced 30 days prior to cycle expiration.",
+      "All intellectual property rights transfer to the client upon full payment settlement."
+    ],
+    "invoiceNumber": "CSS-INV-2026-000001"
+  }
+]

@@ -23,51 +23,38 @@ jobs:
         with:
           node-version: 20
 
-      - name: Validate JavaScript Syntax
+      - name: Validate JavaScript Syntax & Assets
         run: |
-          echo "Checking JavaScript syntax across all modules..."
-          node -c js/config.js
-          node -c js/navigation.js
-          node -c js/portfolio.js
-          node -c js/quote.js
-          node -c js/faq.js
-          node -c js/animations.js
-          node -c js/main.js
+          echo "Checking JavaScript syntax and asset integrity across all modules..."
+          node scripts/validate.js
           node -c api/send-sms.js
-          echo "All JavaScript modules passed syntax verification!"
+          node -c backend/server.js
+          node -c backend/models/db.js
+          node -c backend/services/pricingEngine.js
+          node -c backend/services/pdfService.js
+          node -c backend/services/emailService.js
+          node -c backend/middleware/auth.js
+          node -c backend/middleware/security.js
+          echo "All modules and assets passed validation!"
 
-      - name: Verify Core Static Files & Assets
+      - name: Verify Core Deployment Files
         run: |
-          echo "Checking that all production HTML files exist..."
-          test -f index.html
-          test -f services.html
-          test -f work.html
-          test -f pricing.html
-          test -f about.html
-          test -f contact.html
-          test -f quote.html
-          test -f 404.html
           test -f vercel.json
-          test -f robots.txt
-          test -f sitemap.xml
-          
-          echo "Checking assets and stylesheets..."
-          test -f css/style.css
-          test -f css/responsive.css
-          test -f css/animations.css
-          test -f assets/logo/cape-secure-logo.png
-          test -f assets/logo/favicon.png
-          test -f favicon.png
-          test -f assets/images/kanyakumari-heritage.jpg
-          
-          echo "Checking project demo assets..."
-          test -f assets/projects/sri-lakshmi-textiles.jpg
-          test -f assets/projects/careplus-clinic.jpg
-          test -f assets/projects/future-scholars.jpg
-          test -f assets/projects/spice-route.jpg
-          test -f assets/projects/businessflow-dashboard.jpg
-          
-          echo "All core assets verified successfully!"
+          test -f README.md
+          test -f package.json
+          test -f public/index.html
+          test -f public/services.html
+          test -f public/work.html
+          test -f public/pricing.html
+          test -f public/about.html
+          test -f public/contact.html
+          test -f public/quote.html
+          test -f public/404.html
+          test -f public/robots.txt
+          test -f public/sitemap.xml
+          test -f public/css/style.css
+          test -f public/assets/logo/cape-secure-logo.png
+          echo "All core files verified successfully!"
 
   deploy:
     name: Vercel Production Deployment

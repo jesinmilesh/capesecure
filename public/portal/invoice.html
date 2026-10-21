@@ -156,7 +156,7 @@
       }
 
       try {
-        const res = await fetch(`/api/invoices/${invId}?token=${token}`);
+        const res = await fetch(`/api/public/invoices/${invId}?token=${token}`);
         const data = await res.json();
         if (!data.success || !data.invoice) {
           throw new Error(data.message || 'Invoice not found.');
@@ -168,7 +168,7 @@
 
         document.getElementById('invIdDisplay').textContent = inv.invoiceId;
         document.getElementById('payNoteRef').textContent = inv.invoiceId;
-        document.getElementById('btnDownloadPdf').href = `/api/invoices/${inv.invoiceId}/pdf?token=${token}`;
+        document.getElementById('btnDownloadPdf').href = `/api/public/invoices/${inv.invoiceId}/pdf?token=${token}`;
         document.getElementById('clientName').textContent = c.name || 'Client';
         document.getElementById('clientBusiness').textContent = c.businessName || '';
         document.getElementById('clientEmail').textContent = c.email || c.phone || '';

@@ -17,7 +17,7 @@
 // Universal lead dispatch function
 window.sendCapeSMS = async function (payload) {
   try {
-    const res = await fetch("/api/send-sms", {
+    const res = await fetch("/api/public/quote", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
@@ -25,8 +25,17 @@ window.sendCapeSMS = async function (payload) {
     const result = await res.json().catch(() => ({ success: true }));
     return result;
   } catch (err) {
-    console.warn("sendCapeSMS fallback notice:", err);
-    return { success: true, offline: true };
+    try {
+      const fallbackRes = await fetch("/api/send-sms", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      return await fallbackRes.json().catch(() => ({ success: true }));
+    } catch (fbErr) {
+      console.warn("sendCapeSMS fallback notice:", fbErr);
+      return { success: true, offline: true };
+    }
   }
 };
 
@@ -537,13 +546,14 @@ Looking forward to your guidance!`;
         // Smooth pause before opening centered success dialog
         await new Promise((r) => setTimeout(r, 450));
 
-        const orderRefText = result && result.orderId ? `\nOrder Reference: ${result.orderId}` : '';
+        const enquiryRef = result && (result.enquiryId || result.orderId);
+        const enquiryRefText = enquiryRef ? `\nEnquiry ID: ${enquiryRef}` : '';
 
         if (typeof window.showCapeDialog === "function") {
           await window.showCapeDialog({
             type: "success",
-            title: "Request Submitted Successfully",
-            message: `Thank you for contacting Cape Secure Solutions.${orderRefText}\nWe have received your project details and emailed your confirmation.`,
+            title: "Enquiry Received",
+            message: `Your enquiry has been received.\n${enquiryRefText ? enquiryRefText + '\n' : ''}Your request has been securely submitted. Our team will contact you shortly.`,
             confirmText: "OK"
           });
         }
@@ -555,6 +565,10 @@ Looking forward to your guidance!`;
         if (submitBtn) submitBtn.style.display = "none";
 
         if (successBox) {
+          if (enquiryRef) {
+            const badge = successBox.querySelector(".review-status-badge span:last-child");
+            if (badge) badge.textContent = `ENQUIRY RECORDED: ${enquiryRef}`;
+          }
           successBox.style.display = "block";
           successBox.scrollIntoView({ behavior: "smooth", block: "center" });
         }
