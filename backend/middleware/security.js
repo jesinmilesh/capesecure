@@ -38,6 +38,7 @@ function setCorsHeaders(req, res, isPublicApi = false) {
   ].filter(Boolean);
 
   if (origin) {
+    const normOrigin = origin.toLowerCase().trim();
     const isDev = process.env.NODE_ENV !== 'production';
     const isAllowed = allowedOrigins.some(o => o.toLowerCase().trim() === normOrigin) ||
       normOrigin.endsWith('.vercel.app') ||

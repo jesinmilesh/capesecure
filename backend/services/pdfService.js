@@ -244,23 +244,28 @@ function generateDocumentPDF(docType, documentData) {
       // =========================================================================
       // 4. FINANCIAL TOTALS SUMMARY (Right Aligned Box)
       // =========================================================================
-      const totalsBoxWidth = 210;
+      const totalsBoxWidth = 220;
       const totalsBoxX = pageWidth - margin - totalsBoxWidth;
       let totY = curY;
 
       function renderTotalRow(label, value, isBold = false, isHighlight = false, color = COLORS.charcoal) {
+        doc.fontSize(isBold ? 9 : 8).font(isBold ? 'Helvetica-Bold' : 'Helvetica');
+        const textH = Math.max(doc.heightOfString(label, { width: 120 }), 14);
+        const rowH = isHighlight ? Math.max(textH + 8, 22) : textH + 3;
+
         if (isHighlight) {
-          doc.rect(totalsBoxX - 8, totY - 3, totalsBoxWidth + 8, 22).fill(COLORS.deepOcean);
+          doc.rect(totalsBoxX - 8, totY - 3, totalsBoxWidth + 8, rowH).fill(COLORS.deepOcean);
         }
+        
         doc.fontSize(isBold ? 9 : 8).font(isBold ? 'Helvetica-Bold' : 'Helvetica')
           .fillColor(isHighlight ? COLORS.white : color)
-          .text(label, totalsBoxX, totY, { width: 100 });
+          .text(label, totalsBoxX, totY, { width: 120 });
 
-        doc.text(value, totalsBoxX + 90, totY, {
-          width: totalsBoxWidth - 90,
+        doc.text(value, totalsBoxX + 115, totY, {
+          width: totalsBoxWidth - 115,
           align: 'right'
         });
-        totY += isHighlight ? 25 : 15;
+        totY += rowH;
       }
 
       renderTotalRow('Subtotal:', `₹ ${Number(pricing.subtotal || 0).toLocaleString('en-IN')}`);
@@ -270,7 +275,8 @@ function generateDocumentPDF(docType, documentData) {
       }
 
       if (pricing.taxEnabled && pricing.taxAmount > 0) {
-        renderTotalRow(`${pricing.taxName} (${pricing.taxRate}%):`, `₹ ${Number(pricing.taxAmount).toLocaleString('en-IN')}`);
+        const taxLabel = pricing.taxRate ? `${pricing.taxName || 'GST'} (${pricing.taxRate}%):` : `${pricing.taxName || 'GST'}:`;
+        renderTotalRow(taxLabel, `₹ ${Number(pricing.taxAmount).toLocaleString('en-IN')}`);
       }
 
       renderTotalRow('Total Amount:', `₹ ${Number(pricing.total || 0).toLocaleString('en-IN')}`, true, true);
@@ -285,7 +291,7 @@ function generateDocumentPDF(docType, documentData) {
       // =========================================================================
       // 5. PAYMENT INSTRUCTIONS / TERMS & CONDITIONS (Left Column)
       // =========================================================================
-      const leftBoxWidth = 270;
+      const leftBoxWidth = 260;
       let leftY = curY;
 
       if (isInvoice && config.paymentInstructions) {
@@ -326,26 +332,26 @@ function generateDocumentPDF(docType, documentData) {
         });
       }
 
-      curY = Math.max(leftY, totY) + 20;
+      curY = Math.max(leftY, totY) + 15;
 
       // =========================================================================
       // 6. AUTHORIZED SIGNATURE & FOOTER
       // =========================================================================
-      const signY = Math.max(curY, 730);
+      const signY = Math.min(Math.max(curY, 680), 735);
 
       // Signatory line on the right
       doc.strokeColor(COLORS.borderGray).lineWidth(1)
-         .moveTo(pageWidth - margin - 150, signY + 25)
-         .lineTo(pageWidth - margin, signY + 25)
+         .moveTo(pageWidth - margin - 150, signY + 20)
+         .lineTo(pageWidth - margin, signY + 20)
          .stroke();
 
       doc.fontSize(7.5).font('Helvetica-Bold').fillColor(COLORS.deepOcean)
-         .text(`For ${config.companyName}`, pageWidth - margin - 150, signY + 30, { width: 150, align: 'center' });
+         .text(`For ${config.companyName}`, pageWidth - margin - 150, signY + 24, { width: 150, align: 'center' });
       doc.fontSize(6.5).font('Helvetica').fillColor(COLORS.grayText)
-         .text('Authorized Signatory', pageWidth - margin - 150, signY + 40, { width: 150, align: 'center' });
+         .text('Authorized Signatory', pageWidth - margin - 150, signY + 34, { width: 150, align: 'center' });
 
-      // Bottom Running Footer Bar
-      const footerY = doc.page.height - 30;
+      // Bottom Running Footer Bar (safely positioned within single-page bounds)
+      const footerY = 792;
       doc.strokeColor(COLORS.borderGray).lineWidth(0.5).moveTo(margin, footerY - 5).lineTo(pageWidth - margin, footerY - 5).stroke();
       doc.fontSize(6.5).font('Helvetica').fillColor(COLORS.grayText)
          .text(`This is a computer-generated document from Cape Secure Solutions • Kanyakumari, Tamil Nadu • Support: ${config.email}`, margin, footerY, {
